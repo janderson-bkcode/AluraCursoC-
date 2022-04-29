@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\CursoDesingPatterns1\bin\Debug\CursoDesingPatterns1.exe.config
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\CursoDesingPatterns1\bin\Debug\CursoDesingPatterns1.exe
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\CursoDesingPatterns1\bin\Debug\CursoDesingPatterns1.pdb
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\CursoDesingPatterns1\obj\Debug\CursoDesingPatterns1.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\CursoDesingPatterns1\obj\Debug\CursoDesingPatterns1.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\CursoDesingPatterns1\obj\Debug\CursoDesingPatterns1.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\CursoDesingPatterns1\obj\Debug\CursoDesingPatterns1.exe
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\CursoDesingPatterns1\obj\Debug\CursoDesingPatterns1.pdb

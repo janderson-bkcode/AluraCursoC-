@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ByteBank.Modelos</name>
+    </assembly>
+    <members>
+        <member name="T:ByteBank.Modelos.ContaCorrente">
+            <summary>
+            Define uma Conta Corrente do Banco ByteBank
+            </summary>
+        </member>
+        <member name="M:ByteBank.Modelos.ContaCorrente.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Cria uma instância de ContaCorrente com os argumentos utilizados
+            </summary>
+            <param name="agencia">Representa o valor da propriedade <see cref="P:ByteBank.Modelos.ContaCorrente.Agencia"/> e deve possuir um valor maior que zero</param>
+            <param name="numero">Representa o valor da propriedade <see cref="P:ByteBank.Modelos.ContaCorrente.Numero"/> e deve possuir um valor maior que zero </param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:ByteBank.Modelos.ContaCorrente.Sacar(System.Double)">
+            <summary>
+            Realiza o saque e atualiza o valor da propriedade <see cref="P:ByteBank.Modelos.ContaCorrente.Saldo"/>
+            </summary>
+            <param name="valor">Representa o valor do saque ,deve ser maior que zero e menor que <see cref="P:ByteBank.Modelos.ContaCorrente.Saldo"/></param>
+            <exception cref="T:System.ArgumentException">Exceção lançada quando um valor negativo é usado no argumento <paramref name="valor"/></exception>
+            <exception cref="T:ByteBank.Modelos.SaldoInsuficienteException">Exceção lançada quando o valor do parâmetro <paramref name="valor"/> é maior que o valor da propriedade <see cref="P:ByteBank.Modelos.ContaCorrente.Saldo"/></exception>
+        </member>
+        <member name="T:ByteBank.Modelos.Funcionarios.Funcionario">
+            <summary>
+            Classe que define o Funcionario do Banco ByteBank
+            </summary>
+        </member>
+        <member name="M:ByteBank.Modelos.Funcionarios.Funcionario.#ctor(System.Double,System.String)">
+            <summary>
+            Cria uma instancia da classe Funcionário
+            </summary>
+            <param name="salario">Representa o valor  da propriedade <see cref="P:ByteBank.Modelos.Funcionarios.Funcionario.Salario"/> do Funcionaro</param>
+            <param name="cpf">Representa o valor da propriedade <see cref="P:ByteBank.Modelos.Funcionarios.Funcionario.CPF"/></param>
+        </member>
+    </members>
+</doc>

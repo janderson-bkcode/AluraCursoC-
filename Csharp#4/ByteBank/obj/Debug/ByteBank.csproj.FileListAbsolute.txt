@@ -1,0 +1,16 @@
+C:\Users\Janderson Barbosa\Documents\Alura\Csharp#4\ByteBank\bin\Debug\ByteBank.exe.config
+C:\Users\Janderson Barbosa\Documents\Alura\Csharp#4\ByteBank\bin\Debug\ByteBank.exe
+C:\Users\Janderson Barbosa\Documents\Alura\Csharp#4\ByteBank\bin\Debug\ByteBank.pdb
+C:\Users\Janderson Barbosa\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.csproj.AssemblyReference.cache
+C:\Users\Janderson Barbosa\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.csproj.SuggestedBindingRedirects.cache
+C:\Users\Janderson Barbosa\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+C:\Users\Janderson Barbosa\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.exe
+C:\Users\Janderson Barbosa\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.pdb
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#4\ByteBank\bin\Debug\ByteBank.exe.config
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#4\ByteBank\bin\Debug\ByteBank.exe
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#4\ByteBank\bin\Debug\ByteBank.pdb
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.exe
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#4\ByteBank\obj\Debug\ByteBank.pdb

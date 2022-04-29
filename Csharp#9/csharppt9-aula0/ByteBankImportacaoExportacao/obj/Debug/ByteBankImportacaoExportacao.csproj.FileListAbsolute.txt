@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#9\csharppt9-aula0\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.exe.config
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#9\csharppt9-aula0\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.exe
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#9\csharppt9-aula0\ByteBankImportacaoExportacao\bin\Debug\ByteBankImportacaoExportacao.pdb
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#9\csharppt9-aula0\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#9\csharppt9-aula0\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#9\csharppt9-aula0\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#9\csharppt9-aula0\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.exe
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#9\csharppt9-aula0\ByteBankImportacaoExportacao\obj\Debug\ByteBankImportacaoExportacao.pdb

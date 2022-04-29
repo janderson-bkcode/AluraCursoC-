@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A2.2_JaggedArrays\bin\Debug\A2.2_JaggedArrays.exe.config
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A2.2_JaggedArrays\bin\Debug\A2.2_JaggedArrays.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A2.2_JaggedArrays\bin\Debug\A2.2_JaggedArrays.pdb
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A2.2_JaggedArrays\obj\Debug\A2.2_JaggedArrays.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A2.2_JaggedArrays\obj\Debug\A2.2_JaggedArrays.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A2.2_JaggedArrays\obj\Debug\A2.2_JaggedArrays.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A2.2_JaggedArrays\obj\Debug\A2.2_JaggedArrays.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A2.2_JaggedArrays\obj\Debug\A2.2_JaggedArrays.pdb

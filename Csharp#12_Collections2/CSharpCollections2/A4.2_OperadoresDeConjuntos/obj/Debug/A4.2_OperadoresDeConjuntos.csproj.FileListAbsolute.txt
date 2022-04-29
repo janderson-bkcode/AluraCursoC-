@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A4.2_OperadoresDeConjuntos\bin\Debug\A4.2_OperadoresDeConjuntos.exe.config
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A4.2_OperadoresDeConjuntos\bin\Debug\A4.2_OperadoresDeConjuntos.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A4.2_OperadoresDeConjuntos\bin\Debug\A4.2_OperadoresDeConjuntos.pdb
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A4.2_OperadoresDeConjuntos\obj\Debug\A4.2_OperadoresDeConjuntos.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A4.2_OperadoresDeConjuntos\obj\Debug\A4.2_OperadoresDeConjuntos.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A4.2_OperadoresDeConjuntos\obj\Debug\A4.2_OperadoresDeConjuntos.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A4.2_OperadoresDeConjuntos\obj\Debug\A4.2_OperadoresDeConjuntos.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A4.2_OperadoresDeConjuntos\obj\Debug\A4.2_OperadoresDeConjuntos.pdb

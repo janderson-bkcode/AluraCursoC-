@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A1.3_SortedDictionary\bin\Debug\A1.3_SortedDictionary.exe.config
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A1.3_SortedDictionary\bin\Debug\A1.3_SortedDictionary.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A1.3_SortedDictionary\bin\Debug\A1.3_SortedDictionary.pdb
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A1.3_SortedDictionary\obj\Debug\A1.3_SortedSet.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A1.3_SortedDictionary\obj\Debug\A1.3_SortedSet.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A1.3_SortedDictionary\obj\Debug\A1.3_SortedSet.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A1.3_SortedDictionary\obj\Debug\A1.3_SortedDictionary.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A1.3_SortedDictionary\obj\Debug\A1.3_SortedDictionary.pdb

@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A3.1_ConsultandoCollections\bin\Debug\A3.1_ConsultandoCollections.exe.config
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A3.1_ConsultandoCollections\bin\Debug\A3.1_ConsultandoCollections.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A3.1_ConsultandoCollections\bin\Debug\A3.1_ConsultandoCollections.pdb
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A3.1_ConsultandoCollections\obj\Debug\A3.1_ConsultandoCollections.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A3.1_ConsultandoCollections\obj\Debug\A3.1_ConsultandoCollections.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A3.1_ConsultandoCollections\obj\Debug\A3.1_ConsultandoCollections.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A3.1_ConsultandoCollections\obj\Debug\A3.1_ConsultandoCollections.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A3.1_ConsultandoCollections\obj\Debug\A3.1_ConsultandoCollections.pdb

@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A5.1_Covariancia\bin\Debug\A5.1_Covariancia.exe.config
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A5.1_Covariancia\bin\Debug\A5.1_Covariancia.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A5.1_Covariancia\bin\Debug\A5.1_Covariancia.pdb
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A5.1_Covariancia\obj\Debug\A5.1_Covariancia.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A5.1_Covariancia\obj\Debug\A5.1_Covariancia.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A5.1_Covariancia\obj\Debug\A5.1_Covariancia.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A5.1_Covariancia\obj\Debug\A5.1_Covariancia.exe
+C:\Users\janderson.goncalves\Documents\projetos\CSharpCollections2\A5.1_Covariancia\obj\Debug\A5.1_Covariancia.pdb
