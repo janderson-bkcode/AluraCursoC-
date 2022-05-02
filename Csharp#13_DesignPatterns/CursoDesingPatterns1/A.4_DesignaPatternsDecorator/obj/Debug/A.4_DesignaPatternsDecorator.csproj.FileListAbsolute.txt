@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.4_DesignaPatternsDecorator\obj\Debug\A.4_DesignaPatternsDecorator.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.4_DesignaPatternsDecorator\obj\Debug\A.4_DesignaPatternsDecorator.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.4_DesignaPatternsDecorator\obj\Debug\A.4_DesignaPatternsDecorator.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.4_DesignaPatternsDecorator\bin\Debug\A.4_DesignaPatternsDecorator.exe.config
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.4_DesignaPatternsDecorator\bin\Debug\A.4_DesignaPatternsDecorator.exe
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.4_DesignaPatternsDecorator\bin\Debug\A.4_DesignaPatternsDecorator.pdb
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.4_DesignaPatternsDecorator\obj\Debug\A.4_DesignaPatternsDecorator.exe
+C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.4_DesignaPatternsDecorator\obj\Debug\A.4_DesignaPatternsDecorator.pdb

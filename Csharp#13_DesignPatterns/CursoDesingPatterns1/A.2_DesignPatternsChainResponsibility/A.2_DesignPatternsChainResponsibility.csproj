@@ -45,10 +45,15 @@
   <ItemGroup>
     <Compile Include="CalculadorDeDescontosBaseHandler.cs" />
     <Compile Include="CalculadorDeImpostosStrategyContext.cs" />
-    <Compile Include="ContaExercicio.cs" />
     <Compile Include="DescontoPorCincoItensConcreteHandlers.cs" />
     <Compile Include="DescontoPorMaisDeQuinhentosReaisConcreteHandlers.cs" />
     <Compile Include="DescontoPorVendaCasadaHandler.cs" />
+    <Compile Include="Exercicio\Conta.cs" />
+    <Compile Include="Exercicio\Requisicao.cs" />
+    <Compile Include="Exercicio\Resposta.cs" />
+    <Compile Include="Exercicio\RespostaEmCsv.cs" />
+    <Compile Include="Exercicio\RespostaEmPorcento.cs" />
+    <Compile Include="Exercicio\RespostaEmXml.cs" />
     <Compile Include="ICCC_Strategy.cs" />
     <Compile Include="ICMS_Strategy.cs" />
     <Compile Include="IDescontoHandler.cs" />
@@ -63,8 +68,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exercicio\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

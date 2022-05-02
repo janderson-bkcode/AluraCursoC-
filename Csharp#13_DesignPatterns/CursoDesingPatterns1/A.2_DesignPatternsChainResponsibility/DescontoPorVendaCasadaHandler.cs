@@ -32,23 +32,23 @@ namespace A._2_DesignPatternsChainResponsibility
         }
     }
 
-    public class TestaCorrente
-    {
-        static void Main(String[] args)
-        {
-            IDescontoHandler d1 = new DescontoPorCincoItensConcreteHandlers();
-            IDescontoHandler d2 = new DescontoPorMaisDeQuinhentosReaisConcreteHandlers();
-            IDescontoHandler d3 = new IDescontoHandlerPorVendaCasada();
-            IDescontoHandler d4 = new SemDescontoConcreteHandler();
+    //public class TestaCorrente
+    //{
+    //    public void Testar()
+    //    {
+    //        IDescontoHandler d1 = new DescontoPorCincoItensConcreteHandlers();
+    //        IDescontoHandler d2 = new DescontoPorMaisDeQuinhentosReaisConcreteHandlers();
+    //        IDescontoHandler d3 = new IDescontoHandlerPorVendaCasada();
+    //        IDescontoHandler d4 = new SemDescontoConcreteHandler();
 
-            d1.Proximo = d2;
-            d2.Proximo = d3;
-            d3.Proximo = d4;
+    //        d1.Proximo = d2;
+    //        d2.Proximo = d3;
+    //        d3.Proximo = d4;
 
-            Orcamento orcamento = new Orcamento(500.0);
+    //        Orcamento orcamento = new Orcamento(500.0);
 
-            double IDescontoHandler = d1.Desconta(orcamento);
-            Console.WriteLine(IDescontoHandler);
-        }
-    }
+    //        double IDescontoHandler = d1.Desconta(orcamento);
+    //        Console.WriteLine(IDescontoHandler);
+    //    }
+    //}
 }
