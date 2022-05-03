@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnviadorDeEmail.cs" />
+    <Compile Include="EnviadorDeSms.cs" />
     <Compile Include="ItemDaNota.cs" />
     <Compile Include="ItemDaNotaBuilder.cs" />
     <Compile Include="NotaFiscal.cs" />
     <Compile Include="NotaFiscalBuilder.cs" />
+    <Compile Include="NotaFiscalDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace A._7_DesignPatternsObserver
 {
-    public class NotaFiscalDao : AcaoAposGerarNota
+    internal interface AcaoAposGerarNota
     {
-        public void Executa(NotaFiscal nf)
-        {
-            Console.WriteLine("BD");
-        }
     }
 }

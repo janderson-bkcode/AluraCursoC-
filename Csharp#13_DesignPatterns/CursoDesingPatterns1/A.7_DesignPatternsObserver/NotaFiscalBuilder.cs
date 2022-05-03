@@ -41,9 +41,9 @@ namespace A._7_DesignPatternsObserver
             NotaFiscal nf = new NotaFiscal(RazaoSocial, Cnpj, Data, valorTotal, impostos, todosItens, Observacoes);
            
 
-            new EnviadorDeEmail().EnviaPorEmail(nf);
-            new NotaFiscalDao().SalvaNoBanco(nf);
-            new EnviadorDeSms().EnviaPorSms(nf);
+            new EnviadorDeEmail().Executa(nf);
+            new NotaFiscalDao().Executa(nf);
+            new EnviadorDeSms().Executa(nf);
 
             return nf;
         }

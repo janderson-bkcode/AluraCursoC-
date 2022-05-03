@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace A._7_DesignPatternsObserver
 {
-    public class EnviadorDeSms
+    public class EnviadorDeSms : AcaoAposGerarNota
     {
-
-       public void EnviaPorSms(NotaFiscal nf)
+        public void Executa(NotaFiscal nf)
         {
             Console.WriteLine("SMS");
         }
