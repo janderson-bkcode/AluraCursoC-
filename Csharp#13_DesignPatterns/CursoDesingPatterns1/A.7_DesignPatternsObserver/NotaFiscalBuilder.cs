@@ -20,7 +20,7 @@ namespace A._7_DesignPatternsObserver
         public String Cnpj { get; private set; }
         public DateTime Data { get; private set; }
 
-        private IList<AcaoAposGerarNota> todasAcoesASeremExecutadas = new List<AcaoAposGerarNota>();
+        private IList<AcaoAposGerarNotaObserver> todasAcoesASeremExecutadas = new List<AcaoAposGerarNotaObserver>();
         private double valorTotal;
         private double impostos;
         private IList<ItemDaNota> todosItens = new List<ItemDaNota>();
@@ -45,7 +45,7 @@ namespace A._7_DesignPatternsObserver
             //O método não precisa se preocupar e não sabe qual tipo de ação está executando
             //Apenas executa uma ação que implementa a interface AcaoAposGerarNota
             
-            foreach (AcaoAposGerarNota acao in todasAcoesASeremExecutadas)
+            foreach (AcaoAposGerarNotaObserver acao in todasAcoesASeremExecutadas)
             {
                 acao.Executa(nf);
             }
@@ -58,7 +58,7 @@ namespace A._7_DesignPatternsObserver
             return nf;
         }
 
-        public void AdicionaAcao(AcaoAposGerarNota NovaAcao)
+        public void AdicionaAcao(AcaoAposGerarNotaObserver NovaAcao)
         {
             this.todasAcoesASeremExecutadas.Add(NovaAcao);
         }

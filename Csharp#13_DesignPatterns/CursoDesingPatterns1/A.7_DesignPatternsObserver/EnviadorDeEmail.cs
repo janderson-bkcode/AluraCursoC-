@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace A._7_DesignPatternsObserver
 {
-    public  class EnviadorDeEmail : AcaoAposGerarNota
+    public  class EnviadorDeEmail : AcaoAposGerarNotaObserver
     {
         public void Executa(NotaFiscal nf)
         {

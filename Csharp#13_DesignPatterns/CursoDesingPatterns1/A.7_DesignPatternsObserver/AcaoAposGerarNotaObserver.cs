@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace A._7_DesignPatternsObserver
-{
-    public interface AcaoAposGerarNota
+{   /// <summary>
+    /// Inteface que funciona como Design Pattern Observer
+    /// </summary>
+    public interface AcaoAposGerarNotaObserver
     {
 
         void Executa(NotaFiscal nf);
