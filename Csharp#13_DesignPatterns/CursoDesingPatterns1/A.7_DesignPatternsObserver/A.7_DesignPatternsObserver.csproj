@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcaoAposGerarNota.cs" />
     <Compile Include="EnviadorDeEmail.cs" />
     <Compile Include="EnviadorDeSms.cs" />
     <Compile Include="ItemDaNota.cs" />

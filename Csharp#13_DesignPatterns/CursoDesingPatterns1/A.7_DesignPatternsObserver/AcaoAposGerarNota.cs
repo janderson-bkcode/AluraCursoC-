@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace A._7_DesignPatternsObserver
 {
-    internal interface AcaoAposGerarNota
+    public interface AcaoAposGerarNota
     {
+
+        void Executa(NotaFiscal nf);
     }
 }

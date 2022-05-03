@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace A._7_DesignPatternsObserver
 {
-    public  class EnviadorDeEmail
+    public  class EnviadorDeEmail : AcaoAposGerarNota
     {
-        public void EnviaPorEmail(NotaFiscal nf)
+        public void Executa(NotaFiscal nf)
         {
             Console.WriteLine("Enviando por email");
         }
