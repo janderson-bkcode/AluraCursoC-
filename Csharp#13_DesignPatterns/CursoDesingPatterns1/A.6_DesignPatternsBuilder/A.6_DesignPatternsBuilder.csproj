@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8BDBC78D-22D6-493C-9F97-6D7E0E1678ED}</ProjectGuid>
+    <ProjectGuid>{DF923271-E52D-4613-ABC3-9F72A6116DBC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>A._5_CursoDesignPatternsState</RootNamespace>
-    <AssemblyName>A.5_CursoDesignPatternsState</AssemblyName>
+    <RootNamespace>A._6_DesignPatternsBuilder</RootNamespace>
+    <AssemblyName>A.6_DesignPatternsBuilder</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,30 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculadorDeDescontosBaseHandler.cs" />
-    <Compile Include="CalculadorDeImpostosStrategyContext.cs" />
-    <Compile Include="DescontoPorCincoItensConcreteHandlers.cs" />
-    <Compile Include="DescontoPorMaisDeQuinhentosReaisConcreteHandlers.cs" />
-    <Compile Include="DescontoPorVendaCasadaHandler.cs" />
-    <Compile Include="EstadoDeUmOrcamentoState.cs" />
-    <Compile Include="EstadoOrcamentoAprovadoState.cs" />
-    <Compile Include="EstadoOrcamentoEmAprovacaoState.cs" />
-    <Compile Include="EstadoOrcamentoFinalizadoState.cs" />
-    <Compile Include="EstadoOrcamentoReprovadoState.cs" />
-    <Compile Include="ICCC_Strategy.cs" />
-    <Compile Include="ICMS_Strategy.cs" />
-    <Compile Include="ICPP.cs" />
-    <Compile Include="IDescontoHandler.cs" />
-    <Compile Include="IHIT.cs" />
-    <Compile Include="IKCV.cs" />
-    <Compile Include="Imposto.cs" />
-    <Compile Include="ISS_Strategy.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Orcamento.cs" />
+    <Compile Include="NotaFiscalBuilder.cs" />
+    <Compile Include="ItemDaNota.cs" />
+    <Compile Include="NotaFiscal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SemDescontoConcreteHandler.cs" />
-    <Compile Include="TemplateDeImpostoCondicional.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

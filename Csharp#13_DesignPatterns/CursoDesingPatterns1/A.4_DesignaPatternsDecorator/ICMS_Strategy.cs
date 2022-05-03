@@ -21,6 +21,11 @@ namespace A._4_DesignaPatternsDecorator
 
         }
 
+        /// <summary>
+        /// Método que usa o Decorator para calcular o imposto + o outro imposto
+        /// </summary>
+        /// <param name="orcamento"></param>
+        /// <returns></returns>
         public override double Calcula(Orcamento orcamento)
         {
             return orcamento.Valor * 0.1 + CalculoDoOutroImposto(orcamento);

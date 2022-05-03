@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula05", "Aula05", "{2C3E2D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.5_CursoDesignPatternsState", "A.5_CursoDesignPatternsState\A.5_CursoDesignPatternsState.csproj", "{8BDBC78D-22D6-493C-9F97-6D7E0E1678ED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula06", "Aula06", "{F85EAAB9-0E6B-4362-9B31-F209639E07E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.6_DesignPatternsBuilder", "A.6_DesignPatternsBuilder\A.6_DesignPatternsBuilder.csproj", "{DF923271-E52D-4613-ABC3-9F72A6116DBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{8BDBC78D-22D6-493C-9F97-6D7E0E1678ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BDBC78D-22D6-493C-9F97-6D7E0E1678ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BDBC78D-22D6-493C-9F97-6D7E0E1678ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF923271-E52D-4613-ABC3-9F72A6116DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF923271-E52D-4613-ABC3-9F72A6116DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF923271-E52D-4613-ABC3-9F72A6116DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF923271-E52D-4613-ABC3-9F72A6116DBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{9CC6BFE7-261B-4D7F-8384-6E8EF8A1F8D1} = {00401F6A-0024-4F9D-B1D4-CEE8415FA1B9}
 		{17949184-9B0C-4AE3-B416-F5259C5EBD71} = {51011421-B58F-4973-A985-18537EB20480}
 		{8BDBC78D-22D6-493C-9F97-6D7E0E1678ED} = {2C3E2D26-AF50-44B0-A05E-9B478F0640D7}
+		{DF923271-E52D-4613-ABC3-9F72A6116DBC} = {F85EAAB9-0E6B-4362-9B31-F209639E07E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7EB6480F-382F-4143-8D67-F1A765273074}
