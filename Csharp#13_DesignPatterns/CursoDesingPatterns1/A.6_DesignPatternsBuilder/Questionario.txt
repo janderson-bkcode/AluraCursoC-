@@ -1,0 +1,19 @@
+﻿
+Por que não usar, 
+nao invés do Builder, um conjunto de construtores nesse objeto, 
+que fariam a mesma coisa que o Builder? 
+Discuta vantagens e desvantagens de se usar diversos construtores ao invés do Builder?
+
+RESPOSTA :
+
+Um dos problemas da utilização de construtores é que, em casos onde diversos atributos sejam opcionais, 
+precisaríamos ter uma combinação gigante de construtores 
+(uma para cada possível combinação de atributos obrigatórios e opcionais), 
+tornando o código difícil de manter. Além disso, como construir esse objeto é complicado, 
+colocar essa regra no construtor do objeto, só faz com que ele tenha agora mais uma responsabilidade.
+
+Em outros casos, poderiamos ter diversos ifs dentro do construtor, 
+quanto mais complexo, pode ser mais prático e fácil de manter isolá-lo.
+
+O Builder possibilita a separação da complexidade da criação desse objeto em uma 
+classe específica para isso, além de possibilitar a implementação de atributos opcionais mais facilmente.

@@ -6,3 +6,11 @@ C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesin
 C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\obj\Debug\A.6_DesignPatternsBuilder.csproj.CoreCompileInputs.cache
 C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\obj\Debug\A.6_DesignPatternsBuilder.exe
 C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\obj\Debug\A.6_DesignPatternsBuilder.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\bin\Debug\A.6_DesignPatternsBuilder.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\bin\Debug\A.6_DesignPatternsBuilder.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\bin\Debug\A.6_DesignPatternsBuilder.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\obj\Debug\A.6_DesignPatternsBuilder.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\obj\Debug\A.6_DesignPatternsBuilder.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\obj\Debug\A.6_DesignPatternsBuilder.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\obj\Debug\A.6_DesignPatternsBuilder.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.6_DesignPatternsBuilder\obj\Debug\A.6_DesignPatternsBuilder.pdb

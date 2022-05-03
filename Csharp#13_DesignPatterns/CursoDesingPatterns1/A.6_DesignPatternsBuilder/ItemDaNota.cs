@@ -2,12 +2,12 @@
 {
     public class ItemDaNota
     {
-        public string Nome { get; set; }
+        public string Descricao { get; set; }
         public double Valor { get; set; }
 
-        public ItemDaNota(string nome, double valor)
+        public ItemDaNota(string descricao, double valor)
         {
-            Nome = nome;
+            Descricao = descricao;
             Valor = valor;
         }
 
