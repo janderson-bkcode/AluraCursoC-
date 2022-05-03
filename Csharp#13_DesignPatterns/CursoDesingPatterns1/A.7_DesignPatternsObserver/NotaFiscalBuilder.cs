@@ -39,27 +39,15 @@ namespace A._7_DesignPatternsObserver
         public NotaFiscal Constroi()
         {
             NotaFiscal nf = new NotaFiscal(RazaoSocial, Cnpj, Data, valorTotal, impostos, todosItens, Observacoes);
+           
+
+            new EnviadorDeEmail().EnviaPorEmail(nf);
+            new NotaFiscalDao().SalvaNoBanco(nf);
+            new EnviadorDeSms().EnviaPorSms(nf);
+
             return nf;
-
-            enviaPorEmail(nf);
-            salvaNoBanco(nf);
-            enviaPorSms(nf);
         }
 
-        private void enviaPorSms(NotaFiscal nf)
-        {
-            Console.WriteLine("Simulando envio de sms");
-        }
-
-        private void salvaNoBanco(NotaFiscal nf)
-        {
-            Console.WriteLine("Simulando BD");
-        }
-
-        private void enviaPorEmail(NotaFiscal nf)
-        {
-            Console.WriteLine("Simulando envio de email");
-        }
 
         public NotaFiscalBuilder ParaEmpresa(String razaoSocial)
         {
