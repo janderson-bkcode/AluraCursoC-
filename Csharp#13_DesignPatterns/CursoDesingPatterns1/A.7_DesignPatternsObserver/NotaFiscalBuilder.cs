@@ -41,8 +41,10 @@ namespace A._7_DesignPatternsObserver
             NotaFiscal nf = new NotaFiscal(RazaoSocial, Cnpj, Data, valorTotal, impostos, todosItens, Observacoes);
 
 
-            //Representa as açoes executadas após gerar NotaFiscal
-            //Qualquer ação que 
+            //Representa as açoes executadas após gerar NotaFiscal acima
+            //O método não precisa se preocupar e não sabe qual tipo de ação está executando
+            //Apenas executa uma ação que implementa a interface AcaoAposGerarNota
+            
             foreach (AcaoAposGerarNota acao in todasAcoesASeremExecutadas)
             {
                 acao.Executa(nf);
@@ -56,6 +58,10 @@ namespace A._7_DesignPatternsObserver
             return nf;
         }
 
+        public void AdicionaAcao(AcaoAposGerarNota NovaAcao)
+        {
+            this.todasAcoesASeremExecutadas.Add(NovaAcao);
+        }
 
         public NotaFiscalBuilder ParaEmpresa(String razaoSocial)
         {
