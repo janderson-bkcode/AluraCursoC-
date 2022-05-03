@@ -20,7 +20,7 @@ namespace A._7_DesignPatternsObserver
         public String Cnpj { get; private set; }
         public DateTime Data { get; private set; }
 
-        private IList<AcaoAposGerarNota> todasAcoesASeremExecutadas;
+        private IList<AcaoAposGerarNota> todasAcoesASeremExecutadas = new List<AcaoAposGerarNota>();
         private double valorTotal;
         private double impostos;
         private IList<ItemDaNota> todosItens = new List<ItemDaNota>();
@@ -40,6 +40,9 @@ namespace A._7_DesignPatternsObserver
         {
             NotaFiscal nf = new NotaFiscal(RazaoSocial, Cnpj, Data, valorTotal, impostos, todosItens, Observacoes);
 
+
+            //Representa as açoes executadas após gerar NotaFiscal
+            //Qualquer ação que 
             foreach (AcaoAposGerarNota acao in todasAcoesASeremExecutadas)
             {
                 acao.Executa(nf);
