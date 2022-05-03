@@ -19,8 +19,8 @@ namespace A._6_DesignPatternsBuilder
             criador
                 .ParaEmpresa("Caelum Ensino e Inovacao")
                 .ComCnpj("23456.789/1000-12")
-                .ComItem(new ItemDaNota("Item1", 200.0))
-                .ComItem(new ItemDaNota("Item2", 300.0))
+                .Com(new ItemDaNota("Item1", 200.0))
+                .Com(new ItemDaNota("Item2", 300.0))
                 .NaDataAtual()
                 .ComObservacoes("Uma obs qualquer");
 
