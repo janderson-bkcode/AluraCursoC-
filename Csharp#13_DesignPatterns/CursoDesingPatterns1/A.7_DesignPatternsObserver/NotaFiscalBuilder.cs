@@ -20,7 +20,7 @@ namespace A._7_DesignPatternsObserver
         public String Cnpj { get; private set; }
         public DateTime Data { get; private set; }
 
-
+        private IList<AcaoAposGerarNota> todasAcoesASeremExecutadas;
         private double valorTotal;
         private double impostos;
         private IList<ItemDaNota> todosItens = new List<ItemDaNota>();
@@ -39,11 +39,16 @@ namespace A._7_DesignPatternsObserver
         public NotaFiscal Constroi()
         {
             NotaFiscal nf = new NotaFiscal(RazaoSocial, Cnpj, Data, valorTotal, impostos, todosItens, Observacoes);
-           
 
-            new EnviadorDeEmail().Executa(nf);
-            new NotaFiscalDao().Executa(nf);
-            new EnviadorDeSms().Executa(nf);
+            foreach (AcaoAposGerarNota acao in todasAcoesASeremExecutadas)
+            {
+                acao.Executa(nf);
+            }
+
+            //Substituido pelo foreach acima
+            //new EnviadorDeEmail().Executa(nf);
+            //new NotaFiscalDao().Executa(nf);
+            //new EnviadorDeSms().Executa(nf);
 
             return nf;
         }
