@@ -31,9 +31,6 @@ namespace A._6_DesignPatternsBuilder
 
             Console.ReadLine();
 
-
-
-
         }
     }
 }
