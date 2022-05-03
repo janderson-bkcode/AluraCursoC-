@@ -18,7 +18,11 @@ quanto mais complexo, pode ser mais prático e fácil de manter isolá-lo.
 O Builder possibilita a separação da complexidade da criação desse objeto em uma 
 classe específica para isso, além de possibilitar a implementação de atributos opcionais mais facilmente.
 
+2 - Quando devemos aplicar o padrão Builder? E quando ele mais atrapalhará do que ajudará?
 
+Sempre que tivermos um objeto complexo de ser criado, que possui diversos atributos, ou que possui uma lógica de criação complicada, podemos esconder tudo isso em um Builder.
+
+Além de centralizar o código de criação e facilitar a manutenção, ainda facilitamos a vida das classes que precisam criar essa classe complexa, afinal a interface do Builder tende a ser mais clara e fácil de ser usada.
 
 public class NotaFiscal
 {
