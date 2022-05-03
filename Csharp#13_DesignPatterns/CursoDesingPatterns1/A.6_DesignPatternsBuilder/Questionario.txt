@@ -17,3 +17,16 @@ quanto mais complexo, pode ser mais prático e fácil de manter isolá-lo.
 
 O Builder possibilita a separação da complexidade da criação desse objeto em uma 
 classe específica para isso, além de possibilitar a implementação de atributos opcionais mais facilmente.
+
+
+
+public class NotaFiscal
+{
+    public NotaFiscal(string nomeEmpresa, DateTime data, string endereco = "nao informado", double valor = 0.0)
+    {
+        // implementação do construtor.
+    }
+}
+NotaFiscal nf = new NotaFiscal("Caelum", DateTime.Now) // endereco = nao informado e valor = 0.0
+NotaFiscal nf2 = new NotaFiscal("Caelum", DateTime.Now, "rua") // endereco = rua e valor = 0.0
+NotaFiscal nf3 = new NotaFiscal("Caelum", DateTime.Now, "rua", 10.0) // endereco = rua e valor = 10.0
