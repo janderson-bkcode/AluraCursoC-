@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemDaNotaBuilder.cs" />
     <Compile Include="NotaFiscalBuilder.cs" />
     <Compile Include="ItemDaNota.cs" />
     <Compile Include="NotaFiscal.cs" />
@@ -51,6 +52,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Questionario.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Questionario.txt</LastGenOutput>
+    </Content>
+    <Content Include="Questionario.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Questionario.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
