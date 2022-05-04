@@ -9,7 +9,6 @@ namespace A._3_DesignPatternsTemplateMethod.TesteDataMiner
 {
     public class Path
     {
-
         public String caminhoUrl { get; set; }
     }
 }
