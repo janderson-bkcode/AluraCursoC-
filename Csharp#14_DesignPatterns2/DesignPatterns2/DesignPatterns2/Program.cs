@@ -19,9 +19,6 @@ namespace DesignPatterns2.Aula01
             IDbCommand comando =  conexao.CreateCommand();
             comando.CommandText = "select * from tabela;";
 
-
-
-
         }
     }
 }
