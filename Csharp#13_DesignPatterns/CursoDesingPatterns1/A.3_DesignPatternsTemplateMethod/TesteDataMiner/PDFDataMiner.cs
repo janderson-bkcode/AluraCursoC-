@@ -36,5 +36,11 @@ namespace A._3_DesignPatternsTemplateMethod.TesteDataMiner
             throw new NotImplementedException();
         }
 
+        //Método sobrescrito opcionalmente
+        protected override void analyze()
+        {
+            Console.WriteLine("Análise");
+        }
+
     }
 }

@@ -10,7 +10,7 @@ namespace A._3_DesignPatternsTemplateMethod.TesteDataMiner
     {
 
         public String File { get; set; }
-        public void mine(Path path)
+        public virtual void mine(Path path)
         {
             openFile(path);
             extractData(File);
@@ -23,11 +23,11 @@ namespace A._3_DesignPatternsTemplateMethod.TesteDataMiner
         protected abstract void extractData(String file);
         protected abstract void parseData();
 
-        protected void analyze()
+        protected virtual void analyze()
         {
             Console.WriteLine("Análise");
         }
-        protected void sendReport()
+        protected virtual void sendReport()
         {
             Console.WriteLine("Reportando Analise");
         }
