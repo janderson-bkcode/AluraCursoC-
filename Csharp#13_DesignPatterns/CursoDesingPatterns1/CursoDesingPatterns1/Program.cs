@@ -1,4 +1,5 @@
 ﻿using CursoDesingPatterns1.StrategyFrete;
+using CursoDesingPatterns1.StrategyImposto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace CursoDesingPatterns1
             ImpostoStrategyInterface iss = new ISS_Strategy();
             ImpostoStrategyInterface icms = new ICMS_Strategy();
             ImpostoStrategyInterface iccc = new ICCC_Strategy();
+            ImpostoStrategyInterface iof = new IOF();
 
             //Instanciando Orçamento
             OrcamentoStrategyClient orcamento = new OrcamentoStrategyClient(500.0);
@@ -26,6 +28,7 @@ namespace CursoDesingPatterns1
             calculador.RealizaCalculo(orcamento,icms);
             calculador.RealizaCalculo(orcamento, iss);
             calculador.RealizaCalculo(orcamento,iccc);
+            calculador.RealizaCalculo(orcamento, iof);
 
             //Frete
             CalculadorDeFreteStrateyContext calculadorDeFrete = new CalculadorDeFreteStrateyContext();

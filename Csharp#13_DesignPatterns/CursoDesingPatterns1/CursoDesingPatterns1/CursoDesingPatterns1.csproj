@@ -52,6 +52,7 @@
     <Compile Include="StrategyImposto\ICCC_Strategy.cs" />
     <Compile Include="StrategyImposto\ICMS_Strategy.cs" />
     <Compile Include="StrategyImposto\ImpostoStrategyInterface.cs" />
+    <Compile Include="StrategyImposto\IOF.cs" />
     <Compile Include="StrategyImposto\ISS_Strategy.cs" />
     <Compile Include="StrategyImposto\OrcamentoStrategyClient.cs" />
     <Compile Include="Program.cs" />
