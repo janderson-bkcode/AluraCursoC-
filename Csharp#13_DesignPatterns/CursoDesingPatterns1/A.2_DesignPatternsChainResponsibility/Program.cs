@@ -13,9 +13,9 @@ namespace A._2_DesignPatternsChainResponsibility
 
             CalculadorDeDescontosBaseHandler calculador = new CalculadorDeDescontosBaseHandler();
 
-            Orcamento orcamento = new Orcamento(500);
-            orcamento.AdicionaItem(new Item("Caneta", 500));
-            orcamento.AdicionaItem(new Item("Lápis", 500));
+            Orcamento orcamento = new Orcamento(6000);
+            orcamento.AdicionaItem(new Item("CANETA", 500));
+            orcamento.AdicionaItem(new Item("LAPIS", 500));
             orcamento.AdicionaItem(new Item("Geladeira", 500));
             orcamento.AdicionaItem(new Item("Microondas", 500));
             orcamento.AdicionaItem(new Item("Faca", 500));

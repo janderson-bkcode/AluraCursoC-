@@ -32,7 +32,7 @@ namespace A._2_DesignPatternsChainResponsibility
             //}
 
 
-            IDescontoHandler descontoTipo1 = new DescontoPorCincoItensConcreteHandlers();
+            IDescontoHandler descontoTipo1 = new DescontoHandlerPorVendaCasada();
             IDescontoHandler descontoTipo2 = new DescontoPorMaisDeQuinhentosReaisConcreteHandlers();
             IDescontoHandler descontoTipo3 = new DescontoPOrMaisDe5000reais();
             IDescontoHandler descontoTipo4 = new SemDescontoConcreteHandler();

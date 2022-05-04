@@ -8,12 +8,12 @@ namespace A._2_DesignPatternsChainResponsibility
 {   /// <summary>
     /// Classe que possui uma estratégia de desconto: 5% se tivermos LAPIS e CANETA na mesma compra.
     /// </summary>
-    public class IDescontoHandlerPorVendaCasada : IDescontoHandler
+    public class DescontoHandlerPorVendaCasada : IDescontoHandler
     {
         public IDescontoHandler Proximo { get; set; }
         public double Desconta(Orcamento orcamento)
         {
-            if (aconteceuVendaCasadaEm(orcamento)) return orcamento.Valor * 0.05;
+            if (aconteceuVendaCasadaEm(orcamento) && orcamento.Valor >= 5000) return orcamento.Valor * 0.05;
             else return Proximo.Desconta(orcamento);
         }
 
@@ -26,7 +26,7 @@ namespace A._2_DesignPatternsChainResponsibility
         {
             foreach (Item item in orcamento.Itens)
             {
-                if (item.Nome.Equals(nomeDoItem)) return true;
+                if (item.Nome.Equals(nomeDoItem))  return true;
             }
             return false;
         }
