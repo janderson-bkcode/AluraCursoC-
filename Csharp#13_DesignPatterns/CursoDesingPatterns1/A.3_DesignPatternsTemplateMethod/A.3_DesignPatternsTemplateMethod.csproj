@@ -66,6 +66,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SemDescontoConcreteHandler.cs" />
     <Compile Include="TemplateDeImpostoCondicional.cs" />
+    <Compile Include="TesteDataMiner\CSVDataMiner.cs" />
+    <Compile Include="TesteDataMiner\PDFDataMiner.cs" />
+    <Compile Include="TesteDataMiner\DataMinerTemplate.cs" />
+    <Compile Include="TesteDataMiner\Path.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
