@@ -34,10 +34,12 @@ namespace A._2_DesignPatternsChainResponsibility
 
             IDescontoHandler descontoTipo1 = new DescontoPorCincoItensConcreteHandlers();
             IDescontoHandler descontoTipo2 = new DescontoPorMaisDeQuinhentosReaisConcreteHandlers();
-            IDescontoHandler descontoTipo3 = new SemDescontoConcreteHandler();
+            IDescontoHandler descontoTipo3 = new DescontoPOrMaisDe5000reais();
+            IDescontoHandler descontoTipo4 = new SemDescontoConcreteHandler();
 
             descontoTipo1.Proximo = descontoTipo2;
-            descontoTipo2.Proximo = descontoTipo3;    
+            descontoTipo2.Proximo = descontoTipo3;
+            descontoTipo3.Proximo = descontoTipo4;
             return descontoTipo1.Desconta(orcamento);
         }
 

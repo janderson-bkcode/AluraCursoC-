@@ -46,6 +46,7 @@
     <Compile Include="CalculadorDeDescontosBaseHandler.cs" />
     <Compile Include="CalculadorDeImpostosStrategyContext.cs" />
     <Compile Include="DescontoPorCincoItensConcreteHandlers.cs" />
+    <Compile Include="DescontoPOrMaisDe5000reais.cs" />
     <Compile Include="DescontoPorMaisDeQuinhentosReaisConcreteHandlers.cs" />
     <Compile Include="DescontoPorVendaCasadaHandler.cs" />
     <Compile Include="Exercicio\Conta.cs" />
@@ -68,6 +69,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\A.3_DesignPatternsTemplateMethod\A.3_DesignPatternsTemplateMethod.csproj">
+      <Project>{9CC6BFE7-261B-4D7F-8384-6E8EF8A1F8D1}</Project>
+      <Name>A.3_DesignPatternsTemplateMethod</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

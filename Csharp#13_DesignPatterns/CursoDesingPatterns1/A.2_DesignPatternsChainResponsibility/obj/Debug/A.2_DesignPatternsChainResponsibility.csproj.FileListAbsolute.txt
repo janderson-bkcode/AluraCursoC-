@@ -6,3 +6,15 @@ C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesin
 C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\bin\Debug\A.2_DesignPatternsChainResponsibility.pdb
 C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\obj\Debug\A.2_DesignPatternsChainResponsibility.exe
 C:\Users\janderson.goncalves\Documents\Alura\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\obj\Debug\A.2_DesignPatternsChainResponsibility.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\bin\Debug\A.2_DesignPatternsChainResponsibility.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\bin\Debug\A.2_DesignPatternsChainResponsibility.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\bin\Debug\A.2_DesignPatternsChainResponsibility.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\bin\Debug\A.3_DesignPatternsTemplateMethod.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\bin\Debug\A.3_DesignPatternsTemplateMethod.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\bin\Debug\A.3_DesignPatternsTemplateMethod.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\obj\Debug\A.2_DesignPatternsChainResponsibility.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\obj\Debug\A.2_DesignPatternsChainResponsibility.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\obj\Debug\A.2_DesignPatternsChainResponsibility.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\obj\Debug\A.2_DesignPatternsChainResponsibility.csproj.CopyComplete
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\obj\Debug\A.2_DesignPatternsChainResponsibility.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#13_DesignPatterns\CursoDesingPatterns1\A.2_DesignPatternsChainResponsibility\obj\Debug\A.2_DesignPatternsChainResponsibility.pdb
