@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.2_DesignPatternsFlyWeight\bin\Debug\A.2_DesignPatternsFlyWeight.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.2_DesignPatternsFlyWeight\bin\Debug\A.2_DesignPatternsFlyWeight.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.2_DesignPatternsFlyWeight\bin\Debug\A.2_DesignPatternsFlyWeight.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.2_DesignPatternsFlyWeight\obj\Debug\A.2_DesignPatternsFlyWeight.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.2_DesignPatternsFlyWeight\obj\Debug\A.2_DesignPatternsFlyWeight.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.2_DesignPatternsFlyWeight\obj\Debug\A.2_DesignPatternsFlyWeight.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.2_DesignPatternsFlyWeight\obj\Debug\A.2_DesignPatternsFlyWeight.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.2_DesignPatternsFlyWeight\obj\Debug\A.2_DesignPatternsFlyWeight.pdb
