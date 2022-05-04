@@ -10,7 +10,7 @@ namespace A._3_DesignPatternsMemento
     {
 
 
-        public DateTime Date { get; private set; }
+        public DateTime Data { get; private set; }
 
         public String Cliente { get; private set; }
 
@@ -19,7 +19,7 @@ namespace A._3_DesignPatternsMemento
 
         public Contrato(DateTime date, string cliente, TipoContrato tipo)
         {
-            Date = date;
+            Data = date;
             Cliente = cliente;
             Tipo = tipo;
         }
@@ -31,5 +31,10 @@ namespace A._3_DesignPatternsMemento
             else if (this.Tipo == TipoContrato.Acertado) this.Tipo = TipoContrato.Concluido;
 
         }
+        public Estado SalvaEstado()
+        {
+            return new Estado(new Contrato(this.Data,this.Cliente,this.Tipo));
+        }
+
     }
 }
