@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.4_DesignPatternDSL_Interpreter\bin\Debug\A.4_DesignPatternDSL_Interpreter.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.4_DesignPatternDSL_Interpreter\bin\Debug\A.4_DesignPatternDSL_Interpreter.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.4_DesignPatternDSL_Interpreter\bin\Debug\A.4_DesignPatternDSL_Interpreter.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.4_DesignPatternDSL_Interpreter\obj\Debug\A.4_DesignPatternDSL_Interpreter.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.4_DesignPatternDSL_Interpreter\obj\Debug\A.4_DesignPatternDSL_Interpreter.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.4_DesignPatternDSL_Interpreter\obj\Debug\A.4_DesignPatternDSL_Interpreter.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.4_DesignPatternDSL_Interpreter\obj\Debug\A.4_DesignPatternDSL_Interpreter.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.4_DesignPatternDSL_Interpreter\obj\Debug\A.4_DesignPatternDSL_Interpreter.pdb

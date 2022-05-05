@@ -54,4 +54,4 @@ namespace A._3_DesignPatternsMemento
 
 
 }
-}
+
