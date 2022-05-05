@@ -1,0 +1,47 @@
+﻿[00:00] Nesse capítulo nós queremos discutir um pouco como é que a gente faz para lidar com código de biblioteca ou código de algum sistema antigo que nós queremos utilizar dentro desse novo sistema Orientado a Objetos.
+
+[00:13] Dentro do projeto eu quero, por exemplo, utilizar uma biblioteca que gera xml do C# para conseguir guardar as informações de um cliente no formato xml. Então, aqui dentro do projeto eu vou criar aqui uma nova classe dentro de uma pasta chamada capítulo oito. Essa classe vai ser utilizada para guardar as informações do cliente. Então, uma classe chamada cliente.
+
+[00:39] Aqui dentro dessa classe cliente eu quero declarar uma propriedade, por exemplo, para guardar qual o nome do cliente. Então, propriedade, que vai ser do tipo string, nome do cliente. Além disso, quero guardar, por exemplo, qual é o endereço desse cliente; então vou declarar aqui mais uma propriedade que vai ser do tipo string, endereço do cliente. E quero declarar aqui mais uma propriedade que vai ser propriedade, por exemplo, data de nascimento do cliente, que vai ser do tipo DateTime, data de nascimento.
+
+[01:12] Agora, no código do programa eu quero criar um novo cliente, eu quero transformar esse cliente em um xml. Então eu vou ter aqui um Cliente, cliente = new Cliente();. E eu vou importar essa classe cliente lá dentro da pasta capítulo oito.
+
+[01:28] Agora aqui no cliente quero inicializar as informações. Então, cliente.Nome, vai receber, por exemplo, o meu nome, então cliente.Nome = "Victor; depois quero guardar qual o endereço do cliente. Então cliente.Endereço, vai receber, por exemplo, Rua Vergueiro; cliente.Endereço = "Rua Vergueiro"; e para finalizar quero colocar qual é a data de nascimento do cliente. Então, cliente.DataDeNascimento, recebe, acabei de nascer, então cliente.DataDeNascimento = Datetime.Now;
+
+[01:59] E agora, para eu conseguir transformar esse cliente aqui em um xml eu preciso utilizar uma classe do C# chamada XmlSerializer. Então vou instanciar aqui um xmlSerializar = new xmlSerializer();
+
+[02:19] E essa classe xmlSerializer, vem desse Namespace System xml Serialization. Agora, aqui no construtor do xmlSerialize eu preciso passar qual é o tipo que eu quero serializar, que é o tipo cliente.GetType().
+
+[02:38] Agora, depois que eu criei esse serializer eu quero transformar esse cliente em uma xml, e eu quero guardar esse xml em uma string. Então, eu preciso utilizar aqui uma outra classe chamada stringwriter. E essa classe stringwriter, ela vem do Namespace System.IO. Então, vou ter aqui stringwriter writer = new Stringwriter();
+
+[03:00] E agora para eu conseguir transformar o cliente em um xml, vou utilizar aqui o serializer, chamando o método serializer, passando onde que ele tem que escrever o xml e qual é o objeto que eu quero escrever, que é o objeto cliente. serializer.Serializer(writer, cliente);.
+
+[03:17] E depois, para eu consegui pegar o string do xml eu vou ter aqui string xml = writer.Tostring();. E agora eu posso visualizar esse xml utilizando o Console.WriteLine(xml);. Vamos tentar executar essa aplicação com o “Ctrl + F5”.
+
+[03:38] E nós temos aqui uma exceção porque o xmlSerializer só consegue trabalhar com classes públicas. Então, aqui no tipo do cliente eu preciso declarar um cliente como Public class Cliente. E agora posso novamente rodar a aplicação.
+
+[03:54] E dessa vez deu certo, então ele criou aqui um xml para o tipo cliente, cliente tem um nome, que é o Victor, e endereço, que é Rua Vergueiro, e data de nascimento que é um DateTime.
+
+[04:07] Só que, olha só, toda vez que eu quiser transformar o cliente em um xml, ou, toda vez que eu quiser transformar qualquer outro objeto em um xml, eu vou ter que repetir todos esse código aqui. Então, não é legal eu sair repetindo esse código por todo o sistema. Seria bem melhor se eu pudesse isolar esse código dentro de uma classe. Então, aqui dentro da pasta "Cap8" eu vou criar uma nova classe que vai ser, por exemplo, o GeradorDeXml.
+
+[04:34] Aqui dentro dessa classe GeradorDeXml eu quero criar um método que gera xml, que vai gerar o xml para mim. Então public, que já vai me devolver uma string. Vai ser um método Geraxml. E aqui dentro desse método GeraXml() eu quero receber qual é o objeto que eu quero transformar em xml. Dentro desse método Geraxml() eu quero pegar esse código aqui que gera o xml para mim.
+
+[5:00] Então, vou pegar aqui o código do xmlSerializer e vou importar essa classe. Então importei xmlSerializer, importei o stringwriter. E agora? Aqui, ao invés de escrever no cliente, eu quero escrever o xml da variável O; e aqui, ao invés de fazer cliente.GetType, vai ser O.GetType.
+
+[05:16] E aqui nesse método, ao invés de guardar esse xml em uma variável, eu quero devolver o xml. Então fazer return writer.Tostring. E agora aqui no código do programa, se eu quiser gerar o xml, então vou ter aqui uma string xml = new GeradorDeXml().GeraXml, passando qual é o objeto que eu quero gerar, que é o objeto cliente. string xml = new GeradorDeXml().GeraXml(cliente);.
+
+[05:44] Então, agora, para eu conseguir testar esse programa, vou apertar novamente o “Ctrl + F5”, e nós temos aqui o mesmo xml que foi gerado anteriormente. Então o xml do cliente com as mesmas informações.
+
+[06:00] Então, veja aqui, quando eu quero utilizar uma biblioteca ou um código legado dentro do meu código orientado objeto, a alternativa que eu tenho é isolar esse código legado, esse código de biblioteca, dentro de uma classe do meu sistema. E essa classe vai ser uma classe que eu vou modelar para ela conseguir se encaixar direito dentro do meu código.
+
+[06:18] Então, esse padrão de projeto que me fala para isolar código de biblioteca, ou código de algum sistema legado dentro de uma classe que se adapta direitinho aqui no meu sistema, é um padrão de projeto chamado adapter. Então, eu utilizo o adapter toda vez que eu quiser adaptar o código de uma biblioteca, ou de um sistema legado, ou código legado, para dentro do meu código orientado a objetos.
+
+[06:44] Mas vejam que a implementação do adapter é uma implementação parecida com a implementação do command, que nós vimos anteriormente, e do strategy, que vocês viram no curso anterior. Então, a diferença entre esses padrões de projeto é a finalidade dos padrões. No adapter, eu quero adaptar um código que eu não posso modificar, que é o código de biblioteca, ou código de sistema legado, para eu utilizar dentro desse código que eu estou acabando de criar, desse código orientado a objetos.
+
+[07:14] Mas quando eu estou criando um command, eu estou criando um comando, e esse comando é um código que eu quero executar posteriormente. Então command, tem a finalidade de poder guardar um código que eu vou executar posteriormente, que é bem diferente da finalidade do adapter.
+
+[07:32] Agora, além do command, eu também tinha o strategy. O strategy também tem uma implementação parecida. Agora, no strategy eu estou falando sobre uma estratégia diferente para fazer alguma coisa no sistema. Então, por exemplo, dentro de vários sistemas eu quero guardar informações no banco de dados. Só que vários sistemas têm que conversar com bancos de dados diferentes.
+
+[07:52] Imagina que, quando eu quero conversar com o oracle, eu quero fazer esse código de algum jeito. Quando eu quiser falar com o SQL Server, eu vou querer fazer um código um pouquinho diferente. Então, nesses casos, eu posso criar uma estratégia, um strategy, para falar com cada um desses bancos de dados diferentes. Só que nos dois casos a minha estratégia é uma estratégia que vai armazenar dados, vai acessar dados de um banco de dados.
+
+[08:18] Então, eu estou utilizando uma estratégia com a finalidade de armazenar dados, que é bem diferente aqui do adapter, onde eu quero, simplesmente, adaptar um código de biblioteca, um sistema legado, para eu poder utilizar esse código lá dentro do meu sistema.

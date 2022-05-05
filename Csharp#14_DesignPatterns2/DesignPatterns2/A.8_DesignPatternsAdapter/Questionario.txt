@@ -1,0 +1,18 @@
+﻿Quais são as diferenças que existem entre os padrões Adapter e Strategy?
+
+A diferença que existe entre os padrões é o propósito. 
+No Adapter estamos adaptando a interface de um sistema antigo para 
+que ela possa se encaixar em um sistema novo. 
+Já no Strategy a ideia é utilizar diferentes 
+estratégias para resolver um dado problema no sistema.
+
+
+
+Quais são as diferenças entre os padrões Adapter e Command?
+
+Como dito no exercício anterior, 
+o Adapter serve para adaptar o código de um sistema legado ou 
+biblioteca para que ele possa ser utilizado no novo sistema. 
+
+Já o command serve para guardarmos um trecho de 
+código que precisa ser executado posteriormente.
