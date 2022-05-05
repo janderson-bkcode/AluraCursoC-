@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.6_DesignPatternsBridges\bin\Debug\A.6_DesignPatternsBridges.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.6_DesignPatternsBridges\bin\Debug\A.6_DesignPatternsBridges.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.6_DesignPatternsBridges\bin\Debug\A.6_DesignPatternsBridges.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.6_DesignPatternsBridges\obj\Debug\A.6_DesignPatternsBridges.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.6_DesignPatternsBridges\obj\Debug\A.6_DesignPatternsBridges.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.6_DesignPatternsBridges\obj\Debug\A.6_DesignPatternsBridges.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.6_DesignPatternsBridges\obj\Debug\A.6_DesignPatternsBridges.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.6_DesignPatternsBridges\obj\Debug\A.6_DesignPatternsBridges.pdb

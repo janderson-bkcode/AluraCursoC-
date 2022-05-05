@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.5_DesignPatternVisitor", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula06", "Aula06", "{4D704E25-A974-44CD-8105-C6830306F55A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.6_DesignPatternsBridges", "A.6_DesignPatternsBridges\A.6_DesignPatternsBridges.csproj", "{0507D465-9F98-4257-9380-58A44426B8AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3078FC4E-9664-4BA8-B2CE-BBB5E9260107}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3078FC4E-9664-4BA8-B2CE-BBB5E9260107}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3078FC4E-9664-4BA8-B2CE-BBB5E9260107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0507D465-9F98-4257-9380-58A44426B8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0507D465-9F98-4257-9380-58A44426B8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0507D465-9F98-4257-9380-58A44426B8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0507D465-9F98-4257-9380-58A44426B8AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{F54E15BA-BAD7-4682-ADF9-AE7F27ED2979} = {174985C8-02B8-460F-B472-FD4506686433}
 		{36AAA6B0-23EE-4B29-8093-E89FD04447C5} = {BA88E24F-50AD-451D-8A5A-F9D201F86D07}
 		{3078FC4E-9664-4BA8-B2CE-BBB5E9260107} = {03EAFD82-9DFD-474C-B382-EA4D3DC817BC}
+		{0507D465-9F98-4257-9380-58A44426B8AC} = {4D704E25-A974-44CD-8105-C6830306F55A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92550C06-3D66-453F-859F-EEAA506E9319}

@@ -1,0 +1,27 @@
+﻿[13:14] Rodando novamente. Enviando SMS para o cliente chamado Victor. 
+Então, veja que, agora, se eu quiser criar um novo tipo de mensagem, 
+que vai ter uma formatação diferente, tudo que eu preciso fazer é criar 
+uma única classe do projeto, que vai implementar aquela interface IMensagem.
+
+[13:35] E se eu quiser criar uma nova forma de envio, 
+eu só preciso implementar a interface IEnviador. Veja que, 
+separando a responsabilidade dessas duas hierarquias de classe, 
+eu consegui diminuir o número de classe do meu projeto, 
+consegui facilitar a manutenção desse projeto.
+
+[13:47] Esse padrão de projeto que nós acabamos de implementar, 
+esse padrão que consegue separar a responsabilidade e a hierarquia de classe, 
+é um padrão chamado Bridge. Por que Bridge? Porque utilizando aqui a 
+composição de classes aqui na propriedade enviador lá da interface IMensagem, 
+eu estou fazendo uma ponte entre a interface IMensagem e a interface dos 
+enviadores, a interface IEnviador.
+
+[14:14] Então, nós utilizamos esse padrão chamado Bridge toda vez que nós 
+temos uma hierarquia de classes que tem muitas responsabilidades, 
+tem duas ou mais responsabilidades. E então nós quebramos essa hierarquia 
+em diversas hierarquias de classe. Por exemplo, aqui no nosso caso, 
+quebrei a hierarquia das mensagens nas mensagens e nos enviadores.
+
+[14:38] E depois eu utilizo a composição de classes para 
+eu poder juntar essas hierarquias, e poder compor o meu código. 
+Então, esse foi o padrão chamado Bridge dos Design Patterns.
