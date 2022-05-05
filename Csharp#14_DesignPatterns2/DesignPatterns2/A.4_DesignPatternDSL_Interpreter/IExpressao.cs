@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace A._4_DesignPatternDSL_Interpreter
 {
-    internal interface IExpressao
+    public interface IExpressao
     {
         int Avalia();
     }
