@@ -1,0 +1,10 @@
+﻿Para nosso exemplo de calculadora, você consegue pensar 
+em mais alguma situação em que poderíamos utilizar o visitor?
+
+
+A finalidade do visitor dentro do código é simplesmente 
+percorrer toda a árvore de expressão para executar alguma lógica. 
+Nesse capítulo, ele foi utilizado para imprimir as expressões, 
+mas ele também poderia ser utilizado para realizar cálculos com a expressão 
+ou qualquer outra tarefa que dependa do 
+processamento dos nós de nossa árvore de expressão.
