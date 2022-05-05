@@ -1,0 +1,77 @@
+﻿[00:00] Nesse capítulo, imagine que estamos trabalhando em um sistema de loja virtual que precisa processar muitos pedidos.
+
+[00:08] Dentro do projeto, eu quero criar aqui uma nova pasta que vai guardar as classes desse capítulo, pasta capítulo sete. E dentro dessa pasta eu vou criar uma classe que vai representar o pedido. Então, classe chamada pedido. Abri a classe.
+
+[00:22] Dentro dessa classe eu quero guardar qual é o nome do cliente. Então vou criar aqui uma propriedade que vai ser do tipo string chamada cliente. public string Cliente { get; set; }. Além dessa propriedade eu também quero guardar qual é o valor desse pedido. Então, vou criar aqui uma propriedade que vai ser do tipo double chamada valor do pedido. public double Valor { get; set; }.
+
+[00:44] Além disso, quero guardar também qual foi a data em que eu terminei de processar esse pedido. Então, vou criar aqui propriedade do tipo DateTime que vai ser a data de finalização do pedido. public DateTime DataFinalizacao { get; set; }.
+
+[00:55] E além dessas três propriedades eu também quero guardar qual é o status desse pedido. Então, vou ter aqui mais uma propriedade que vai ser o public no tipo novo que vou criar daqui a pouco, status, chamada status também. public Status Status { get; set; }.
+
+[01:12] Agora, eu vou criar aqui dentro da pasta "Cap7" um novo item. Esse novo item vai ser o enum. E enum é bem parecido com uma classe, então vou criar aqui com o template da classe, um enum chamado status. Agora, para criar esse enum, ao invés da palavra class, eu utilizo a palavra enum, enum status.
+
+[01:30] Dentro desse enum status eu preciso falar quais são todos os valores possíveis para esse enum. Então, pedido, ele pode ser um novo pedido. Só que ele também pode ser um pedido processado. Depois do pedido ser processado, ele tem que ser pago pelo cliente, ele tem que ser separado, então item separado, e depois que o item foi separado ele vai estar entregue.
+
+[01:56] Então, eu criei aqui o meu enum, e agora, aqui dentro do pedido, eu tenho o status. Bacana. E aqui dentro dessa classe pedido, eu quero criar um construtor que vai receber o nome do cliente e o valor desse pedido. Então, vou criar aqui setor para criar o construtor. Dentro do construtor eu quero guardar, quero receber uma string nome do cliente, e eu quero receber um double que é o valor desse pedido. public Pedido(string cliente, double valor).
+
+[02:20] Agora, aqui dentro, vou simplesmente guardar essas informações, this.Cliente = cliente; e this.Valor = valor;. E, além disso, como estou criando esse pedido, então vou ter aqui this.Status = Status.Novo;. Acabei de criar o pedido, então o pedido é um pedido novo.
+
+[02:45] Agora, para eu conseguir manipular aqui, as informações desse pedido, eu quero, por exemplo, esconder essas informações e manipular essas informações através de métodos. Então, eu vou ter aqui private para essas propriedades. Então private set. E, última propriedade aqui, status, também vai ter private set. Então apenas a classe pode manipular essas propriedades.
+
+[03:08] E agora, aqui dentro do pedido, eu vou, por exemplo, criar um método que vai falar que o pedido está pago. Então, eu vou |criar aqui um método publico void Paga(). Nesse método pago eu vou simplesmente mudar o status. this.Status = Status.Pago;. E além desse método paga, eu também quero ter aqui um método finaliza. public void Finaliza(). E dentro desse método finaliza eu quero fazer this.Status = Status.Entregue;. E eu quero guardar qual foi a data de finalização desse pedido. Então this.DataFinalizacao = DateTime.Now;, para pegar a data atual.
+
+[04:00] Agora, imagina que essa loja aqui, ela recebe muitos pedidos de uma vez só, e ela precisa processar todos esses pedidos. Só que, se ela recebe muitos pedidos, então, talvez, a loja não consiga processar todos os pedidos na hora em que eles acontecem. O que a gente faz nesse caso é tentar enfileirar o processamento desses pedidos para poder processar mais tarde, quando a máquina estiver livre, ou poder processar em outras máquinas.
+
+[04:25] Dentro dessa pasta capítulo sete, eu quero criar uma nova classe que vai ser a fila de processamento, então, a fila de trabalho. Vou ter aqui classe FilaDeTrabalho. Agora, dentro dessa classe FilaDeTrabalho, eu quero guardar uma lista dos itens que eu vou ter que processar. Vou ter aqui um private que vai ser do tipo IList.
+
+[04:50] Essa lista vai ser de, por exemplo, pedidos que eu vou ter que processar. Vou ter aqui pedidos. E lista vai ser uma lista de pedido. E, para inicializar, posso fazer aqui private IList<Pedido> Pedidos = New List<Pedido>();.
+
+[05:12] Só que, será que eu quero realmente processar pedido? Alguns pedidos eu vou querer processar porque eu quero pagar aquele pedido; outros pedidos eu vou processar porque eu quero finalizar aquele pedido. Eu preciso saber qual é o comando que eu tenho que executar naquele pedido. Então, ao invés de guardar aqui uma lista de pedidos, eu poderia guardar, por exemplo, uma lista de comandos que eu quero executar naquele pedido.
+
+[05:36] Dentro da pasta capítulo sete, eu posso criar aqui um novo item que vai ser uma interface que representa o comando que eu quero executar no pedido. Então, IComando. interface IComando. E dentro dessa interface comando eu vou ter lá um método que eu tenho vai ser executado. Então, void Executa();.
+
+[05:56] E agora, dentro da FilaDeTrabalho, eu não vou ter uma lista de pedidos, eu vou ter uma lista de comandos que precisam ser executados no pedido. Eu vou ter aqui IComando. private IList<IComando> Pedidos = new List<IComando>();. E agora, para conseguirmos representar esses comando, eu preciso criar classes que implementam essa interface comando. Então, vou ter, por exemplo, aqui, uma nova classe.
+
+[06:19] Essa classe vai ser, por exemplo, um paga pedido. class PagaPedido. E dentro dessa classe paga pedido ela vai implementar a interface class PagaPedido : IComando. E aqui dentro eu preciso dar uma implementação para o método public void* Executa().
+
+[06:36] Só que dentro desse método executa eu preciso executar esse comando em um pedido. Então, eu vou criar aqui um construtor. Então, public PagaPedido(Pedido pedido), e nesse construtor eu vou receber qual é a pedido onde eu vou fazer esse processamento.
+
+[06:53] E dentro do construtor vou simplesmente guardar esse pedido dentro de um atributo. E vou criar esse atributo através do “Ctrl + .”. E para pagar um pedido, tudo que eu preciso fazer é chamar aqui o pedido.Paga();.
+
+[07:11] Para criar o comando, tudo que eu preciso fazer é criar essa nova classe que implementa essa interface comando. E eu posso criar aqui um outro comando, por exemplo, um comando para finalizar um pedido que foi criado. Vou criar aqui uma nova classe; essa classe, por exemplo vai ser a finaliza pedido. class FinalizaPedido : IComando.
+
+[07:33] Essa classe finaliza pedido também vai ter que implementar aquela interface Icomando. Dentro dessa interface, dessa classe, eu quero colocar novamente o construtor. Esse construtor vai receber qual é o pedido que vai ser processado. public FinalizaPedido(Pedido pedido). E aqui dentro da classe eu quero simplesmente fazer this.pedido = pedido;.
+
+[07:52] E eu vou criar esse atributo através “Ctrl + .”. Só que como ele implementa interface eu preciso colocar aqui o public void executa(). E dentro desse método executa, eu vou chamar o método correto do pedido; que é o pedido.Finaliza();.
+
+[08:12] Agora, dentro da fila de trabalho, eu quero guardar uma lista de comandos. Então, como essa lista de comandos é privada, para eu conseguir adicionar um novo item dentro dessa lista de comandos, eu preciso ter um método aqui na fila de trabalho. Esse método aqui vai ser, por exemplo, um método public void Adiciona(IComando comando).
+
+[8:40] E nesse método adiciona quero receber qual é o comando que vai ter que ser executado. E agora eu vou fazer. this pedidos não faz sentido, eu quero ter aqui this comandos a serem executados. private IList<IComando> Comandos = new List<IComando>();. E agora eu vu fazer, this. Comandos.Add(comando).
+
+[09:00] Agora, toda vez que eu quiser adicionar um comando, simplesmente chama o método adiciona. E depois, quando eu quiser processar todos os comandos, eu vou ser aqui um método public void Processa(), abre o método. E dentro desse método processa, o que eu precisa fazer é simplesmente inteirar na lista de comandos e executar cada um dos comandos.
+
+[09:26] Então, vou utilizar aqui um foreach do C#. Dentro do foreach do C# eu vou ter uma variável comando, que vai interar em foreach(var comando in this.Comandos).
+
+[09:35] E agora, dentro do foreach vou simplesmente fazer comando.Executa(). Agora, vamos ver como é que vai ficar o uso dessa fila de trabalho dentro do programa principal da aplicação. Dentro do programa eu quero criar uma fila de trabalho. FilaDeTrabalho fila = new fila de trabalho();.
+
+[10:09] E agora eu quero adicionar itens na fila. Ficou fila.Adiciona(). Nessa fila.adiciona eu quero adicionar um novo comando. E esse comando aqui vai ter que processar um pedido. Vou ter aqui, por exemplo, um pedido, que vai ser o pedido1, que vai receber um novo pedido. Pedido pedido1 = new Pedido("Mauricio",100,0).
+
+[10:33] E aqui no construtor vou passar, por exemplo, o nome do Maurício. O Maurício e o valor desse pedido. Mauricio gastou bastante dinheiro, gastou lá cem reais nesse pedido.
+
+[10:44] E depois vou ter aqui um segundo pedido que vai ser o pedido, pedido2. Pedido pedido2 = new pedido("Marcelo", 200,0);. E esse novo pedido vai ser construindo para, por exemplo, um cliente chamado Marcelo. E esse novo pedido vai ser lá um pedido de duzentos reais.
+
+[11:02] E agora, no método adiciona, tudo que eu preciso fazer é passar um comando que eu quero executar nesse pedido. Então, por exemplo, eu quero pagar o pedido1. Eu faço aqui fila.Adiciona(new PagaPedido(pedido1));. E no paga pedido eu passo qual o pedido que eu quero pagar, que é o pedido1. Fechei aqui o método.
+
+[11:20] Depois eu quero adicionar também, pagar o pedido2. Então vou fazer aqui, fila.Adiciona(new PagaPedido(pedido2));. E depois, para finalizar esse pedido, vou simplesmente fazer fila.Adiciona(newFinalizaPedido(pedido1));.
+
+[11:55] E agora para nós conseguirmos ver o que está realmente acontecendo aqui nessa fila de mensagem, quando eu processar essa fila de mensagem, aqui no método executa do paga pedido eu quero, por exemplo, colocar que é uma mensagem do terminal. Console.WriteLine("Pagando o pedido do cliente {0}, pedido.cliente);.
+
+[12:30] E aqui no finaliza eu quero colocar também uma mensagem. Console.WriteLine("finalizando o pedido do cliente {0}, pedido.Cliente);.
+
+[12:53] Agora, tem aqui a minha fila de trabalho, criei os meus pedidos, falei o que eu quero processar nesses pedidos, então, até aqui, eu não executei nenhum processamento do pedido, não paguei nada, não finalizei nada. E agora, depois que eu coloquei todos os itens na fila de trabalho, agora sim eu quero processar todo mundo. Eu chamo aqui fila.Processa();. E salvei aqui o código. E agora vamos ver o que vai acontecer quando eu executar esse código.
+
+[13:23] Apertei aqui “Ctrl + F5”. E agora vocês podem ver que ele está pagando o pedido do Maurício primeiro, que é o primeiro pedido, pagando o pedido do Marcelo, que é o segundo pedido, e depois ele está finalizando o pedido do Maurício. Ele executou os três itens dessa lista de comandos.
+
+[13:41] Vejam que nós conseguimos implementar essa lista, essa fila de processamento, porque nós conseguimos guardar um comando dentro dessa fila de processamento. Esse comando foi executado mais tarde. Esse padrão que nós acabamos de implementar é um padrão chamado command. Eu utilizo esse padrão command toda vez que eu quero criar uma classe que vai executar um comando, que vai ser executado posteriormente.
+
+[14:08] Por exemplo, no caso de uma fila de trabalho. Eu quero guardar vários comandos que vão ser executados de uma vez, depois, posteriormente, no meu programa.
