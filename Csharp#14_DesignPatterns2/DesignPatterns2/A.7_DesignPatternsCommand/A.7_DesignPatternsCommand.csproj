@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FilaDeTrabalho.cs" />
+    <Compile Include="FinalizaPedido.cs" />
+    <Compile Include="IComando.cs" />
+    <Compile Include="PagaPedido.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
