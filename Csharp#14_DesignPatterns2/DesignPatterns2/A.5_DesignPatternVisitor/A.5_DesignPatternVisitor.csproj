@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Divisao.cs" />
+    <Compile Include="IExpressao.cs" />
+    <Compile Include="Multiplicacao.cs" />
+    <Compile Include="Numero.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaizQuadrada.cs" />
+    <Compile Include="Soma.cs" />
+    <Compile Include="Subtracao.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
