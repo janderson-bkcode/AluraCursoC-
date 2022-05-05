@@ -12,8 +12,14 @@ namespace A._9_DesignPattern_Facades_e_Singletons
 
         static void Main(string[] args)
         {
-        //    EmpresaFacade facade = new EmpresaFacade();
-        //    Cliente cliente = facade.BuscaCliente(cpf);
+
+            //Uso do singleton
+            EmpresaFacade facade = new EmpresaFacadeSingleton().Instancia;
+
+
+            // Uso do facade acessando metodos escondidos que geram classes
+        //   EmpresaFacade facade = new EmpresaFacade();
+        //   Cliente cliente = facade.BuscaCliente(cpf);
 
             //String cpf = /// pega cpf
             //ICliente Cliente = new ClienteDao().BuscaPorCpf(cpf);
