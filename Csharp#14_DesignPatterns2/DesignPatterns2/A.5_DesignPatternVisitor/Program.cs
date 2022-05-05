@@ -10,6 +10,8 @@ namespace A._5_DesignPatternVisitor
     {
         static void Main(string[] args)
         {
+
+
         }
     }
 }

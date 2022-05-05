@@ -7,7 +7,7 @@
     <ProjectGuid>{3078FC4E-9664-4BA8-B2CE-BBB5E9260107}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>A._5_DesignPatternVisitor</RootNamespace>
-    <AssemblyName>A._5_DesignPatternVisitor</AssemblyName>
+    <AssemblyName>A.5_DesignPatternVisitor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
