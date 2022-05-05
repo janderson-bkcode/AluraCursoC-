@@ -1,0 +1,85 @@
+﻿[00:00] Nesse capítulo estamos interessados em desenvolver uma calculadora para a nossa aplicação. Essa calculadora vai receber uma expressão matemática, e ela precisa devolver o resultado dessa expressão matemática.
+
+[00:15] Uma expressão matemática é uma conta que o programa tem que resolver. Então, por exemplo, uma conta é “1+10”, por exemplo. Só que uma conta, ela pode ser mais complicada. Então, por exemplo, posso pegar esse “1+10”, posso multiplicar o resultado por vinte, depois dividir o resultado por sete. //(1+10) * 20/7. Isso também é uma expressão matemática válida.
+
+[00:35] Para desenvolver essa calculadora, eu quero, por exemplo, começar aqui com uma expressão um pouco mais simples. Quero fazer aqui, representar, por exemplo, uma soma. Uma soma, ela pode ser uma soma de dois números, por exemplo, “1+10”, só que ela também pode ser uma expressão mais complexa, então eu quero somar //(1+10) + (20-10).
+
+[00:59] Você pode ver que uma soma, ela pode ser uma soma de dois números, ou ela pode ser uma soma de duas outras expressões matemáticas. Para representar aqui uma expressão no código, como nós estamos no código C# que é Orientada a Objetos, nós vamos utilizar um objeto, uma classe.
+
+[01:15] Para representar soma, por exemplo, de 1 com 10, eu vou criar aqui um novo objeto do tipo soma, e aqui nesse objeto soma eu quero passar dois números. Só que a soma, ela pode somar duas expressões. Então, número também vai ser uma classe, que vai ser também uma expressão matemática.
+
+[01:32] Vou ter aqui new Soma(new Numero(1), new numero(10));. Esse novo número vai representar o número 1 e eu vou ter aqui um outro número que vai representar, por exemplo, o número 10. Estou fazendo aqui a conta “1+10”. E agora se eu quisesse representar outra operação, que é “2010”, eu poderia criar aqui uma outra classe que representa uma outra expressão matemática.
+
+[01:53] Por exemplo, uma subtração. Vou criar aqui uma nova subtração new Subtração(new Numero(20), new Numero(10));. E aqui nessa subtração eu quero fazer um novo número, aqui nesse novo número eu quero subtrair o número 20 do número 10. E agora eu quero somar esse resultado.
+
+[02:14] Isso daqui vai ser uma expressão, por exemplo, da esquerda = new Soma(new Numero(1), new Numero(10));. E isso daqui, direita = new Subtração(new Numero(20), new Numero(10));, vai ser uma expressão da direita. Quero somar esquerda com direita, então, vou fazer uma nova soma, e nessa nova soma, eu quero receber o que eu vou somar na esquerda, que é “1 + 10”, e depois o que eu vou somar na direita, que é o “20 - 10”. new Soma(esquerda, direita);.
+
+[02:40] Agora, para fazer todo esse código aqui compilar, eu preciso criar essas classes aqui. A soma recebe primeiro uma expressão da esquerda e uma expressão da direita. Para criar aqui a soma, eu vou primeiro criar uma interface que vai representar as expressões; e essa interface eu vou criar dentro de uma nova pasta do projeto, que vai ser a pasta para as classes do capítulo quatro, "Cap4".
+
+[03:02] Dentro dessa pasta eu vou criar um novo item, esse novo item vai ser uma interface do C#; e essa interface vai ser interface IExpressão. Criei uma interface, salvei o código, e agora eu quero criar uma classe para representar a soma. Eu vou criar essa classe no capítulo quatro, vou adicionar um novo item, que vai ser um classe do C#. Essa classe vai ser classe chamada Soma, e a soma é uma expressão matemática, então ela implementa interface e expressão.
+
+[03:34] E dentro dessa soma eu tenho que ter um construtor. Vou digitar setor, “Tab” “Tab”, para criar o construtor. E no construtor eu quero receber duas expressões; a expressão que vai vir da esquerda, e depois quero receber também uma outra expressão, que é a expressão que vem à direita. E o que eu preciso fazer aqui no construtor? Simplesmente guardar essas expressões.
+
+[03:56] Faço this.esquerda = esquerda; e depois this.direita = direita;. E para criar esses dois atributos vou simplesmente utilizar aqui o atalho “Ctrl + .” com generate field. Criei à esquerda, criei à direita. Agora salvei o arquivo, e agora eu vou criar a minha subtração.
+
+[04:22] Vou criar uma nova classe. A classe vai ser a Subtração. Aqui dentro da classe subtração também vai ser uma expressão matemática, então ela implementa e expressão. E dentro da subtração também quero criar um construtor. Dentro desse construtor quero receber também duas expressões, que vai ser a expressão da esquerda, e uma expressão, que vai ser a expressão da direita. E agora, dentro do construtor eu preciso simplesmente guardar essas duas expressões.
+
+[04:54] Então this.esquerda = esquerda; e this.direita = direita;, e eu vou novamente criar esses dois atributos utilizando aqui o atalho “Ctrl + .” do Visual Studio.
+
+[05:14] Criei a minha subtração e agora só falta criar a classe para representar um número. Vou adicionar uma nova classe, essa classe vai ser a classe que representa um número, e o número também é um tipo de expressão matemática. Então, vou colocar class Numero : IExpressão.
+
+[05:33] E na classe número quero colocar um construtor que vai simplesmente receber um inteiro, que é um número que ele vai representar. Public Numero(int numero). E dentro do construtor quero simplesmente guardar o valor desse número. Então this.numero = numero;. Eu vou criar esse atributo utilizando o atalho “Ctrl + .”
+
+[05:48] Agora o meu programa deve estar compilando, eu só preciso declarar as variáveis corretamente. Vou ter aqui um variável do tipo IExpressão esquerda = new Soma(new Numero(1), new Numero(1)); e eu vou ter uma IExpressão direita = new Subtracao(new Numero(20), new Numero(10));. Agora eu tenho uma soma que é uma expressão matemática também. Então IExpressão soma = new Soma(esquerda, direita);.
+
+[06:20] Agora eu tenho a representação da minha expressão que eu quero avaliar, e eu quero mostrar o resultado dessa expressão para o usuário. Como a soma é uma classe, nada mais justo do que pedir para a soma se avaliar. Só que toda expressão matemática, ela tem que saber se avaliar também.
+
+[06:38] Então, na verdade, aqui dentro do meu código eu quero fazer soma.Avalia();. E esse método avalia, ele tem que ser um método que venha aqui da minha interface IExpressão. Então aqui dentro eu vou criar um método que vai me devolver um número inteiro chamado avalia. int Avalia();.
+
+[06:53] E agora, todo mundo que implementa interface precisa dar uma implementação para esse método. Então aqui na soma eu preciso avalia, na subtração também e no número também.
+
+[07:03] Vou começar pelo número, porque ele é o mais fácil de todos então. Eu vou colocar aqui o método public int Avalia(). E agora, para avaliar um número, se é um número, eu simplesmente preciso devolver o valor numérico daquele número, o atributo número. Então return this.numero;.
+
+[07:24] Agora, implementamos aqui, como eu faço para avaliar um número, agora vamos tentar implementar como é que eu faço para avaliar uma soma. Vou ter aqui um novo método public int Avalia(). Esse método aqui precisa devolver o valor da expressão da soma. Agora, para eu conseguir avaliar uma soma, eu sei que é preciso pegar valor da expressão da esquerda, valor da expressão da direita, e devolver a soma dessas duas expressões. Esse método aqui vai ter que devolver o valor da esquerda, então return valorEsquerda + valorDireita;.
+
+[08:01] Agora, para eu conseguir o valor da esquerda eu vou ter aqui um int valorEsquerda = esquerda.Avalia();, para eu conseguir pegar o valor da expressão da esquerda. E agora eu também posso fazer int valorDireita = direita.Avalia();.
+
+[08:36] Com isso, eu consegui implementar o que é avaliar uma expressão de soma. E essa implementação é uma implementação que eu posso também colocar na subtração. Vou copiar esse código, vou abrir a classe da subtração e vou colocar o código dentro dessa classe.
+
+[08:54] Para avaliar a subtração, eu primeiro avalio o que está na esquerda, depois o que está na direita, e depois eu preciso subtrair a direita da esquerda. Agora, vamos ver aqui como é que vai ficar o nosso código. Vem em avalia, e eu quero imprimir o resultado dessa soma. Vamos fazer aqui Console.writeLine(soma.Avalia();. Então vamos tentar executar esse código. Vou apertar aqui o "Ctrl + F5" no Visual Studio.
+
+[09:24] Temos aqui o resultado 21. Vamos conferir se esse resultado está realmente correto. Aqui na minha conta eu tenho “1+10; 1+10” vai me dar 11. E depois eu tenho +20, 10; “2010” vai me dar 10. E depois vou somar 11 com 10, que é realmente o resultado 21.
+
+[09:44] Vocês vejam que utilizando essa classe da expressão, eu consegui representar uma expressão matemática na memória. Eu tenho aqui, primeiro, uma soma, e abaixo dessa soma tem a expressão da esquerda e a expressão da direita. Na expressão da esquerda eu tenho uma soma, e na expressão da direita eu tenho uma subtração. Nessa soma da expressão da esquerda eu tenho dois números; estou somando o número 1 com o número 10; e na subtração eu estou subtraindo o número 20 com o número 10.
+
+[10:16] Agora, na hora de fazer a avaliação, eu estou fazendo a avaliação aqui da soma. E da soma, ela vai pedir para, primeiro, para a esquerda se avaliar. Na expressão da esquerda eu tenho a soma. Ele vai fazer a avaliação de outra soma. E para fazer a avaliação da soma, ele vai pegar o número 1, o número 10, vai somar esse número e vai conseguir o 11. Depois ele vai tentar avaliar a expressão da direita.
+
+[10:40] A expressão da direita era uma subtração de 20 com 10. Então, vou fazer a conta, “2010” e vou ter o resultado 10. Depois que eu conseguir a expressão da esquerda e a expressão da direita, ele vai somar o resultado dessas duas expressões. Então vai somar o 11 com 10, e vai ter o resultado 21.
+
+[10:59] Vejam que com isso eu consegui realmente representar a minha expressão, consegui avaliar essa expressão. Esse código aqui é um código bem mais complicado do que os códigos que nós tínhamos visto em qualquer outro curso. Se você tiver qualquer dificuldade na hora de implementar esse código, entender esse código, reveja o vídeo e pergunte bastante no fórum de dúvidas.
+
+[11:22] Agora, têm aqui as expressões, essa expressão matemática, ela pode ficar arbitrariamente complexa. Por exemplo, essa expressão da esquerda, não precisava ser uma soma de dois números, ela poderia ser uma soma de outra soma de dois números.
+
+[11:36] Então, faço aqui, new Soma, essa soma aqui vai ser do número 1 como número, por exemplo, 100. Fechei a soma e fechei o construtor da soma interna. Agora a expressão que eu estou avaliando é essa daqui. Eu estou somando o número 1 com o número 100, e depois somando o resultado disso com o número 10, e depois somando com 10, “2010”.
+
+[12:06] Vejam que, utilizando essa ideia aqui de montar uma árvore para representar uma expressão matemática, eu consigo avaliar facilmente as expressões. E essas expressões podem ser arbitrariamente complexas.
+
+[12:20] Esse padrão que nós acabamos de implementar, é um padrão de projeto chamado interpreter. O interpreter pode ser utilizado toda vez que nós temos uma árvore de expressões que nós queremos avaliar. Esse padrão interpreter é muito utilizado, por exemplo, para fazer, representar expressões matemáticas, também para representar, por exemplo, documentos, quando eu quero, por exemplo, aplicar formatação em documentos, também é utilizado bastante para eu fazer dsls.
+
+[12:49] Agora, essa história de utilizar expressões matemáticas para representar contas, ou representar códigos, é também utilizado dentro da própria linguagem C#. Então deixa eu comentar aqui o código.
+
+[13:04] Lá dentro do C# existe uma API pronta para avaliar expressões, que é API de Expressions do C#. Lá dentro do API de Expressions eu tenho uma classe aqui chamada Expression. Essa classe Expression é uma classe que representa uma expressão da linguagem C#; pode ser uma expressão matemática chamada de funções, construções de objetos, qualquer coisa.
+
+[13:24] Lá dentro da Expression, para representar uma soma, eu tenho aqui o método Add() para fazer uma soma. Lá dentro do método Add() eu preciso passar aqui uma expressão da esquerda e uma expressão da direita. Se eu quiser, por exemplo, somar dois números, eu posso fazer Expression. Add(Expression.Constant(10), Expression.Constnt(100));, que seria o nosso número no nosso programa; e no Expression.Constant eu posso passar, por exemplo, que eu quero somar o número 10 com o outro Expression.Constant do número 100.
+
+[13:56] Com isso daqui eu tenho uma expressão matemática representada na API do C#. Isso aqui representa uma soma. Então, agora, eu quero tentar rodar essa soma e ver o resultado no C#. Para rodar uma soma, eu preciso transformar essa soma em uma função anônima do C#. Para fazer essa transformação, eu preciso pegar aqui a classe Expression.
+
+[14:20] Lá dentro da Expression existe um método chamado Lambda. E aqui dentro desse método Lambda eu preciso falar que tipo de função que essa expressão vai construir. Uma função que vai me devolver aqui um número inteiro. Expression.Lambda(Func<int>>(soma).Compila().
+
+[14:33] Nessa função Lambda eu preciso passar a variável que representa a minha expressão, que é a variável soma, e depois eu preciso pedir para o C# compilar uma função anônima do C#. Esse código vai me devolver uma função que me devolve um número inteiro. Isso daqui vai ser a minha função matemática.
+
+[14:50] E agora, para eu conseguir avaliar essa função, e imprimir o resultado do terminal, tudo que eu preciso fazer é Console.WriteLine(funcao());.
+
+[15:06] Vamos ver aqui como é que ficou a avaliação desse código no C#, esse código de expressões do C#. Rodei o programa e vejam que o resultado é 110, que é exatamente o resultado esperado.
+
+[15:18] Vejam que essa ideia do interpreter também é implementada dentro da própria linguagem C# para representar um programo inteiro do C# através dessa API de expressões.

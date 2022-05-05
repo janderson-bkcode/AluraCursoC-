@@ -20,12 +20,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.4_DesignPatternDSL_Interpreter", "A.4_DesignPatternDSL_Interpreter\A.4_DesignPatternDSL_Interpreter.csproj", "{36AAA6B0-23EE-4B29-8093-E89FD04447C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula05", "Aula05", "{03EAFD82-9DFD-474C-B382-EA4D3DC817BC}"
+	ProjectSection(SolutionItems) = preProject
+		descricao.txt = descricao.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.5_DesignPatternVisitor", "A.5_DesignPatternVisitor\A.5_DesignPatternVisitor.csproj", "{3078FC4E-9664-4BA8-B2CE-BBB5E9260107}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula06", "Aula06", "{4D704E25-A974-44CD-8105-C6830306F55A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.6_DesignPatternsBridges", "A.6_DesignPatternsBridges\A.6_DesignPatternsBridges.csproj", "{0507D465-9F98-4257-9380-58A44426B8AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula07", "Aula07", "{77778BF8-AF05-4F65-B14A-599D858D9764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A.7_DesignPatternsCommand", "A.7_DesignPatternsCommand\A.7_DesignPatternsCommand.csproj", "{CD415507-CFCB-443E-9C14-F00E9229FCE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +64,10 @@ Global
 		{0507D465-9F98-4257-9380-58A44426B8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0507D465-9F98-4257-9380-58A44426B8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0507D465-9F98-4257-9380-58A44426B8AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD415507-CFCB-443E-9C14-F00E9229FCE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD415507-CFCB-443E-9C14-F00E9229FCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD415507-CFCB-443E-9C14-F00E9229FCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD415507-CFCB-443E-9C14-F00E9229FCE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +79,7 @@ Global
 		{36AAA6B0-23EE-4B29-8093-E89FD04447C5} = {BA88E24F-50AD-451D-8A5A-F9D201F86D07}
 		{3078FC4E-9664-4BA8-B2CE-BBB5E9260107} = {03EAFD82-9DFD-474C-B382-EA4D3DC817BC}
 		{0507D465-9F98-4257-9380-58A44426B8AC} = {4D704E25-A974-44CD-8105-C6830306F55A}
+		{CD415507-CFCB-443E-9C14-F00E9229FCE1} = {77778BF8-AF05-4F65-B14A-599D858D9764}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92550C06-3D66-453F-859F-EEAA506E9319}

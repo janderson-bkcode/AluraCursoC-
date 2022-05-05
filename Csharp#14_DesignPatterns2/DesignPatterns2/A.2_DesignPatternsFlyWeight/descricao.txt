@@ -1,0 +1,67 @@
+﻿[00:00] Boas-vindas ao segundo capítulo do curso de design patterns 2 da Alura. Nesse capítulo nós estamos interessados em desenvolver um software que vai ser capaz de tocar músicas que foram feitas pelo usuário.
+
+[00:15] Nesse software, cada música vai ser representada por uma lista de notas que vão ser tocadas. Então, por exemplo, vou ter aqui uma nova lista, e para representar as notas, como nós estamos falando sobre o sistema orientado a objetos, nós vamos utilizar uma interface, por exemplo, chamada "INota".
+
+[00:34] Criei aqui uma instância da lista. E dentro dessa lista, para representar cada uma das notas, eu quero criar um objeto que implementa aquela interface. Então, por exemplo, para representar um Do, vou criar aqui um novo do new Do(). Depois, se eu quisesse criar um Re, então vou criar aqui um novo objeto new Do(), new Re();.
+
+[01:00] Agora, para representar música eu quero tocar aquela música famosa "Do Re Mi Fa Fa Fa". Então eu tenho Re, agora eu quero criar um Mi. Então new Do(), new Re(), new Mi(), new Fa(), new Fa(), new Fa();. E terminei.
+
+[01:27] Agora, dentro desse objeto, lista, vejam que para tocar a nossa música eu tive que instanciar três vezes essa classe Fa. Então "Fa Fa Fa". Agora, em uma música, a nota Fa é sempre a mesma nota. Sempre que eu falo Fa, é a mesma nota Fa que eu estou tocando, porque essa nota representa, na verdade, uma frequência de um som que eu quero tocar na minha música.
+
+[01:54] Vejam que se eu estou criando três vezes a nota Fa,estou gastando três vezes o espaço para aquele objeto Fa. E eu não precisaria fazer isso, porque se a nota Fa é sempre a mesma, eu poderia utilizar a mesma instância daquele objeto Fa. Eu quero, de algum jeito, reaproveitar esse objeto Fa que eu instanciei aqui no meu programa. Eu quero instanciar esse objeto apenas uma vez. Porque se eu tivesse uma música muito grande, por exemplo, com milhares de notas, milhões de notas, somente a instanciação desses objetos pequenos poderia gastar uma boa parte da memória da minha aplicação.
+
+[02:30] Para resolver esse problema nós poderíamos, por exemplo, colocar a criação desses objetos que representam as notas musicais dentro de uma classe do programa. Vou criar dentro do design patterns uma nova pasta que vai ser a pasta para os objetos do capítulo 2, "Cap2".
+
+[02:47] Dentro dessa pasta "Cap2", eu quero criar uma nova classe. Essa classe vai ser uma classe que vai criar as notas musicais. Então NotasMusicais, criei a classe.
+
+[02:59] Agora, dentro dessa classe, para eu conseguir guardar apenas uma instância em cada nota, eu vou criar um novo dicionário. Então, vou ter aqui um private. Esse dicionário, para ser compartilhado por todo o programa, vai ser static. Então private static IDictionary. Esse dicionário vai guardar o nome da nota, e ele vai guardar também qual é a nota que eu estou associada. Então, esse dicionário vai ser chamado de notas. E vou criar aqui também interface, que vai ser o generate, new type com “Ctrl + .”, tipo vai ser interface, vou dar um ok. private static IDictionary<string, INota> notas.
+
+[03:31] O Visual Studio criou aqui um arquivo INota.cs dentro já da pasta "Cap2". Agora essa nota vai ter que receber um novo dicionário do C#. new Dictionary. Esse dicionário vai ser do tipo string para o tipo INota. new Dictionary<string, INota>(){.
+
+[03:49] E dentro desse dicionário eu quero adicionar as minhas notas. Vou adicionar, por exemplo, a nota Do. Então o nome Do, e eu quero instanciar aqui um novo Do. {"do", new Do()}.
+
+[04:00] Além disso, eu também quero adicionar a nota Re. Então, vou colocar aqui o objeto chamado Re, associado com new Re. {"re", new Re()}. Depois vou criar aqui mais uma nota, que vai ser o Mi, que vai ser associado com new Mi. {"mi", new Mi()}.
+
+[04:21] Vou ter também o objeto Fa, {"fa", new Fa()}. Vou ter outro objeto que vai ser o Sol. Então {"sol", new Sol()}. Depois quero criar aqui também o La, então, criando o objeto La, associando com new La. {"la", new La()}. Para finalizar só preciso criar aqui agora o Si. Então Si associado com new Si. {"si", new Si()}. E vou finalizar o dicionário, };.
+
+[05:06] E agora vou criar essas notas musicais. Então, para criar a nota “Ctrl + .”, vou gerar uma classe para o Do, depois vou criar aqui uma classe para o Re, uma classe para o Mi, uma classe para o Fa, tudo com “Ctrl + .”. Para o Sol, para o La e para o Si.
+
+[05:26] Tem aqui todas as minhas classes criadas. Agora, dentro dessas classes, toda nota precisa saber qual é a frequência que eu quero utilizar para tocar essa nota aqui no meu software. Então, aqui dentro da interface eu quero colocar uma nova propriedade que vai representar qual é a frequência da nota. E essa propriedade só vai poder ser lida pelo programa.
+
+[05:48] E agora, cada uma das notas precisa implementar aqui na interface. Então aqui dentro eu vou ter, por exemplo, um public int Frequência {}, que vai ter um get, e esse get vai devolver a frequência de um Do, que é duzentos e sessenta e dois hertz. public int Frequencia { get { return 262; } };. E esse Do precisa implementar a interface INota que eu criei.
+
+[06:14] Agora, vamos para o Re. Re, a mesma coisa. Vai ter que implementar um INota, e aqui dentro eu vou ter que ter um public int Frequencia { get { return 294; } };.
+
+[06:31] E agora para eu não ter trabalho de ficar toda hora colocando esse código da frequência, eu vou copiar esse código e vou colar aqui dentro da classe Mi, e a frequência do Mi é public int Frequencia { get { return 330; } };. E o Mi também vai ter que implementar a interface INota.
+
+[06:51] Agora tem o Fa que também vai ser uma INota. Aqui dentro do Fa também quero colocar a frequência dele, public int Frequencia { get { return 349; } };. Vou ter o Sol. Sol também é um INota. E aqui dentro quero colocar a frequência dele. public int Frequencia { get { return 392; } };.
+
+La também é um INota. Aqui dentro do La vou colocar frequência, public int Frequencia { get { return 440; } };. E para finalizar vamos colocar aqui o Si, que também é um INota, e aqui dentro do Si a frequência é public int Frequencia { get { return 490; } };.
+
+[07:38] Esses valores eu peguei da internet porque eu não sei tanto assim de música. Então, agora, tem aqui o dicionário, e aqui dentro dessa classe, então, esse dicionário está preenchido.
+
+[07:50] Agora, para eu conseguir acessar os valores desse dicionário, eu vou colocar o método que vai pegar uma nota musical para mim. Então vai ser um método public que vai me devolver uma instância do INota, que vai ser um método, por exemplo, chamado de "Pega".
+
+[8:08] E aqui nesse método eu vou receber qual é o nome da nota que eu quero pegar. public INota Pega(string nome). E aqui dentro desse método eu quero, simplesmente, devolver a nota do dicionário. Então vou devolver, return notas[nome];.
+
+[08:19] Finalizei, salvei aqui notas musicais, e agora vamos voltar para o programa. Então, no Program.cs, para eu conseguir criar essa lista de notas, então vou ter que instanciar primeiro aquela classe notas musicais. Então, notas musicais, notas vai receber um new notas musicais. NotasMusicais notas = new NotasMusicais();.
+
+[08:42] E dentro do código, para eu conseguir instanciar essas notas musicais, eu não vou mais fazer a instanciação direta. Eu vou instanciar utilizando aquela classe notas. Então, notas.Pega("do"),}; e eu quero pegar primeiro a nota Do. Depois de pegar a nota Do eu quero pegar as outras notas. Vou copiar esse código aqui e vou colar aqui para pegar o Re, notas.Pega("re"),}; para pegar o Mi notas.Pega("mi"),}; para pegar o Fa, notas.Pega("fa"),};, notas.Pega("fa"),};, notas.Pega("fa"),};.
+
+[09:18] Com isso daqui nós conseguimos criar as notas apenas uma vez. Eu vou guardar essa lista dentro de um objeto do tipo IList, do tipo INota, que eu vou chamar de música que eu quero tocar. Então música recebe um new List de notas. IList<INota> musica = new List<INota>(){.
+
+[09:36] Agora que eu tenho essa lista de notas musicais, eu quero tentar tocar essas notas musicais utilizando o meu programa. E para tocar essas notas musicais, nós vamos utilizar um método lá da classe console chamado "beep". Só que para nós não espalharmos aí o console.beep em todo lugar do programa, nós vamos isolar essa chamada doconsole.beep dentro de uma nova classe.
+
+[10:00] Vou criar aqui uma nova classe. Essa classe vai ser, por exemplo, uma classe chamada piano. Criei a classe. E agora, dentro dessa classe piano, eu quero colocar um método que vai ser o public, que não vai devolver nada, que vai ser chamado de toca. E aqui dentro desse método toca eu quero receber uma lista de notas musicais que eu quero tocar. public void Toca(IList<INota> musica).
+
+[10:25] E agora, aqui dentro dessa classe, eu quero, simplesmente, iterar nessa lista e tocar cada uma das notas. Então, para iterar na lista, eu vou utilizar aqui um foreach do C# e, aqui dentro desse foreach eu vou ter aqui uma nota, e essa nota vai estar dentro da música. foreach (var nota in musica). E agora, para cada nota eu quero fazer um Console.Beep.
+
+[10:45] E aqui no Console.Beep eu preciso, primeiro, passar qual é a frequência da nota. Então nota.frequencia, além disso, eu também preciso falar qual é a duração que eu quero tocar essa nota. Então, por exemplo, eu quero tocar aqui essa nota durante trezentos mile segundos. Console.Beep(nota.Frequencia, 300);.
+
+[11:02] E agora salvei aqui a classe piano. E vamos tentar utilizar essa classe piano para tocar as notas do programa. Então, vou instanciar aqui um piano. Piano piano = new Piano();. E para o tocar a música com piano. piano.Toca(musica);.
+
+[11:28] Vamos tentar tocar essa música. Vou rodar aqui a aplicação utilizando o "F5" do visual studio. Eu não sei se vocês ouviram, vou tentar aumentar aqui o som. Está quase no máximo já. Vou rodar de novo. Se não deu para ouvir, paciência, mas o computador conseguiu tocar realmente a minha música.
+
+[12:02] Vejam que utilizando essa classe notas musicais, eu consegui criar cada uma das notas da aplicação apenas uma vez dentro do programa inteiro. Então, com isso eu consigo economizar a memória da minha aplicação, eu consigo fazer com que os objetos da aplicação ocupem menos espaço dentro da memória do computador.
+
+[12:23] Esse padrão de projeto que me fala para criar esses objetos aí, apenas uma vez, e ficar reutilizando objeto durante toda a aplicação, é um padrão de projeto chamado Flyweight. Então, com Flyweight eu estou reutilizando todas aquelas notas da música toda hora na minha aplicação. Dentro da aplicação as notas Do, Re, Mi, Fa, Sol, La, Si, elas são criadas uma vez só e depois todo mundo reutiliza. Então esse é o padrão Flyweight do GoF.

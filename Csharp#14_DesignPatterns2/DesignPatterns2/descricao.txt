@@ -1,0 +1,95 @@
+[00:00] No capítulo anterior nós utilizamos o padrão interpreter para implementar uma calculadora aqui dentro do programa C#. Nesse capítulo nós queremos resolver um problema diferente, que é o problema de pegar aquela expressão que foi avaliada pela calculadora e imprimir aquela expressão matemática no terminal.
+
+[00:21] Por exemplo, para essa expressão aqui da variável soma que nós interpretamos na aula anterior, eu gostaria de imprimir essa string lá no terminal, que é “(1+10) + (2010)”. Só que quando eu estou imprimindo uma expressão matemática, existem diversas formas de imprimir expressão.
+
+[00:38] Então, ao invés de colocar aqui o operador no meio dos números, eu poderia imprimir aqui, por exemplo, se eu quero fazer a soma de 1 com 100, eu poderia colocar aqui, primeiro, a operação que eu quero executar, que é mais (+), e depois falar quais são os números que eu quero somar, mais um, cem.
+
+[00:54] Eu quero resolver esse problema, que é o problema de imprimir uma expressão matemática. Só que para conseguir imprimir essa expressão matemática, como nós estamos trabalhando com objetos, eu vou criar um objeto responsável por fazer essa impressão.
+
+[01:06] Entro aqui no projeto, vou criar aqui uma nova pasta, que vai ser a pasta para as classes do capítulo cinco. E dentro dessa pasta eu quero criar uma nova classe que vai ser uma classe que eu vou chamar de impressora. Agora, nessa classe impressora eu preciso ter métodos para imprimir soma, número e subtração. E cada expressão tem um jeito diferente de ser impresso. Na impressora eu vou colocar um método para cada tipo de expressão. Então, public void ImprimeSoma(Soma soma).
+
+[01:43] E dentro desse método eu vou importar aqui o Soma do capítulo quatro. E agora, aqui dentro, o que eu vou fazer para imprimir uma soma? Eu vou primeiro imprimir aqui um abre parênteses. Console.Write("(");.
+
+[01:57] Depois, quando vou imprimir uma soma, eu tenho que fazer Console.Write("+"); colocando aqui o símbolo da soma. E, para terminar, Console.Write(")");, quero imprimir o fecha parentes.
+
+[02:12] Agora, entre o abre parentes e o sinal de mais eu quero colocar a expressão da esquerda. Então, aqui dentro, eu vou colocar a expressão da esquerda, depois vou imprimir o mais, e depois de imprimir o mais, e antes de fechar o parentes, eu quero colocar a expressão da direita.
+
+[02:28] Eu tenho aqui a opção do código para imprimir a soma. E esse mesmo código pode ser utilizado para imprimir a subtração. Vou copiar aqui o código com “Ctrl + C” e vou colar, e vou renomear aqui o código de imprime soma para imprime subtração. Esse método imprime subtração vai receber uma variável chamada Subtração.
+
+[02:52] E agora, para imprimir a subtração, ao invés de colocar aqui o símbolo de mais, eu quero colocar o símbolo de menos.
+
+[02:58] E agora, o último tipo de expressão que eu quero imprimir é o número. Vou ter public void ImprimeNumero(Numero numero), e aqui no ImprimeNumero vou receber número em uma variável chamada número.
+
+[03:10] Agora, nesse método imprime número, tudo que eu preciso fazer é imprimir o valor numérico daquele número. Vou fazer aqui Console.Write(numero.Numero); e lá dentro do console.Write quero pegar um número, e lá dentro do número preciso imprimir valor daquele atributo número. Só que como eu quero pegar o valor daquele atributo, eu vou transformar o atributo em uma propriedade chamada número.
+
+[03:32] Dentro da classe número, eu vou transformar esse atributo em uma propriedade. Então public int Numero{ get; private set; }.
+
+[03:49] Só que tem um problema, quando eu estou trabalhando aqui com uma propriedade, a propriedade não pode ter o mesmo nome que o nome da classe que contem aquela propriedade. Nesse caso aqui, como a classe é número, a propriedade não pode ser chamada número. Vou chamar, por exemplo, essa propriedade de "Valor". public int Valor { get; private set; }. E dentro do código vou trocar a implementação para utilizar essa propriedade chamada valor, return this.Valor;. E aqui na impressora, ao invés de fazer número.número, vou fazer número.valor, Console.Write(numero.Valor);.
+
+[04:16] Agora que nós já implementamos aqui o ImprimeNumero, vamos ver como é que a gente faz para implementar esse ImprimeSoma. No ImprimeSoma eu preciso imprimir essa expressão da esquerda. Preciso pegar a soma, lá na soma preciso pegar a expressão da esquerda que, novamente, é um atributo, então não posso acessar diretamente. Vou abrir aqui a classe soma e vou transformar essa expressão da esquerda em uma propriedade.Vou ter aqui public IExpressão esquerda;. E vou renomear o nome da propriedade para "Esquerda" com E maiúsculo. E para renomear utilizei aqui o atalho “Ctrl + R”, “Ctrl + R”.
+
+[04:52] Aqui vai ter um public IExpressao Esquerda {get; private set; }. Deixa eu copiar esse código para eu não ficar digitando depois. Vou fazer a mesma coisa para a expressão da direita. public IExpressao Direita {get; private set; }, “Ctrl + R”, “Ctrl + R” para renomear o nome da propriedade com D maiúsculo.
+
+[05:15] E a subtração vou ter que fazer a mesma coisa. public IExpressao Direita {get; private set; }, mesma coisa para a expressão da esquerda. Então public IExpressao Esquerda {get; private set; }.
+
+[05:38] E agora na impressora eu preciso pegar essa expressão da esquerda e preciso imprimir essa expressão. E para imprimir eu preciso chamar o método correto da impressora. Então, o método correto, será que vai ser o ImprimeSoma? Passando soma.Esquerda? Pois é, se eu tentar chamar aqui a imprime soma, eu preciso passar uma soma para esse ImprimeSoma.
+
+[06:00] Só que a expressão da esquerda, ela pode ser um número. Só que ela também pode ser uma subtração, ou pode ser uma outra soma. Então, não sei qual é o tipo dessa expressão da esquerda. Quem sabe qual é o tipo da expressão da esquerda é apenas a própria classe que está lá dentro da expressão da esquerda. Então, a expressão que sabe qual é o tipo, qual o método correto que ele tem que ser chamado aqui na impressora.
+
+[06:23] Aqui da expressão eu quero colocar um novo método que vai ser responsável por fazer exatamente isso, vai ser responsável por chamar o método correto da impressora. Vou colocar aqui o método void Aceita(Impressora impressora);. Vou importar aqui a classe impressora em uma variável chamada impressora.
+
+[06:45] Agora eu vou implementar esse método em todas as minhas expressões. Vou ter aqui public void Aceita(Impressora impressora), em uma variável chamada impressora.ImprimiSubtracao(this);. E aqui na imprime subtração eu vou passar qual é a subtração que ele tem que imprimir, que é this.
+
+[07:13] Agora, na soma, mesma coisa. Vou colocar aqui o método public void Aceita(Impressora impressora). E aqui no aceita quero aceitar uma impressora em uma variável chamada impressora. E aqui dentro desse método vou chamar impressora.ImprimeSoma(this);.
+
+[07:33] E a soma que ele vai imprimir é o this. E para finalizar vou colocar um método também no número, que é o public void Aceita(Impressora impressora) e no aceita eu vou receber uma impressora e uma variável chamada impressora.
+
+[07:47] E dentro desse método aceita vou chamar impressora.ImprimeNumero(this); e no imprime número vou passar o this como número que ele vai imprimir.
+
+[07:57] Agora, aqui na impressora, tudo que eu preciso fazer é pegar a expressão da esquerda, que é o oma.Esquerda.Aceita(this); e lá no esquerda eu preciso falar para ela aceitar uma impressora, para ela chamar o método correto para aquela impressora. No aceita vou passar a impressora que é o this.
+
+[08:15] Mesma coisa para a expressão da direita, fazer soma.Direita.Aceita(this);. Para a subtração mesma coisa, fazer subtracao.Esquerda.Aceita(this);. E para a expressão da direita vou fazer subtracao.Direita.Aceita(this);.
+
+[08:43] Agora que nós implementamos aqui a impressora, vamos tentar utilizar essa impressora no programa principal da aplicação. Vou instanciar aqui a impressora em uma variável chamada impressora, recebe um novo impressora. Impressora impressora = new Impressora();.
+
+[08:58] E agora para imprimir essa soma eu preciso pegar a soma que eu quero imprimir, que é essa variável soma, e fazer soma..Aceita(impressora); passando qual é a impressora que eu quero utilizar.
+
+[09:13] Vou executar esse código como um atalho “Ctrl + F5” do Visual Studio. Vocês podem ver que ele imprimiu primeiro qual o resultada daquela conta, que é 21; e depois ele imprimiu aqui qual é a expressão matemática que representa esse resultado 21, que é “(1+10) + (2010)”, que é exatamente a expressão que nós queríamos imprimir aqui no comecinho do capítulo.
+
+[09:37] Agora que nós vimos que a impressora funciona corretamente, vamos ver como que ela está fazendo o trabalho, o que ela está fazendo por debaixo dos panos. Quando eu faço aqui só o .Aceita(impressora), eu estou chamando aqui na classe Soma esse método aceita. No método aceita, ele está chamando aqui o método imprime soma da impressora.
+
+[09:58] Aqui no método imprime soma da impressora, ele faz Console.Write("(");, e depois ele pega a expressão da esquerda daquela soma, e pede para a expressão da esquerda aceitar aquela soma, aceitar a impressora. A expressão da esquerda aqui da soma era essa variável esquerda que é, de novo, uma soma. Ele vai chamar aqui o método imprime soma. E aqui nesse método imprime soma, ele vai fazer um imprime abre parênteses e depois vai imprimir a expressão da esquerda, que é o número 1.
+
+[10:33] Depois ele vai fazer o sinal de mais e depois ele vai imprimir o número 10. E depois de imprimir o número 10, ele vai fechar o parênteses; e ele vai continuar fazendo isso até ele terminar de visitar todas as expressões da nossa árvore de expressões.
+
+[10:49] Esse padrão que nós acabamos de implementar é um padrão de projeto conhecido como Visitor. Nós utilizamos o Visitor toda vez que nós temos aqui uma estrutura de dados, ou uma árvore de expressões, por exemplo, e eu quero visitar essa estrutura para fazer algum processamento em cada um dos nós dessa estrutura, em cada uma das partes dessa estrutura.
+
+[11:12] Essa impressora, na verdade, é um visitor. E para indicar que ela é um Visitor eu vou renomear a classe aqui para ImpressoraVisitor. Então, aplicar aqui as modificações. Agora temos aqui o padrão visitor para conseguir imprimir todos os nós dessa árvore. Agora vamos entender aqui qual é a mecânica utilizada pelo visitor para visitar cada nó da árvore e conseguir fazer o processamento em cada um desses nós da árvore.
+
+[11:37] Quando eu faço aqui soma.aceitaimpressora, eu estou passando essa soma que tem a expressão da esquerda e a expressão da direita. Como nós vimos, quando eu faço aquele método aceita, a soma chama o método ImprimeSoma da impressora.
+
+[11:51] O ImprimeSoma, primeiro imprime um abre parênteses, e depois ele chama o método aceita da expressão da esquerda. A expressão da esquerda é novamente uma soma. Então ele vai chamar o ImprimeSoma da impressora, que vai, novamente, imprimir um abre parênteses, e depois vai chamar o aceita da expressão da esquerda.
+
+[12:10] A expressão da esquerda agora é um número, que é o número 1. Então o Visitor vai imprimir o número 1 no terminal e depois vai voltar de novo para o ImprimeSoma. O ImprimeSoma vai imprimir o mais e depois vai tentar imprimir a expressão da direita. E a expressão da direita é o número 10. Então ele vai imprimir o 10 e vai voltar para o ImprimeSoma. O ImprimeSoma agora vai fechar o parênteses e vai sair o método. Então ele vai voltar para a soma principal.
+
+[12:34] A soma principal agora, ele imprimiu a expressão da esquerda, então ele vai imprimir o sinal de mais. Depois de imprimir o mais, ele vai tentar imprimir a expressão da direita. A expressão da direita é uma subtração, e para imprimir a subtração, ele primeiro imprime o abre parênteses e vai para a expressão da esquerda. Na expressão da esquerda têm um número, que é o número 20. Então ele, simplesmente, imprime o número 20 e volta.
+
+[12:55] Depois de imprimir a expressão da esquerda, ele imprimiu o menos, e depois de imprimir o menos, ele vai para a expressão da direita. Na expressão da direita ele imprimiu o número 10 e volta. Depois que ele voltou, ele imprime o fecha parentes e volta para a expressão principal, que era a soma. Eu terminei de imprimir a expressão da direita, simplesmente fecho o parentes, e termino de visitar essa árvore de expressões.
+
+[13:18] Agora, se eu quisesse imprimir aquela expressão matemática de alguma outra forma, eu poderia, simplesmente, mudar a implementação desse visitor, poderia, por exemplo, criar um visitor novo. Essa ImpressoraVisitor poderia, por exemplo, implementar uma interface. Vou criar aqui uma nova interface dentro do meu código, que vai ser uma interface chamada Visitor.
+
+[13:48] Agora, nessa interface Visitor eu vou colocar aqueles métodos ImprimeSoma, ImprimiSubtracao e ImprimeNumero da impressora. E nesse método ImprimeSoma eu vou receber uma soma, uma variável chamada soma. Importando aqui a classe, depois vou ter aqui um método void ImprimeSubtracao, que vai receber uma subtração, uma variável chamada subtração, e vou ter também o método void ImprimeNumero. Número que recebe número em uma variável chamada número.
+
+[14:23] E o nosso visitor, que é essa impressora, o ImpressoraVisitor, ela implementa essa interface visitor, que na verdade deveria ser chamada de IVisitor por causa da convenção do C#. Então, na interface IVisitor, ele está implementando imprime soma, imprime subtração e imprime número. E agora aqui nas classes nas expressões, eu não preciso conhecer mais o ImpressoraVisitor, quem eu preciso conhecer é o IVisitor.
+
+[14:52] E aqui na subtração, então, o aceita vai aceitar, na verdade, um IVisitor na soma, eu também vou aceitar aqui um IVisitor, e no número também vou aceitar um IVisitor. Agora, se eu quisesse imprimir a expressão utilizando aquela anotação maluca que é colocar primeiro o operador e depois os números, que é esse "+ 1 100" que nós falamos no começo do capítulo, tudo que eu precisaria fazer é implementar um novo visitor para o meu projeto.
+
+[15:23] Recapitulando, utilizando esse padrão visitor eu consigo visitar uma expressão do interpreter, ou qualquer outra estrutura de dados. Eu estou visitando cada uma das expressões e fazendo o processamento em cada um dos nós dessa expressão.
+
+[15:41] Agora, esse visitor, ele é muito utilizado, por exemplo, para implementar vários frameworks do .NET Framework. Por exemplo, no Entity Framework nós trabalhamos com o link para fazer queries no banco de dados. E no curso do FN13, que é o curso de Orientação a Objetos, e o curso FN14 e FN15, que complementam a Orientação a Objetos, nós vimos que no link, quando eu utilizo aquelas queries do link, na verdade, eu estou chamando métodos do link. Por exemplo, filtrar, método wear, para fazer uma seleção, método select, e por aí a diante.
+
+[16:14] Quando eu estou utilizando o link com o Entity Framework na verdade, ele recebe uma expression, e expression é aquela árvore de expressões que nós vimos no capítulo anterior do interpreter. Então o Entity Framework, na verdade, ele pega aquela árvore de expressões que foi montada pelo seu código, e passeia naquela árvore de expressões utilizando um visitor, utilizando, na verdade, uma classe chamada expression visitor. E ele passa por cada um dos nós daquela expressão e monta a SQL que vai ter que ser mandada para o banco de dados.
+
+[16:50] Então, nesse capítulo, nós aprendemos como utilizar o padrão visitor, que é um padrão bem complicado, mas é um padrão bem interessante porque ele nós mostra como que a gente pode fazer para navegar em uma estrutura de dados que, talvez, seja bem complicada, como é a nossa estrutura de expressões.
+
+[17:08] Utilizando esse padrão nós podemos, por exemplo, navegar na árvore dada por um interpreter que nós vimos na aula anterior.

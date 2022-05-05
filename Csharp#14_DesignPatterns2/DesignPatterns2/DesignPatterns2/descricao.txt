@@ -1,0 +1,43 @@
+﻿[00:00] Olá, meu nome é Victor Harada. Boas-vindas ao segundo curso de design patterns do Alura. Se você já fez o primeiro curso de design patterns, você aprendeu diversos padrões de projetos que estão descritos no livro do GoF. Então dentro dos padrões de projeto que você aprendeu, você viu o observer, o chain of responsibility e o padrão builder.
+
+[00:19] Nesse segundo curso nós temos basicamente dois objetivos; o primeiro objetivo é estudar padrões de projeto que são parecidos, do ponto de vista de implementação, mas que têm uma motivação completamente diferente dos padrões de projeto vistos anteriormente.
+
+[00:37] Além disso, nós temos o segundo objetivo que é o objetivo de estudar padrões de projetos que não são tão utilizados assim no dia a dia, mas que nos falam um pouco sobre como nós deveríamos utilizar a orientação a objeto. Então são padrões de projetos não tão utilizados, mas que nos fornecem algum insight sobre como desenvolver aplicações orientadas a objetos.
+
+[01:00] Então, agora vamos começar a ver nosso primeiro padrão de projeto. Então aqui dentro do Visual Studio eu vou criar um novo projeto, que vai ser o projeto desse curso. Vai ser do tipo console application, um C#, que vai ser chamado de design patterns2. Vou dar "ok" aqui na janela.
+
+[01:18] Agora, dentro desse projeto nós queremos, inicialmente, trabalhar com problema de nos conectarmos com o banco de dados. Dentro do main do programa, eu quero abrir uma conexão, por exemplo, com SQL server. A conexão com o banco de dados é uma instância de uma interface chamada IDbConnection. Vou importar essa interface com “Ctrl + .” e vou guardar em uma variável chamada conexão.
+
+[01:42] E para me conectar com SQL server eu preciso instanciar aqui um objeto do tipo sqlConnection();, que eu também vou importar com “Ctrl + .” Então, agora que eu tenho essa conexão, dentro da conexão eu preciso falar qual é, por exemplo, o usuário que quero utilizar para falar com o banco de dados, a senha, qual é o endereço do banco e qual é o banco que eu quero utilizar. Essas informações ficam dentro de uma propriedade aqui da conexão que é a ConnectionString. E aqui dentro dessa ConnectionString, então, eu preciso falar qual é o usuário que eu vou utilizar para me conectar com o banco de dados.
+
+[02:18] Por exemplo, User Id=root. Além disso, eu preciso falar qual é o password que esse usuário vai utilizar. Então, por exemplo, password vazio. Eu também preciso falar qual o endereço do banco de dados. server=localhost, se o endereço for na minha própria máquina, e eu também preciso falar qual é o banco que eu quero utilizar lá dentro. Então banco, Database=meubanco.
+
+[02:44] Agora que eu tenho aqui a string de conexão configurada, eu posso abrir essa conexão utilizando conexão.Open();. E agora que eu tenho essa conexão aberta, eu posso fazer uma query no banco de dados. Então, quero executar um comando, e para isso, primeiro eu vou criar esse comando. Com conexao.CreateCommand();. Esse método CreateCommand me devolve o objeto do tipo IDbCommand, eu vou chamar de comando.
+
+[03:16] E agora, nesse comando, eu quero falar qual é a SQL que eu vou executar no banco. Então, comando.CommandText =. E agora, para nós conseguirmos executar, por exemplo, a SQL que vai listar todo mundo, então eu vou colocar aqui comando.CommandText = "select * from tabela";.
+
+[03:38] Vejam aqui que toda vez que eu quero executar um comando no banco de dados, eu preciso de uma conexão aberta para eu conseguir executar esse comando. Se eu não tiver essa conexão, eu não consigo fazer esse comando. Não importa se eu quero inserir informações no banco de dados, se eu quero listar as informações, remover as informações, ou se eu quero, simplesmente, fazer uma atualização do banco de dados. Para todos esses casos eu preciso de uma conexão. E toda vez que eu preciso de uma conexão, eu vou precisar repetir essas três linhas de código aqui para criar essa conexão com o banco de dados.
+
+[04:08] Eu não quero fazer isso, eu quero ter alguma forma de isolar essa criação de conexão. Então, aqui dentro do meu projeto, eu vou criar uma nova classe que vai fazer exatamente isso, vai isolar a criação dessa conexão. Então, aqui dentro do projeto, eu vou criar, primeiro, uma nova pasta para colocar essa classe; essa pasta vai ser, por exemplo, a pasta "Cap1", e dentro dessa pasta eu vou criar essa nova classe que eu vou chamar, por exemplo, de "ConnectionFactory".
+
+[04:38] Agora, aqui dentro dessa classe ConnectionFactory eu quero colocar um método que vai ser responsável por abrir uma conexão com o banco de dados que vai ser, por exemplo, o método public, que vai me devolver um IDbConnection. Vou importar com “Ctrl + .” e esse método vai ser o GetConnection().
+
+[04:57] Dentro desse método, eu preciso isolar esse código aqui de criar conexão. Então, vou pegar o código daqui e vou colocar ele aqui dentro. Vou simplesmente importar aqui o sqlConnection. E agora, para terminar esse método GetConnection() eu só preciso devolver essa conexão aberta. Então, return conexão;.
+
+[05:19] E agora, dentro do programa, para abrir essa conexão com o banco de dados, eu vou utilizar a minha ConnectionFactory. Então IDbConnection conexao = new ConnectionFactory().GetConnection();, vou importar a classe ConnectionFactory.
+
+[05:49] Com isso eu consigo abrir a conexão com o banco de dados. Vejam que o trabalho dessa classe ConnectionFactory é simplesmente isolar a criação desse objeto complicado, dessa conexão com o banco de dados. Toda vez que eu quiser agora abrir uma conexão, eu vou sempre chamar esse método GetConnection().
+
+[06:07] E dentro do método GetConnection() é onde eu vou isolar tudo esse código de criação da conexão com o banco de dados. Agora, muitas vezes, quando a gente está trabalhando com banco de dados, a informação aqui sobre a ConnectionString, que nós vamos utilizar para conectar com o banco de dados, geralmente não é colocada diretamente no código de aplicação. Essa informação, geralmente, fica dentro de um arquivo de configuração.
+
+[06:30] Só que, olha só, como a criação da conexão está isolada dentro de uma classe, se eu quisesse modificar esse código aqui para ler essa string de conexão de um arquivo de configuração, ao invés de colocar essa string de conexão diretamente no meu código, eu simplesmente teria que modificar esse método GetConnection(), não teria que mudar mais nada dentro do meu código.
+
+[06:54] Por exemplo, eu poderia colocar aqui um novo, leitor de configuração, essa classe aqui é completamente hipotética. new LeitorDe Configuracao().LeConnectionSring();.
+
+[07:10] Vejam que eu modifiquei apenas a ConnetionFactory. O programa que está utilizando a ConnetionFactory não precisa ser modificado, porque a lógica de criação do objeto está toda dentro da ConnetionFactory. Vejam que a ConnetionFactory, ela se parece bastante com aquele builder que vocês viram no curso passado. Com o builder eu queria também criar o objeto, só que no caso d builder eu estava criando o objeto variando os parâmetros daquele objeto.
+
+[07:38] Por exemplo, eu tinha lá nota fiscal, e toda vez que eu quero criar uma nota fiscal, eu vou criar a nota fiscal com produtos diferentes, com valor da nota diferente, com a data da nota fiscal diferente.
+
+[07:49] Agora, no caso aqui da ConnetionFactory, toda vez que eu for criar uma conexão com o banco de dados, eu vou criar a conexão do mesmo jeito, porque é muito raro eu querer variar as informações da ConnetionString do banco de dados dentro da mesma aplicação.
+
+[08:05] Vejam que eu tenho aqui um padrão de projeto para criar objetos, que é diferente do builder. Esse novo padrão de projeto é a Factory do GoF. Então a Factory isola a criação de objetos complicados, só que aí, esse objeto complicado, vai ser basicamente o objeto que vai ter as mesmas configurações, enquanto o builder, o objeto que é criado varia de acordo com os parâmetros. Então, por isso, nós conseguimos aprender o que é a Factory do GoF.

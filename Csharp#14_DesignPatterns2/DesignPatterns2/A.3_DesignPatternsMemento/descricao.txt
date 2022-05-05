@@ -1,0 +1,75 @@
+﻿[00:00] Boas-vindas ao terceiro capítulo do curso de designer patterns 2 do Alura. Nesse capítulo nós queremos trabalhar com uma nova classe chamada "contrato" dentro do projeto.
+
+[00:14] Dentro do projeto eu vou criar uma nova pasta para guardar as classes desse capítulo. Pasta chamada "Cap3". Dentro dessa pasta eu vou criar uma nova classe para representar o contrato. Então classe, contrato.
+
+[00:26] E dentro do contrato eu quero guardar algumas informações como a data, nome do cliente desse contrato e o tipo de contrato que eu estou trabalhando. Então vou criar aqui uma propriedade para representar a data, então DateTime, chamada data. Nessa propriedade eu quero que todo mundo possa ler, mas apenas a classe é que pode escrever. Então, public DateTime Data { get; private set; }. Além disso, também quero declarar aqui uma outra propriedade que é public, que é o cliente do contrato, que também todo mundo pode ler, mas apenas a classe é que pode escrever. public string Cliente { get; private set; }.
+
+[01:00] E para finalizar, eu quero colocar aqui uma outra propriedade que é do tipo contrato. E essa propriedade vai ser chamada de tipo, public TipoContrato Tipo { get; private set; }.
+
+[01:14] E agora vou criar esse tipo de contrato. Então vou apertar aqui “Ctrl + .”, Generate new type e o tipo vai ser um enum do csharp. Vou criar aqui esse novo enum. E dentro desse tipo de contrato eu quero criar vários tipos. Eu vou ter aqui um tipo que vai falar que o contrato é novo, vou ter um tipo em andamento, vou ter o tipo acertado, e o tipo concluído. Novo, EmAndamento, Acertado, Concluido.
+
+[01:45] Criei aqui o meu enum com os tipos possíveis de contrato. E agora, para conseguir construir essa classe com essas informações do contrato, eu vou criar um construtor na classe. Dentro desse construtor eu quero receber qual é o DateTime que representa a data desse contrato, também quero receber qual é a string com nome do cliente, e quero receber também um tipo de contrato, que é o tipo do contrato que eu estou criando. public Contrato(DateTime data, string cliente, TipoContrato tipo).
+
+[02:14] E agora, dentro do construtor eu quero simplesmente guardar essas informações. Então this.Data = data;. Vai receber a data que veio como argumento. this.Cliente = cliente;. Que veio como argumento. E this.Tipo = tipo;.
+
+[02:35] E agora, para trabalhar com esse contrato, para o cliente conseguir manipular o estado desse contrato, nós vamos ter que colocar métodos, porque todas as propriedades são privadas. Então, por exemplo, para mudar qual o tipo de contrato, eu vou colocar aqui um novo método, o método chamado avança. E aqui dentro desse método eu quero ver qual é o tipo atual do contrato. public void Avanca().
+
+[03:00] Se o (this.Tipo for = = TipoDeContrato.Novo), então, nesse caso, eu quero falar que if (this.Tipo for = = TipoDeContrato.Novo) this.Tipo = TipoDeContrato.EmAndamento;.
+
+[03:22] Agora, senão, else if(this.Tipo = = TipoDeContrato.EmAndamento), então nesse caso eu quero falar que this.Tipo = TipoDeContrato.Acertado). E agora, se o contrato estiver acertado, então else if(this.Tipo = = TipoDeContrato.Acertado), então, nesse caso, se eu for avançar, o contato vai estar concluído. this.Tipo = = TipoDeContrato.Concluido;.
+
+[04:03] E agora, dentro do programa eu quero tentar criar um novo contrato e sair avançando os estados desse contrato. Eu vou criar aqui um contrato, vou importar a classe contrato, que vai ser o c, vai receber um novo contrato.
+
+[04:22] Agora, dentro desse contrato, para eu conseguir construir esse objeto, vou construir com a data de hoje, então DateTime.Now, o cliente vai ser eu mesmo, então, cliente chamado Victor, e o tipo de contrato vai ser tipo de contrato novo, porque é um novo contrato. Contrato c = new Contrato(DateTime.Now, "victor", TipoContrato.Novo);.
+
+[04:37] E agora eu quero, por exemplo, tentar imprimir qual é o tipo do contrato atual. Então Console.WriteLine(c.Tipo);. Depois eu quero tentar avançar esse contrato. Então, c.Avanca);, e depois fazer Cosole.WriteLine(c.Tipo);.
+
+[05:03] Agora vou rodar a aplicação e vamos ver o que acontece. Vou rodar aqui com o “Ctrl + F5”. Primeira vez que eu imprimi, o contrato era novo, então ele imprimiu novo. Depois, segunda vez, ele imprimiu em andamento, que é o estado atual desse contrato.
+
+[05:19] Vejam que com esse avança eu consigo modificar o estado do contrato, eu consigo avançar esse estado do contrato. Mas e se eu quisesse, por exemplo, voltar atrás, desfazer essa operação no contrato. Então, nesse caso, eu teria que guardar qual era o estado anterior do contrato.
+
+[05:39] No caso aqui, para guardar o estado anterior, eu poderia guardar simplesmente o tipo. Mas o que aconteceria se essa operação avança também mexesse em outras informações do contrato? Então, nesse caso, eu realmente precisaria guardar uma foto do estado anterior daquele objeto contrato.
+
+[05:54] O que eu poderia fazer para conseguir voltar na história, no histórico desse contrato, seria manter uma lista de todos os estados pelo qual o contato já passou. E, dentro dessa lista, toda vez que eu chamo o avança, quero adicionar um novo item nessa lista, e se eu precisar voltar, vou simplesmente procurar o estado anterior do contrato nessa lista.
+
+[06:18] Vamos implementar isso. Então aqui dentro da pasta capítulo três eu vou querer implementar uma nova classe, que vai ser um estado do contrato. Então, estado do contrato. E aqui dentro dessa classe do estado do contato eu quero, simplesmente, guardar qual era o contrato, as informações do contrato daquele estado que eu estou falando. Então vou ter aqui public Contrato Contrato { get; private set; }.
+
+[06:50] E agora, quando for construir o estado, eu quero que o construtor do estado já receba o contrato. Então public Estado (Contrato contrato).
+
+[07:00] E aqui dentro do construtor eu vou simplesmente fazer this.Contrato = contrato;. Agora, para guardar todos os estados do contrato da aplicação eu vou criar aqui uma outra classe que vai ser o histórico dos estados do contrato. Então, classe histórico, adicionei a classe. E agora, dentro dessa classe, eu quero guardar um private que vai ser a lista de todos os estados do contrato. Então private IList<Estado> Estados = new List<Estado>();.
+
+[07:44] Agora, dentro desse histórico eu quero adicionar um novo estado. Eu vou ter aqui o método public void Adiciona(Estado estado). Vou abrir um método, e agora, dentro desse método, eu quero adicionar esse estado dentro da lista de estados. Então vou fazer this.Estados.Add(estado);.
+
+[08:15] Além desse método adiciona, eu também quero ter um método para poder recuperar um estado que já estava elevado na lista. Então, vou colocar aqui um método public, vai me devolver um estado, que vai ser um método, por exemplo, chamado de pega. Esse método pega vai ter que receber qual é o índice do estado que eu quero recuperar. public Estado Pega(int indice).
+
+[08:34] Para implementar esse método vou, simplesmente, fazer return, estados, na posição do índice que foi passado. return Estados(indice);.
+
+[08:46] Agora, dentro do programa, toda vez que eu chamar aqui o método avança, eu quero gravar o estado daquele contrato. Então, para eu conseguir criar aquele estado do contrato, eu vou deixar essa responsabilidade dentro do próprio objeto contrato. Então, aqui dentro do contrato, além desse método avança, eu também quero criar aqui um novo método, que vai ser o public, que vai me devolver um estado, esse método vai ser o salva estado. public Estado SalvaEstado().
+
+[09:10] E aqui dentro desse método SalvaEstado() eu quero criar um novo objeto do tipo estado. return new Estado(). Só que para eu conseguir construir o estado, eu preciso passar o contrato que ele vai utilizar. Então passando aqui dentro um novo contrato. return new Estado(new Contrato());. E agora, aqui dentro desse novo contrato eu preciso falar qual é a data do contrato. Que é o return new Estado(new Contrato(this.Data, ));. Além disso, preciso falar qual é o cliente desse contratado que é o return new Estado(new Contrato(this.Data, this.Cliente));. E também quero falar qual é o tipo, que é o return new Estado(new Contrato(this.Data, this,Cliente, this.Tipo));.
+
+[09:50] Agora tem aqui o estado do contrato. E agora, dentro do meu programo, toda vez que eu quiser salvar o estado do contrato eu preciso criar aquele meu histórico. Então vou ter aqui Historico historico = new Historico();. E agora, criei o contrato, quero salvar o estado inicial desse contrato. Então vou fazer aqui historico.Adiciona(c.SalvaEstado());.
+
+[10:22] Vou tirar temporariamente aqui o Console.WriteLine. Salvei o primeiro estado, quero avançar uma vez e depois quero salvar o segundo estado. Vou fazer aqui historico.Adiciona(c.SalvaEstado());.
+
+[10:41] E depois quero tentar avançar novamente. Então c.Avanca();. E vou fazer historico.Adiciona(c.SalvaEstado());.
+
+[10:56] Vamos ver aqui qual foi o estado final do contrato. Console.WriteLine(c.Tipo);. Então, rodando a aplicação. E o tipo final do contrato foi acertado.
+
+[11:15] Agora, vamos ver como é que ficou o histórico desse contrato. Por exemplo, eu adicionei aqui três entradas no histórico; entradas zero, entrada um e entrada dois. E agora eu quero saber qual é o tipo da entrada do histórico. Vou fazer aqui Console.WriteLine, e vou tentar ler aqui o histórico. Lá dentro do histórico quero pegar, por exemplo, o item que está na posição zero. E dessa posição zero eu quero pegar o contrato, e lá do contrato, quero saber qual é o tipo do contrato que eu estou pegando. Então posição zero era a posição do contrato novo. Então tipo novo.
+
+[11:54] Agora, se eu mudar aqui para a posição um, então, nesse caso, eu vou ver aqui o estado em andamento. E se eu tentar ler a posição dois aqui do histórico, então, nesse caso, eu vou conseguir ver a última posição, o último estado de contrato, que é o estado acertado. Então, veja que com esse histórico eu consigo restaurar o estado anterior de um objeto do meu sistema, no caso aqui o contrato.
+
+[12:22] Então, toda vez que nós precisamos resolver esse problema de restaurar o estado anterior de um objeto da aplicação, eu posso utilizar essa classe histórico. Então, com isso daqui, com esse histórica e o estado, nós implementamos um padrão de projeto, também do GoF, chamado Memento.
+
+[12:46] O Memento é utilizado toda vez que eu quero salvar o estado de um objeto para eu poder recuperar esse estado posteriormente no meu programa, para eu poder, por exemplo, implementar aquela operação de desfazer, o “Ctrl + Z”.
+
+[13:02] Aqui dentro do projeto eu tenho aqui o histórico, e esse histórico está guardando estados. Então, deixa eu abrir aqui a classe histórico, e aqui dentro do histórico vocês podem ver que eu estou guardando o estado. E o estado é basicamente o contrato.
+
+[13:16] Ao invés de guardar um estado, aquela classe histórico, ela poderia guardar diretamente um contrato. Sim, ela poderia. Dentro do padrão de projeto Memento, o jeito que ele foi descrito originalmente, dentro do padrão, existe essa classe estado para guardar as informações do histórico do seu objeto. Mas, se você não precisar dessa classe estado, porque eu não quero guardar esse contato de nenhuma forma especial, então você pode simplesmente guardar diretamente o objeto contrato, você não precisa criar essa classe estado necessariamente.
+
+[13:57] Veja que o padrão de projeto, ele nada mais é do que um guia. Ele não te fala como você tem que implementar alguma coisa, ele só te dá a motivação, e uma ideia de como você pode fazer uma implementação. O mais importante de um padrão de projeto não é a implementação, e sim a motivação que te levou para aquele padrão de projeto.
+
+[14:18] Aqui dentro do Memento, essa classe estado geralmente é utilizada porque, muitas vezes, nós, além do estado do objeto, nós também precisamos guardar alguma informação associada àquele estado. Por exemplo, quando que aquele estado foi criado, quando que o objeto foi salvo dentro do histórico. Então, para conseguir guardar essa informação adicional eu preciso dessa classe estado. Só que se eu não preciso de informação adicional nenhuma, então eu poderia guardar diretamente o objeto contrato dentro do histórico, não tem problema nenhum.
+
+[14:49] Então, com isso daqui, nós temos o padrão de projeto Memento do GoF.

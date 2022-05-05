@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bridge.txt" />
+    <Content Include="descricao.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

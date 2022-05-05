@@ -1,0 +1,79 @@
+﻿[00:00] Nesse capítulo nós queremos resolver mais um problema aqui no nosso sistema. Toda vez que o cliente fecha um contrato com a empresa nós precisamos enviar o email para esse cliente. Então, aqui dentro do projeto nós precisamos de uma nova classe, que vai ser responsável por enviar mensagem para o cliente.
+
+[00:17] Vou criar aqui uma nova pasta que vai ser a pasta para as classes do capítulo seis. Dentro dessa pasta eu quero criar aqui uma nova classe que vai ser, por exemplo, uma MensagemPorEmail. Então eu criei a classe. Dentro dessa classe eu quero ter um construtor que vai receber qual é o nome do cliente. Então, para gerar o construtor digito o setor e aperto “Tab” “Tab”. E dentro desse construtor eu quero receber qual é o nome do cliente. Então, this.nome = nome; e esse nome vai ser um argumento do construtor, string nome.
+
+[00:50] E para criar o atributo eu vou utilizar o atalho “Ctrl + .” do Visual Studio. E agora, dentro dessa classe, quero colocar aqui o novo método, que vai ser o método envia, que vai enviar MensagemPorEmail. Então, dentro dessa classe primeiro eu quero colocar aqui Console.writeLine("Enviando a mensagem por email"); e depois quero colocar realmente a formatação da mensagem. Console.writeLine("Mensagem para o cliente"); e depois eu quero colocar o nome do cliente, que vai ser o argumento aqui dessa string; que vai ser preenchido com a variável nome dessa classe. Console.writeLine("Mensagem para o cliente {0}, nome);.
+
+[01:37] Agora, aqui no programa, se eu quero mandar mensagem para o cliente, tudo que eu preciso fazer é utilizar aqui a MensagemPorEmail, e vou importar essa classe com “Ctrl + .” Guardando aqui em uma variável chamada MensagemPorEmail mensagem = new MensagemPorEmail();.
+
+[01:55] No construtor da mensagem eu quero passar o nome do cliente que vai ser, por exemplo, Victor. MensagemPorEmail mensagem = new MensagemPorEmail("victor"); e agora, para enviar mensagem, faço Mensagem.envia();. E vamos tentar rodar esse programa. Então, vocês podem ver aqui que eu tenho enviando a mensagem por email para o cliente chamado Victor.
+
+[02:12] Agora, imagina que o nosso cliente, ele também quer receber a mensagem por SMS. Então alguns clientes querem receber a mensagem por email, outros por SMS. Então, para resolver esse problema nós podemos criar aqui uma nova classe, que vai ser a mensagem por SMS.
+
+[02:26] E para nós podermos utilizar MensagemPorEmail e MensagemPorSMSda mesma forma, nós podemos criar aqui uma interface para representar as mensagens. Então vou criar aqui um novo item que vai ser uma interface, e essa interface vai ser a interface chamada Imensagem.
+
+[02:40] Dentro dessa interface, toda a mensagem tem que ter aqui um método void Envia();. E agora, aqui dentro do capítulo seis também quero criar aqui uma nova classe, que vai ser a MensagemPorSMS.
+
+[02:57] Essa MensagemPorSMS também vai ser uma mensagem, e toda mensagem precisa ter um método public void envia, abre aqui o método envia. E, além disso, aqui na MensagemPorSMS, eu também quero colocar um construtor que vai receber o nome do cliente. Então vou ter aqui argumento que vai ser string nome do cliente, e dentro do construtor quero, simplesmente, fazer this.nome = nome;.
+
+[03:26] E para criar esse atributo vou utilizar novamente o atalho "Ctrl + .". Agora, aqui dentro do método Envia() eu quero, primeiro, escolher a forma de envio. Então Console.WriteLine("Enviando a mensagem por SMS");, e depois quero colocar a formatação dessa mensagem. Eu quero utilizar a mesma formatação aqui da mensagem por email. Então vou copiar essa segunda linha do método envia e vou colar aqui no método envia mensagem por SMS.
+
+[03:55] E agora aqui dentro do programa, se eu quiser mandar uma mensagem, eu vou utilizar aqui a interface IMensagem para mandar mensagem por email, e instancio aqui uma nova mensagem por email; que também tem que implementar aquela interface mensagem.
+
+[04:11] E agora, se eu quiser mandar mensagem por SMS eu vou instanciar aqui uma nova mensagem por SMS. Então, vamos tentar testas esse programa e ver qual o resultado. Então, executei aqui programa, e podemos ver que a mensagem foi enviada por SMS para o cliente chamado Victor.
+
+[04:28] Então conseguimos resolver o problema de enviar mensagem para os clientes. Só que, agora, nós queremos utilizar essa mesma infra estrutura para podermos mandar mensagens administrativas para os administradores desse sistema. Então, o administrador, ele também quer receber mensagem por SMS ou também mensagens por email.
+
+[04:47] Então, se eu quiser utilizar, se eu quiser criar essa mensagem por SMS, mensagem por email, para o administrador, eu teria que criar mais duas classes novas; uma mensagem administrativa por SMS e uma mensagem administrativa por email.
+
+[05:03] Então, vejam que para cada novo tipo de mensagem que eu quero adicionar, eu preciso adicionar várias classes para cada forma de envio que eu tenho no sistema. No caso aqui, se eu quisesse adicionar uma mensagem administrativa, eu teria que colocar mensagem administrativa para SMS e para email.
+
+[05:23] Isso acontece porque essa hierarquia das mensagens, ela tem muitas responsabilidades. Ela tem a responsabilidade de, primeiro, escolher qual é a forma de envio daquela mensagem, e segundo, essa hierarquia também está responsável por fazer a formatação dessa mensagem.
+
+[05:40] Então, ao invés de nós termos uma hierarquia que tem tanta responsabilidade assim, nós poderíamos dividir essa responsabilidade entre duas hierarquias. Então eu quero ter uma mensagem que sabe se formatar, e eu quero ter um enviador que sabe enviar a mensagem de alguma forma.
+
+[05:57] Eu vou ter aqui a interface mensagem, e eu quero colocar uma nova interface, que vai ser uma interface chamada IEnviador. E nessa interface IEnviador, todo enviador precisa saber enviar uma (IMensagem mensagem);.
+
+[06:26] Agora, aqui na mensagem eu vou ter o método envia para eu poder manter a interface que o usuário já está acostumado, só que eu também quero ter um método que vai me devolver a mensagem formatada; qual é a formatação que eu quero utilizar para aquela mensagem. Então, vou ter aqui um novo método que é o string Formata();. E esse novo método vai ter que me devolver qual a mensagem que o enviador, realmente, vai ter que enviar para o cliente.
+
+[06:51] Além disso, toda mensagem, ela precisa saber qual é a forma de envio que ela vai ter que utilizar. Então, toda mensagem, ela vai ter que declarar aqui uma propriedade que vai ser um IEnviador, que é o enviador que vai ser utilizado para aquela mensagem. Vai ter um IEnviador Enviador { get; set; }.
+
+[07:11] E agora, essa mensagem, primeiro, mensagem por SMS, eu vou renomear essa classe para ser uma mensagem do cliente, e eu quero também renomear essa outra classe para ela ser uma mensagem para o administrador. Então, mensagem administrativa. Renomeei a classe. E agora? Mensagem administrativa é uma mensagem. Esse método envia, nós não vamos implementar por enquanto, nós vamos implementar um pouquinho depois. E eu quero colocar aquele método formata. Então, public string Formata();.
+
+[07:52] Esse método formata precisa devolver a string formatada que vai ser enviada por email ou por SMS. Então ele vai fazer um return string.Format("Enviando a mensagem para o administrador {0}, nome);.
+
+[08:30] E depois, aqui na mensagem do cliente, eu também quero colocar aqui a formatação da mensagem. Então, public string Formata. E aqui nesse método formata eu também vou devolver a string formatada. Então, return string.format();. E aqui no format eu posso copiar a formatação que nós já estávamos utilizando. return String.Format("Mensagem para o cliente {0}", nome);.
+
+[08:56] Agora, tem aqui o método formata, e o enviador pode utilizar esse método formata para saber qual é o formato que ele vai ter que utilizar para a mensagem. Eu quero, por exemplo, criar aqui um enviador que vai enviar mensagem por email. Então, uma classe chamada envia por email, por exemplo.
+
+[09:15] Esse envia por email vai ser um IEnviador. E aqui, todo enviador precisa ter aquele método public void Envia. E esse método envia precisa receber uma mensagem, uma variável chamada mensagem. public void Envia(IMensagem mensagem).
+
+[09:30] Agora, aqui dentro eu preciso falar qual é a forma de envio que eu quero utilizar. Então, Console.writeLine. E a forma de envio vai ser, por exemplo, Console.writeLine("Enviando a mensagem por email");. E depois, eu quero colocar a formatação da mensagem. Então, Console.writeLine(mensagem.Formata());.
+
+[09:56] E agora, se eu quiser enviar mensagem por SMS, só preciso criar aqui uma nova classe, que vai ser EnviaPorSMS. Criei a classe. E essa classe aqui também vai ser um IEnviador. Agora, dentro dessa classe, eu preciso ter aquele método public void Envia(IMensagem mensagem). E dentro desse método eu vou ter que fazer novamente a escolha de qual é a forma de envio. Então, Console.WriteLine("Enviando a mensagem por SMS");. E depois preciso fazer a formatação da mensagem. Então, Console.WriteLine(mensagem.Formata());.
+
+[10:45] Agora, se eu quiser mandar mensagem por simplesmente, simplesmente preciso instanciar aqui mensagem envia por SMS. E para enviar por email, envia por email.
+
+[10:54] Agora, dentro da mensagem, nós falamos que toda mensagem tem que ser esse método formata, que vai devolver a string formatada, o método envia, que vai ter que enviar essa mensagem utilizando o IEnviador que foi declarado lá na interface IMensagem. Essa propriedade aqui IEnviador.
+
+[11:11] Então, agora vamos modificar aqui a mensagem administrativa. Então, aqui dentro da mensagem administrativa, eu quero declarar uma propriedade. Para declarar propriedade eu posso utilizar aqui a palavra prop “Tab” “Tab”. Então, essa propriedade vai ser do tipo IEnviador chamada enviador. E agora, aqui dentro desse método envia, tudo que eu preciso fazer é utilizar o this.Enviador.Envia(this);.
+
+[11:36] E na mensagem do cliente, mesma coisa. Eu vou ter que declarar aqui uma propriedade, que vai ser do tipo IEnviador, que vai ser chamada enviador. E, aqui no método envia, vou fazer this.Enviador.Envia(this);.
+
+[11:55] Agora vamos ver como é que vai ficar o uso dessas classes aqui dentro do programa principal. Então aqui dentro do programa eu tenho a mensagem, que é a mensagem administrativa, e eu quero enviar essa mensagem administrativa por email. Então, vou ter aqui um IEnviador enviador = new EnviaPorEmail();.
+
+[12:16] E agora eu quero fazer mensagem.Enviador = enviador;. E agora eu posso enviar essa mensagem. Vamos ver aqui como é que vai ficar a execução desse programa. Eu vou apertar aqui “Ctrl + F5” para executar o código. Parece que tem um erro de compilação. Então, aqui na interface não posso ter métodos públicos, porque todos os métodos já são públicos. Então, vamos tentar rodar novamente. Agora temos aqui enviando a mensagem por email para o administrador chamado Victor.
+
+[12:48] Vejam aqui, se eu quisesse enviar por email eu só preciso colocar aqui envia por email; se eu quisesse mandar por SMS, então eu instanciaria envia por SMS.
+
+[12:58] Rodando aqui novamente o programa, enviando a mensagem por SMS para o administrador chamado Victor. E agora, se eu quisesse mandar aqui a mensagem para o cliente, ao invés de instanciar mensagem administrativa, eu posso instanciar mensagem do cliente.
+
+[13:14] Rodando novamente. Enviando SMS para o cliente chamado Victor. Então, veja que, agora, se eu quiser criar um novo tipo de mensagem, que vai ter uma formatação diferente, tudo que eu preciso fazer é criar uma única classe do projeto, que vai implementar aquela interface IMensagem.
+
+[13:35] E se eu quiser criar uma nova forma de envio, eu só preciso implementar a interface IEnviador. Veja que, separando a responsabilidade dessas duas hierarquias de classe, eu consegui diminuir o número de classe do meu projeto, consegui facilitar a manutenção desse projeto.
+
+[13:47] Esse padrão de projeto que nós acabamos de implementar, esse padrão que consegue separar a responsabilidade e a hierarquia de classe, é um padrão chamado Bridge. Por que Bridge? Porque utilizando aqui a composição de classes aqui na propriedade enviador lá da interface IMensagem, eu estou fazendo uma ponte entre a interface IMensagem e a interface dos enviadores, a interface IEnviador.
+
+[14:14] Então, nós utilizamos esse padrão chamado Bridge toda vez que nós temos uma hierarquia de classes que tem muitas responsabilidades, tem duas ou mais responsabilidades. E então nós quebramos essa hierarquia em diversas hierarquias de classe. Por exemplo, aqui no nosso caso, quebrei a hierarquia das mensagens nas mensagens e nos enviadores.
+
+[14:38] E depois eu utilizo a composição de classes para eu poder juntar essas hierarquias, e poder compor o meu código. Então, esse foi o padrão chamado Bridge dos Design Patterns.
