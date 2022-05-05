@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Divisao.cs" />
     <Compile Include="IExpressao.cs" />
+    <Compile Include="Impressora.cs" />
     <Compile Include="Multiplicacao.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Program.cs" />
