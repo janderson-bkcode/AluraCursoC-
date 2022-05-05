@@ -1,0 +1,50 @@
+﻿
+O Memento é utilizado toda vez que eu quero salvar o 
+estado de um objeto para eu poder recuperar esse 
+estado posteriormente no meu programa, para eu poder, 
+por exemplo, implementar aquela operação de desfazer, o “Ctrl + Z”.
+
+Aqui dentro do projeto eu tenho aqui o histórico, 
+e esse histórico está guardando estados. Então, deixa
+eu abrir aqui a classe histórico, e aqui dentro do histórico 
+vocês podem ver que eu estou guardando o estado. 
+E o estado é basicamente o contrato.
+
+[13:16] Ao invés de guardar um estado, 
+aquela classe histórico, ela poderia guardar diretamente um contrato. 
+Sim, ela poderia. 
+Dentro do padrão de projeto Memento, o jeito que ele foi descrito originalmente, 
+dentro do padrão, existe essa classe estado para guardar as informações do histórico do 
+seu objeto. Mas, se você não precisar dessa classe estado, 
+porque eu não quero guardar esse contato de nenhuma forma especial,
+então você pode simplesmente guardar diretamente o objeto contrato, 
+você não precisa criar essa classe estado necessariamente.
+
+[13:57] Veja que o padrão de projeto, ele nada mais é do que um guia. 
+Ele não te fala como você tem que implementar alguma coisa, ele só te dá a motivação,
+e uma ideia de como você pode fazer uma implementação. 
+O mais importante de um padrão de projeto não é a implementação, e sim a motivação que 
+te levou para aquele padrão de projeto.
+
+[14:18] Aqui dentro do Memento, essa classe estado geralmente é utilizada porque, muitas vezes,
+nós, além do estado do objeto, nós também precisamos guardar alguma informação associada
+àquele estado. Por exemplo, quando que aquele estado foi criado, quando que o objeto foi
+salvo dentro do histórico. Então, para conseguir guardar essa informação adicional 
+eu preciso dessa classe estado. Só que se eu não preciso de informação adicional nenhuma, 
+então eu poderia guardar diretamente o objeto contrato dentro do histórico, 
+não tem problema nenhum.
+
+[14:49] Então, com isso daqui, nós temos o padrão de projeto Memento do GoF.
+
+
+
+Você consegue ver algum possível problema do padrão Memento? Se sim, qual?
+
+Um possível problema é a quantidade de memória que ele pode ocupar, 
+afinal estamos guardando muitas instâncias de objetos que podem ser pesados.
+
+Por isso, dependendo do tamanho dos seus objetos, 
+a classe Estado pode passar a guardar não o objeto todo, 
+mas sim somente as propriedades que mais fazem sentido.
+
+Nada impede você também de limitar a quantidade máxima de objetos no histórico que será armazenado.

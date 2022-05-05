@@ -12,21 +12,26 @@ namespace A._3_DesignPatternsMemento
         {
             Historico historico = new Historico();
 
-            Contrato c = new Contrato(DateTime.Now, "Victor", TipoContrato.Novo);
-            historico.Adiciona(c.SalvaEstado());
+            Contrato contrato = new Contrato(DateTime.Now, "Victor", TipoContrato.Novo);
+            historico.Adiciona(contrato.SalvaEstado());
 
             //Console.WriteLine(c.Tipo);
 
-            c.Avanca();
-            historico.Adiciona(c.SalvaEstado());
+            contrato.Avanca();
+            historico.Adiciona(contrato.SalvaEstado());
 
-            c.Avanca();
-            historico.Adiciona(c.SalvaEstado());
+            contrato.Avanca();
+            historico.Adiciona(contrato.SalvaEstado());
 
+            //Vendo Qual estado final do contrato
             // Console.WriteLine(c.Tipo);
 
+            //Pegando pelo historico os estados salvos 
             Console.WriteLine(historico.Pega(0).Contrato.Tipo);
-           
+            Console.WriteLine(historico.Pega(1).Contrato.Tipo);
+            Console.WriteLine(historico.Pega(2).Contrato.Tipo);
+
+            Console.ReadLine();
         }
     }
 }

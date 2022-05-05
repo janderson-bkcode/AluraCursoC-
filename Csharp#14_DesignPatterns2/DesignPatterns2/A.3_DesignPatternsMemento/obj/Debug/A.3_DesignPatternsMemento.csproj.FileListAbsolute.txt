@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.3_DesignPatternsMemento\bin\Debug\A.3_DesignPatternsMemento.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.3_DesignPatternsMemento\bin\Debug\A.3_DesignPatternsMemento.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.3_DesignPatternsMemento\bin\Debug\A.3_DesignPatternsMemento.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.3_DesignPatternsMemento\obj\Debug\A.3_DesignPatternsMemento.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.3_DesignPatternsMemento\obj\Debug\A.3_DesignPatternsMemento.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.3_DesignPatternsMemento\obj\Debug\A.3_DesignPatternsMemento.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.3_DesignPatternsMemento\obj\Debug\A.3_DesignPatternsMemento.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.3_DesignPatternsMemento\obj\Debug\A.3_DesignPatternsMemento.pdb
