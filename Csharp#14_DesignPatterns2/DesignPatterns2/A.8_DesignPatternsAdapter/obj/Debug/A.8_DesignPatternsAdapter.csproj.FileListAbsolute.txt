@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.8_DesignPatternsAdapter\bin\Debug\A.8_DesignPatternsAdapter.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.8_DesignPatternsAdapter\bin\Debug\A.8_DesignPatternsAdapter.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.8_DesignPatternsAdapter\bin\Debug\A.8_DesignPatternsAdapter.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.8_DesignPatternsAdapter\obj\Debug\A.8_DesignPatternsAdapter.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.8_DesignPatternsAdapter\obj\Debug\A.8_DesignPatternsAdapter.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.8_DesignPatternsAdapter\obj\Debug\A.8_DesignPatternsAdapter.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.8_DesignPatternsAdapter\obj\Debug\A.8_DesignPatternsAdapter.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.8_DesignPatternsAdapter\obj\Debug\A.8_DesignPatternsAdapter.pdb

@@ -1,0 +1,12 @@
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\bin\Debug\A.9_DesignPattern_Facades_e_Singletons.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\bin\Debug\A.9_DesignPattern_Facades_e_Singletons.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\bin\Debug\A.9_DesignPattern_Facades_e_Singletons.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\bin\Debug\A.8_DesignPatternsAdapter.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\bin\Debug\A.8_DesignPatternsAdapter.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\bin\Debug\A.8_DesignPatternsAdapter.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\obj\Debug\A.9_DesignPattern_Facades_e_Singletons.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\obj\Debug\A.9_DesignPattern_Facades_e_Singletons.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\obj\Debug\A.9_DesignPattern_Facades_e_Singletons.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\obj\Debug\A.9_DesignPattern_Facades_e_Singletons.csproj.CopyComplete
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\obj\Debug\A.9_DesignPattern_Facades_e_Singletons.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.9_DesignPattern_Facades_e_Singletons\obj\Debug\A.9_DesignPattern_Facades_e_Singletons.pdb

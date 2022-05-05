@@ -6,10 +6,23 @@ using System.Threading.Tasks;
 
 namespace A._9_DesignPattern_Facades_e_Singletons
 {
-    internal class Program
+    public class Program
     {
+        public static TipoBoleto Tipo { get; }
+
         static void Main(string[] args)
         {
+            //String cpf = /// pega cpf
+            //ICliente Cliente = new ClienteDao().BuscaPorCpf(cpf);
+
+            
+            //Fatura fatura = new Fatura(cliente, valor);
+
+            //Cobranca cobranca = new Cobranca(Tipo.Boleto, fatura);
+            //cobranca.Emite();
+
+            //ContatoCliente contato = new ContatoCliente(cliente, cobranca);
+            //contato.Dispara();
         }
     }
 }

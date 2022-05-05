@@ -1,0 +1,65 @@
+﻿[00:00] Nesse último capítulo do curso nós estudaremos dois padrões de projeto que são bem controversos, e que muitas pessoas, atualmente, criticam, mas eles ainda são importantes porque vários sistemas legados ainda utilizam esses padrões de projeto.
+
+[00:17] Imagine que aqui na minha aplicação eu quero utilizar um sistema que já existe lá em uma empresa, que é o sistema que cuida dos clientes, cuida das faturas, cobranças e contatos com esses clientes. E agora eu quero utilizar esse sistema aqui dentro da regra de negócio do meu main.
+
+[00:36] O código que eu vou colocar aqui agora dentro do meu programa não vai compilar, mas o importante aqui é entender a motivação desses dois padrões de projeto. O código não é tão importante assim. Então, preste bastante atenção aqui na motivação e não nos erros de compilação que vão aparecer aqui no Visual Studio.
+
+[00:52] Imaginem que eu tenho, por exemplo, o CPF do cliente. O CPF do cliente é, por exemplo, 1234. E agora eu quero, por exemplo, buscar esse cliente lá no meu banco de dados. Então vou ter aqui um Cliente cliente = new ClienteDAO().BuscaPorCpf(cpf);. Cliente vai receber um novo, quero buscar do banco, então eu vou instanciar aqui um ClienteDAO e vou chamar lá o método busca por CPF desse ClienteDAO, passando qual é o CPF do cliente.
+
+[01:20] Agora que eu tenho esse cliente, eu quero gerar uma fatura para o cliente. Então vou ter aqui uma Fatura fatura = new Fatura(cliente, 5000);. Recebe uma nova fatura, passando qual é o cliente que eu vou cobrar, e o valor da fatura que é cinco mil reais, por exemplo.
+
+[01:36] Depois que eu gerei essa fatura, eu quero gerar uma cobrança com essa fatura. Então vou ter aqui uma cobrança, Cobranca cobranca = new Cobranca(Tipo.Boleto, fatura);. Vai receber uma nova cobrança, passando aqui qual é o tipo da cobrança, então, por exemplo, eu vou cobrar por boleto, e qual é a fatura que eu estou cobrando, que é aquela variável fatura.
+
+[01:59] E depois eu quero emitir essa cobrança. Então cobranca.Emite();. E agora que eu tenho essa cobrança eu quero, por exemplo, contatar um cliente através de uma classe aqui. contatoCliente contato = new ContatoCliente(cliente, cobranca);. Que vai receber um novo contato, cliente, passando aqui qual é o cliente que eu quero contatar e qual é a cobrança que eu quero cobrar do cliente. E depois eu quero disparar esse contato. Então contato.Dispara();.
+
+[02:36] Vejam que aqui no código do main, para eu conseguir utilizar aquele sistema antigo, eu precisei conhecer todas essas classes aqui lá do sistema antigo. Eu preciso conhecer o DAO, eu preciso conhecer o cliente, a fatura, cobrança, contato com o cliente. Eu preciso também saber quais são os métodos que eu preciso chamar dentro dessas classes. Então, isso daí é um jeito muito difícil de utilizar um sistema antigo.
+
+[03:01] Então, o que podemos fazer? Nós podemos tentar aqui criar uma classe que vai isolar todas essas chamadas de método. Então eu vou tentar aqui colocar uma nova classe em uma pasta chamada capítulo nove. Essa nova classe, ela vai ser uma fachada para esse sistema aqui da minha empresa. Então vai ser uma EmpresaFacade.
+
+[03:30] Esse EmpresaFacade vai esconder essas classes que eu estou utilizando aqui, algumas dessas lógicas de negócio que eu estou utilizando aqui dentro do meu programa diretamente. Então, por exemplo, aqui dentro do EmpresaFacade eu vou ter, por exemplo, o método busca cliente. Vou ter aqui um método public Cliente BuscaCliente(string cpf), que vai me devolver um cliente, que vai ser o busca cliente. E dentro desse método eu vou receber qual é o CPF do cliente. E dentro desse método eu vou, simplesmente, fazer return new ClienteDAO().BuscaPorCPF(cpf);, passando qual é o CPF do cliente.
+
+[04:15] Além disso, para emitir a fatura eu vou ter aqui um método public Fatura CriaFatura(). E dentro desse método eu quero receber qual é o cliente, qual o valor da fatura. Então public Fatura CriaFatua(Cliente cliente, double valor). E aqui dentro eu vou, simplesmente, fazer um return new Fatura(cliente, valor);. Passando o cliente e o valor dessa fatura.
+
+[04:47] E agora, para fazer uma cobrança, então eu vou criar aqui um método public Cobranca GeraCobranca(Tipo tipo, Fatura fatura). Que vai me devolver a cobrança que foi gerada, que vai ser o método gera cobrança. E aqui dentro desse método eu quero receber qual é o tipo da cobrança, e eu quero receber qual é a fatura da cobrança.
+
+[05:15] E dentro desse método eu vou gerar cobrança. Vou fazer aqui, Cobranca cobranca = new Cobranca(tipo, fatura);. Recebe uma nova cobrança, passando aqui qual é o tipo da cobrança, e qual é a fatura dessa cobrança. E depois eu quero emitir a cobrança. Então Cobranca.Emite();.
+
+[05:45] E agora eu vou ter também o método, por exemplo, faz contato com o cliente. Então vou ter aqui um método public que vai me devolver o contato do cliente, que vai ser o método faz contato, e que dentro desse método faz contato eu quero receber qual é o cliente que eu estou contatando, e eu quero receber também qual é a cobrança sobre a qual eu quero falar com o cliente. Então public ContatoCliente FazContato(Cliente cliente, Cobranca cobranca cobranca).
+
+[06:11] E aqui dentro eu vou simplesmente criar aqui um contato cliente. ContatoCliente = new ContatoCliente(cliente cobranca); que vai ser o meu contato, vai receber um novo contato cliente, passando qual é o cliente, e qual é a cobrança desse contato.
+
+[06:31] E depois eu quero fazer contato.Dispara();. E eu quero devolver o contato. Então return contato;. E aqui em cima eu quero devolver essa cobrança. Então eu vou fazer aqui return cobranca;.
+
+[06:50] Vejam que, agora, aqui dentro do meu programa eu não preciso mais conhecer todas as classes, o DAO, os métodos que eu tenho que chamar aqui dentro do DAO, ou método que eu vou ter que chamar na cobrança, o método que eu vou ter que chamar lá no contato. O que eu vou precisar conhecer é somente a Façade aqui da empresa, uma EmpresaFacade. Vou criar aqui EmpresaFacade, vou importar classe, que vai ser o Façade. EmpresaFacade facade = new EmpresaFacade();.
+
+[07:22] E agora, para chamar o método, fazer Façade, por exemplo, vou buscar o cliente passando qual é o CPF do cliente. facade.BuscaCliente(cpf);. Isso daqui vai me devolver o cliente. Cliente cliente facade.BuscaCliente(cpf);.
+
+[07:33] Vejam que agora eu não preciso mais saber como que eu busco cliente do banco de dados, tudo que eu preciso conhecer é qual é o método da Façade que eu vou utilizar para chamar, para buscar aquele cliente do meu banco de dados. Não preciso mais conhecer a classe busca DAO. É mesma coisa se eu quisesse gerar, por exemplo, uma fatura para o cliente. Eu poderia pegar aqui a Façade, lá na Façade eu quero criar fatura, passando qual é, por exemplo, o cliente e o valor da fatura, cinco mil reais. facade.CriaFatura(cliente, 5000);.
+
+[08:03] E se eu quisesse emitir uma cobrança, então eu faria aqui facade.GeraCobrança(tipo.Boleto, fatura). E aqui eu passo qual é o tipo da cobrança, então, por exemplo, boleto, e passando aqui qual é a fatura que eu quero cobrar. E essa fatura vai ser uma variável aqui de cima. var fatura facade.CriaFatura(cliente, 5000);.
+
+[08:25] Vejam que agora meu sistema não precisa mais ficar se preocupando com quais são as classes que ele tem que chamar lá naquele sistema antigo da empresa. Tudo que ele precisa conhecer é essa Façade dessa empresa. Então, esse design patterns que nós acabamos de implementar é um design patterns realmente conhecido como Façade. E nós utilizamos esse Façade quando nós queremos esconder a complexidade de um sistema legado para nós podermos utilizar aqui dentro do nosso novo sistema orientada a objetos.
+
+[08:58] Só que vejam que esse Façade aqui é uma classe, e eu só estou chamando os métodos da classe. Isso aqui, toda vez que eu quero chamar os métodos aqui da Façade, eu tenho que instanciar Façade, para depois sair chamando os métodos. Só que, será que eu realmente preciso instanciar uma nova Façade toda vez que eu vou chamar os métodos? Essa classe aqui EmpresaFacade só tem métodos, ela não está guardando nenhuma variável, não está guardando nenhum atributo, não está guardando nenhuma propriedade. Então, na verdade, eu não preciso de várias Façades dentro do meu sistema. Tudo que eu preciso é de uma única instância dessa Façade.
+
+[09:31] Nós poderíamos tentar utilizar aquele padrão Factory para tentar isolar a criação dessa Façade, ou nós poderíamos tentar aqui também implementar aquele padrão Flyweight também, que era um jeito de criar uma única instância do objeto.
+
+[09:47] Vou criar aqui um Class, essa nova classe aqui, vai ser, por exemplo, empresa Façade. Só que quando eu tenho um Flyweight que só cuida de um objeto, de um tipo de objeto, então, nesse caso, a gente chama de Singleton.
+
+[10:03] Então, EmpresaFacadeSingleton. Aqui dentro dessa EmpresaFacadeSingleton eu quero guardar qual é a Façade que eu estou gerenciando. Então, aqui dentro eu vou ter um private, que vai ser uma empresa Façade, que vai ser Façade, que tem que ser static para ter uma única instância da aplicação, que vai receber um novo empresa Façade. private static EmpresaFacade = new EmpresaFacade();.
+
+[10:27] E agora, para eu conseguir pegar essa instância, eu vou ter aqui uma propriedade que vai ser public EmpresaFacade Instancia que vai ser, por exemplo, instância, que vai ter lá um get.
+
+[10:42] E aqui dentro do get tudo que eu vou fazer é devolver a Façade para o cliente. Então vou fazer aqui return facade;. E vou fechar a implementação aqui dessa propriedade.
+
+[10:56] E agora, aqui dentro do programa, ao invés de instanciar essa empresa Façade diretamente, eu vou instanciar aqui um new EmpresaFacadeSingleton, e eu quero pegar a instância da empresa Façade. EmpresaFacade facade = new EmpresaFacadeSingleton().Instancia;.
+
+[11:09] E com isso daqui eu tenho a minha Façade que vai ser utilizada para se comunicar com o meu sistema antigo. Então, utilizando esse Singleton eu consigo criar uma única instância aqui da Façade, e utilizar essa instância em todos os pontos da minha aplicação.
+
+[11:29] Só que vejam aqui, como eu estou utilizando um Singleton, só tem uma instância, então essa instância acaba sendo uma variável global compartilhada em todo o projeto. E variáveis globais, a programação procedural já provou que variáveis globais geram mais problema do que elas resolvem. Então, o Singleton é muito criticado exatamente porque ele cria essa variável global. E, se você não sabe, se você não tem certeza de como você pode evitar os problemas das variáveis globais, você não deveria utilizar esse padrão Singleton.
+
+[12:02] Além disso, tem aqui o Façade que é o padrão de projeto que eu vou utilizar para isolar como que eu faço para me comunicar com o sistema legado, ou com vários sistemas legados talvez. Então, essa classe aqui do Façade, ela pode ser uma classe que fica muito complexa com o passar do tempo.
+
+[12:22] Ela pode ser uma classe que vai ter muitos métodos, ou que algum programador pode acabar colocando aqui uma regra de negócio mais complicada dentro da Façade, que ele não deveria fazer, mas acaba fazendo porque é simplesmente fácil, já que a classe está grande, ela fica um pouquinho maior, não vai influenciar tanto. Mas, na verdade, influencia com o passar do tempo.
+
+[12:40] Esses foram os padrões Façade e Singleton. E são padrões que você deve utilizar com muito cuidado, porque eles são padrões que podem gerar problemas de manutenção futura no seu projeto, mas é importante você conhecer esses padrões, porque muitos projetos antigos ainda utilizam esses padrões de projeto. Obrigado.
