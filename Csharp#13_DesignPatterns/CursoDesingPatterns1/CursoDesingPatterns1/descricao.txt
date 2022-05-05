@@ -1,0 +1,93 @@
+﻿[00:00] Olá bem-vindo ao Curso de Design Patterns .NET, eu tenho certeza de que se você já mexeu em algum projeto de tamanho médio ou grande, já sofreu com alguns problemas de código como, por exemplo, classes ou métodos de gigantes com 100, 200 linhas.
+
+[00:20] Ou metros que tenham 5, 6, 7 Ifs um sequência do outro, códigos que são difíceis de ler etc. ou quando o cliente pede uma mudança você é obrigado abrir 20 classes para fazer essa mudança e isso acontecer direito no sistema, são problemas do nosso dia a dia como desenvolvedor e que acontece tempo inteiro.
+
+[00:40] Mas a pergunta é: por que isso acontece? Essas coisas acontecem porque nós planejamos muito bem essas mudanças, nós saímos programando sem pensar que o nosso software pode mudar, que a regra de negócio pode mudar etc.
+
+[00:56] saímos escrevendo um monte de if, um monte de método grande sem nos preocuparmos com isso, padrões de projeto ou design patterns em inglês no fim das contas são um monte de soluções elegantes para esses problemas que passamos no dia a dia.
+
+[01:13] Por exemplo, aquele monte de ifs vai ter uma maneira elegante de resolver, aquele método gigantesco lá de 100, 200 linhas também vamos achar uma maneira elegante de resolver ele e assim por diante.
+
+[01:28] Chama padrão de projeto porque alguém pensou numa solução e deu um nome bonitinho para essa solução, vamos começar com um, problema imagina o seguinte imagina que eu tenho aplicação que objetivo dela é criar orçamentos.
+
+[01:44] Só que temos algumas regras, sabendo que nós temos muitos impostos no Brasil. esse orçamento ele pode ser submetido a uma série de impostos, como ISS ICMS e assim por diante.
+
+[01:56] Vamos começar a criar um projeto no visual Studio, eu vou dar New Project, estou usando visual Studio Express. Você pode usar sua versão enterprise, qualquer uma não tem muita diferença. Quero um Console Application para começar a experimentar.
+
+[02:15] Vou chamar essa aplicação de CursoDesignPatterns, vou mudar para C#, vou dar um ok, ele traz essa classe Program.cs que tem uma meia qualquer.
+
+[02:40] Eu vou deixá-la quietinha e agora eu vou criar uma outra classe “Add”, “Class” eu vou chamar essa classe de orçamento, essa classe vai ter público e um orçamento.
+
+[03:03] Vai ter por enquanto um valor, public double valor { get; private set } vamos dar um construtor para ela que recebe um valor nesse construtor, vou fechar a chave para não ter problema, this.Valor = valor; pronto o valor é igual a esse valor que eu recebi no construtor.
+
+[03:31] Vou criar mais uma classe eu vou chamá-la de calculadora de impostos. Essa é a classe que vai ter a regra de negócio de calcular imposto, não tem segredo, vou colocar público vou colocar public void RealizaCalculo que recebe o orçamento no construtor.
+
+[04:00] E vamos supor que o ICMS seja 10% do valor do orçamento, double icms = orçamento.Valor * 0.1;, vamos imprimir na tela, Console.WriteLine(icms); até agora o código não tem segredo.
+
+[04:25] Mas o problema é o seguinte, o problema é que eu não sei se eu tenho que calcular o ICMS, depende, pode ser ISS ou ICMS, a regra do ISS double iss = orçamento.Valor * 0,06; - eu também vou imprimir o ISS.
+
+[04:25] Porém, este realiza cálculo, esse realiza cálculo ele vai receber também no método uma variável que se chama imposto. Para eu conseguir fazer um if, por exemplo, ICMS ”ICMS”.Equals(imposto) e se o imposto que vier no método for ICMS, vou calcular dessa maneira.
+
+[05:18] Caso contrário é o if se for ISS eu vou calcular valor de ISS, alguns de vocês podem ter reparado que eu investi na geralmente faço ao contrário imposto.Equals, eu fiz ao contrário else if (“ISS”.Equals(imposto)), eu fiz isso para não ter problema com pointer.
+
+[05:41] Se a variável do imposto for nula e fizer imposto.Equals pode dar problema, dessa maneira não tem jeito, porque ISS é string, nunca nula, .Equals não tem problema simplesmente mudei o efalse de certa maneira acabei acostumando-se de programar um pouquinho desse jeito.
+
+[05:57] Só que esse código tem um problema, na verdade vários problemas, o primeiro dele é que o seguinte: imagina se eu tiver 10, 15 impostos diferentes esse código vai encher de if, não vai ter jeito, vou ter que if, else em quantidade, vai deixar o código, segundo problema é que essa classe calculadora de imposto vai ficar pouco coesa.
+
+[06:25] Coesão é o nome que dá para quando uma classe tem responsabilidade específica, por exemplo, a classe orçamento que acabamos de criar tem uma única responsabilidade que é representar um único orçamento, já essa nossa classe calculadora de imposto se ela tivesse 10, 15 ifs um para cada imposto diferente.
+
+[06:45] Ela tem um monte de responsabilidade, ela sabe calcular ISS, ICMS, xpto e assim por diante. Eu tenho uma classe complicada, cheia de ifs, pouco coesa e eu preciso achar uma maneira de resolver isso. Vamos começar por tirar essas regras de negócio dessa classe calculadora de imposto e colocar em classes menores.
+
+[07:11] Como assim? Vamos criar uma classe que se chama ICMS - o nome do nosso imposto; vou colocar essa classe como pública e vou colocar daqui public double calcula ICMS. Esse é um orçamento e a classe faz o seguinte: return orçamento.Valor * 0.1, não se deixe enganar pela simplicidade desta implementação.
+
+[07:43] O ICMS é bem simples é 10% em cima do orçamento, mas isso podia ser muito mais complicado, é legal separar por classes, vou fazer a mesma coisa com o nosso ISS, public double CalculaISS(Orcamento orcamento), return orçamento.Valor * 0,06.
+
+[08:18] Se eu voltar para minha calculadora de imposto, eu consigo melhorar a linha double icms = orçamento.Valor * 0.1 se for ICMS eu não preciso colocar a regra do negócio aqui, porque ela está escondida na classe ICMS.
+
+[08:31] Dou meu ICMS .CalculaICMS e passo o orçamento, a mesma coisa no ISS, double iss = new ISS().CalculaISS(orcamento), está um pouco melhor, a classe calculadora de imposto já não tem cada regrinha de imposto.
+
+[08:54] Está delegando para classes especializadas e coesas, se você pensar a classe ICMS é bastante coesa, tem única responsabilidade calcular o imposto ICMS, a mesma coisa para ISS.
+
+[09:10] Ainda tenho um problema, porque minha classe calculadora de imposto tem um monte de if se eu tiver 15 impostos diferentes, eu terei 15 if diferentes. Primeira coisa para tentar simplificar é o seguinte: no lugar de única função que se chama realiza cálculo, vou colocar realizaCalculoICMS vou jogar fora os ifs.
+
+[09:41] A indentação ficou horrorosa, deixa eu arrumar, eu crio um outro método realiza cálculo ISS que recebe um orçamento, esqueci de pôr o retorno igual de cima, calcula ISS da maneira que tinha feito antes, em cima até posso tirar string de imposto não preciso mais dele porque agora cada método faz uma ação específica.
+
+[10:11] Realiza cálculo ICMS, ISS. Porém, não resolvi o problema ainda, apenas mudei de if para métodos, mais ou menos a mesma coisa. Sabe que vamos discutir o segundo problema, muito if é complicado, porque fica difícil de ler, mas o código com ou sem if tem outro problema.
+
+[10:33] Imagina que você programador chegou de repente no novo projeto e alguém falou para você “implementa o imposto xpto”, você vai abrir o código existente, verá que tem uma classe para cada imposto.
+
+[10:48] Você vai criar uma classe nova imposto xpto.C# vai implementar a regra de negócio etc. mas será que você vai lembrar de abrir a calculadora de imposto e colocar um if a mais? Ou escrever um método a mais?
+
+[11:00] Veja que isso está escondido, se você não conhecer o projeto como um todo, nunca vai saber que tem if na calculadora de imposto, eu simplifiquei, o if somente existe nessa classe.
+
+[11:12] Eu poderia ter outras 10, 15 classes no sistema onde eu precisaria colocar esse if, a ideia não é boa, sabemos que só podemos ter um método, não posso ter um método para cada tipo de imposto e ele tem de ter nome genérico, realiza cálculo.
+
+[11:32] Eu preciso passar o imposto para ele, já estávamos fazendo isso: passando o imposto como string, mas isso forçava a fazer aquele if, eu preciso passar de uma maneira mais inteligente, para no lugar de fazer =new ICMS eu faça imposto qualquer que seja, .calcula passando o orçamento.
+
+[11:57] Como faz isso? Eu terei de criar a coisa chamada imposto. Isso será uma interface, que vai se chamar imposto e o que ela vai ter? Um único método, double calcula que recebe um orçamento, ou seja, cria um contrato.
+
+[12:31] Imposto é qualquer coisa que tenha o método calcula, recebe orçamento e veja que bate nosso ICMS, eu vou fazer com que o ICMS implemente a interface imposto. Basta mudar o nome do método, calcular e pronto está implementando.
+
+[12:49] A mesma coisa com ISS, eu vou falar que ele é uma implementação de imposto tira a palavra ISS, agora ICMS quanto ISS são impostos, vamos na classe programa; eu vou criar dois impostos new ISS, vou guardar em variável tipo imposto e vou fazer a mesma coisa com ICMS.
+
+[13:22] Eu vou criar um orçamento qualquer, orçamento é o meu orçamento de 500 reais, vou criar calculadora de impostos, falo para ela realizar o cálculo para mim do orçamento com o ISS, vamos rodar, fechou a tela, botei Console.ReadKey, vamos lá de novo.
+
+[13:58] Deu 30, certo, calculou o ISS para orçamento de valor 500, se eu quisesse usar o ICMS, bastava colocar ICMS, “F5” para rodar novamente, deu 50. Posso fazer os dois de uma vez a calculadora RealizaCalculo(orçamento, iss), vamos rodar, 50 e 30.
+
+[14:27] Agora ficou fácil criar um novo tipo de imposto, se amanhã aparece o imposto xpto, basta criar uma classe xpto que implemente imposto, coloca regra de negócio lá dentro e tudo vai funcionar, veja que nosso calculador de imposto independe de um imposto concreto, ele depende agora da abstração da interface imposto.
+
+[14:50] Eu posso passar qualquer imposto para ele, veja só amanhã eu posso criar mais 10, 15, 20 impostos diferentes e eu nunca mais vou ter que mexer nesse calculador de imposto, ficou fácil evoluir - eu não preciso mais pôr a mão nele para programar, para fazer mudança.
+
+[15:08] Isso é um bom design orientado a objetos. Tínhamos um problema que era “diversos cálculos de impostos diferentes”, temos uma calculadora que precisa pegar esse imposto e fazer alguma coisa com ele, no nosso caso calcular e imprimir , mas eu queria fazer isso maneira genérica sem ter que toda vez que surgiu um novo imposto eu escrever um if a mais.
+
+[15:36] Como resolvemos isso? Interface imposto, implementações embaixo, desde que no fim das contas o ICMS e ISS são estratégias de cálculo de imposto, o nome desse padrão de projeto é strategy.
+
+[15:52] Essa a ideia: eu tenho uma interface e implemento estratégias embaixo dessa interface, passo essas estratégias para o resto do meu sistema e o meu sistema funciona de maneira genérica independente de imposto específico ou qualquer coisa específica que você esteja criando.
+
+[16:19] O padrão strategy para vocês, vocês vão ver - agora que estão conhecendo padrões de projeto, que eles são muito utilizados por aí, imediatamente você sabe que é um strategy. Porque o realiza cálculo recebe ali como parâmetro abstração, uma interface no nosso caso o imposto.
+
+[16:32] Outra coisa importante sair sabendo dessa lição, um padrão de projeto no fim das contas é mais do que a implementação, eu mostrei código para vocês para conseguir ficar mais claro que era strategy.
+
+[16:44] Mas um padrão de projeto em si é no fim das contas a ideia. Eu tenho lá o meu problema que é diferentes estratégias de imposto e eu tenho uma maneira de resolver que é criar uma abstração, implementações embaixo dessa abstração e passo abstração para lá e para cá.
+
+[17:01] Isso é strategy, nós damos uma implementação, mas a implementação pode variar à vontade - no fim das contas um padrão de projeto é o que menos importa, o que vale mesmo é a motivação do padrão, quando usá-lo. E eu espero que tenha ficado claro que quando que devemos usar o strategy. Obrigado.

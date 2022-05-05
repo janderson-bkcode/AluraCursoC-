@@ -1,0 +1,45 @@
+﻿[00:00] Olá, vamos continuar então, temos impostos na nossa aplicação que criamos na primeira aula e vamos criar outros impostos, por exemplo, o imposto que vou inventar o nome de ICPP e IKCV – o ICPP funciona assim se o valor do orçamento for menor do que R$ 500,00 eu devo descontar 5%.
+
+[00:27] Caso contrário, se for maior do que 500 reais, eu tenho que descontar 7%, então vamos criar esse imposto, nova classe, ICPP, implementa imposto, public double Calcula(Orcamento orcamento), recebe um orçamento e a regra se o valor do orçamento for maior ou igual a 500 reais retorna return orçamento.Valor * 0,07 orçamento.
+
+[01:10] Caso contrário retorna 0.05, vamos para o próximo imposto, que eu chamei de IKCV, também implementa a interface imposto, tem o public double Calcula(Orcamento orcamento) recebe um orçamento.
+
+[01:33] A regra dele se orçamento for maior do que 500 e se tiver um item maior que r100 reais nesse orçamento, então ele tem 10% de desconto, caso contrário tem só 6%.
+
+[01:47] Se if (orçamento.Valor > 500 && temItemMaiorQue100ReaisNo(orçamento)) deixo ele por enquanto, vou terminar o pensamento return orçamento.Valor * 0.1 caso contrário orçamento.Valor * 0,06.
+
+[02:16] Vamos implementar esse método, para ele compilar, o nome de método grande que dei, recebendo orçamento, vou fazer um foreach para cada item em orçamento.Itens se o if(item.Valor > 100) return true, certo, tem um item que é maior.
+
+[02:40] Caso contrário retorna falso. O que eu quero chamar a atenção nesse momento, nós temos dois impostos cujo algoritmo de cálculo é mais ou menos parecido; perceba que todos eles fazem o seguinte, eles fazem um if para saber se aquele orçamento vai cair na taxação máxima ou não.
+
+[03:04] Então, if cai na caixa taxação máxima, calcula a taxação máxima, caso contrário calcula a taxação mínima. Deu para perceber? Esse padrão, esse molde entre esses dois impostos. Por exemplo, vou criar uma classe e vou chamar TemplateDeImpostoCondicional.
+
+[03:25] Esse TemplateDeImpostoCondicional é o imposto, vou colocar essa classe com pública também e publica double Calcula(Orcamento orcamento) ficou mais ou menos assim, se if(DeveUsarMaximaTaxacao(orcamento)).
+
+[03:47] Então retorna a máxima taxação em cima, caso contrário retorna a mínima taxação, veja que de maneira genérica é isso que está fazendo, como que eu vou fazer isso? Eu vou pegar a nossa classe de template e vou falar que é abstrata.
+
+[04:14] Abstrata é aquela que não posso instanciar, ela serve de molde para outras e esses métodos, a ideia de usar uma taxação máxima, máxima e mínima taxação são métodos que não conheço a implementação.
+
+[04:26] Depende do imposto concreto, no IKCV eu tenho essa regrinha.
+
+[04:32] Que deve usar máxima taxação, 0,1 é a máxima taxação, 0,06 é a mínima. Vou falar que esses métodos são abstratos, public abstract bool e deve usar máxima taxação.
+
+[04:49] public abstract double MaximaTaxacao(Orcamento orcamento); e public abstract double MinimaTaxacao(Orcamento orcamento), eu criei uma classe abstrata, que representa o meu algoritmo de cálculo e tenho métodos abstratos como se fossem os buracos que a classe vai ter de implementar.
+
+[05:23] No IKCV eu vou falar que ao invés de ser uma implementação de imposto, ele herdará de TemplateDeImpostoCondicional, vou mudar o método, em double Calcula eu vou renomeá-lo para public bool DeveUsarMaximaTaxacao que recebe orçamento.
+
+[05:43] Observa o que o método vai fazer, retorna e a regra para saber se tem máxima taxação ou não. Eu tenho outros métodos para implementar ainda, public double MaximaTaxacao(Orcamento orcamento); vou fazer a máxima taxação se você lembra bem, era 10%.
+
+[06:09] Multiplico por 10%, e a mínima taxação é return orcamento.Valor * 0.06, ficou mais simples. Eu apenas preenchi os buracos entre aspas do meu algoritmo, porque meu imposto vai seguir a máxima taxação calcula, caso contrário calcula a mínima.
+
+[06:36] Vou fazer o mesmo no ICPP, vou dar TemplateDeImpostoCondicional imposto condicional, esse método calcula vai virar DeveUsarMaximaTaxacao vai fazer return orçamento.Valor >= 500;.
+
+[06:54] O restante desaparece. Implemento os dois outros métodos máxima taxação recebe orçamento retorna orçamento valor multiplicado por 0,07, public double MinimaTaxacao que recebe orçamento, cujo cálculo é vezes 0,05.
+
+[07:20] Como temos impostos cujo algoritmo é mais ou menos parecido, definimos o algoritmo de maneira genérica, criamos buracos para serem preenchidos pelas classes concretas, fizemos nos dois novos impostos, IKCV e ICPP.
+
+[07:38] A vantagem disso é que se algum dia esse algoritmo mudar basta mudar no template, mudando aqui será aplicado para todos impostos que seguem esse modelo. O nome deste padrão de projeto é Template method.
+
+[07:52] Novamente, perceba a motivação dele, tenho classes cujo algoritmo é semelhante, represento o algoritmo de uma maneira abstrata, usei classe abstrata, métodos abstratos e as implementações concretas preenchem as lacunas.
+
+[08:09] Este é o Template Method, diminuímos a repetição de código, porque o if apenas existe no template, facilita as diferentes variações deste algoritmo. Até a próxima.

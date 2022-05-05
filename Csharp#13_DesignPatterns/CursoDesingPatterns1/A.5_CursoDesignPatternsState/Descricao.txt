@@ -1,0 +1,91 @@
+﻿[00:00] Nosso próximo problema é o seguinte: orçamento - ele pode ter um estado diferente de acordo com a situação dele, então orçamento nasce em aprovação, depois disso ele pode vir aprovado ou reprovado.
+
+[00:20] E no fim do processo ele deve ser finalizado, só que dependendo do estado que esse orçamento está, algumas ações podem ser diferentes, por exemplo uma ação que temos é que pode dar um desconto extra no orçamento
+
+[00:32] Se o orçamento está em fase de aprovação, podemos dar até 5% de desconto, se o orçamento já está aprovado eu posso dar mais 2% de desconto, se tiver reprovado finalizado não posso dar desconto algum.
+
+[00:46] Eu vou abrir o programa, nossa main para testar e eu queria fazer uma coisa Orcamento reforma é um novo orçamento de 500 reais, e reforma.AplicaDescontoExtra é método que terá aquelas regras nossas do negócio que discutimos aqui.
+
+[01:11] Vamos na classe orçamento, nela vai estar essa coisa. Vou criar alguns inteiros que vão guardar os estados, por exemplo o estado e aprovação vai ser 1, o estado aprovado vai ser 2, o estado reprovado vai ser 3 e o estado finalizado vai ser 4, uma maneira geral que usa quando tem um estado.
+
+[01:35] Tem inteiro que guarda esse estado, vou chamar uma propriedade estado atual e eu tenho números que diferenciam o meu estado e agora eu vou implementar o método public void AplicaDescontoExtra.
+
+[01:53] Então, se o estado atual for (EstadoAtual == EM_APROVACAO) o valor é o valor menos 5% Valor = Valor – (Valor * 0.05); escrevi de uma maneira meio estranha, mas é mais ou menos por aí a regra de negócio.
+
+[02:14] Se o estado atual for aprovado, o valor é o valor Valor = Valor – (Valor * 0.02); caso contrário eu vou lançar uma exceção else throw new Exception(“ Orcamentos reprovados/finalizados nao recebem desconto extra”) mais ou menos nossa implementação e isso deve funcionar.
+
+[02:41] Mas esse código está estranho, eu espero que nesse momento do curso isso eu fique bem claro por que que está estranho, imagina só se eu tivesse 30 estados diferentes eu teria 30 ifs nesse método aplica desconto extra.
+
+[02:50] Eu posso ter mais operações também que depende do estado, se aplica desconto de qualquer outra coisa vou ter mais 30 ifs imagina a maluquice que não ia ficar essa classe orçamento.
+
+[03:09] Sem contar sempre o problema do ponto de vista de projeto, que se eu criar um estado novo eu vou ter que lembrar de passar método por método e colocar um if a mais com a nova regra de negócio. A primeira coisa para remover os ifs nós já sabemos, vamos ter que extrair para classes pequenininhas.
+
+[03:29] Onde cada uma faz uma coisa específica. Eu vou criar uma classe que se chama em aprovação, que é o primeiro estado que nós temos, depois uma outra classe que se chama aprovado.
+
+[03:47] Vamos lá mais um estado, nova classe reprovado e nova classe que vai representar o último estado que é o finalizado. Dá para entender que todas elas são estados de um orçamento, têm alguma coisa em comum, isso sempre me lembra de que eu posso representar de maneira formal que através de uma interface.
+
+[04:13] Eu vou criar uma interface que se chama estado de um orçamento, essa interface vai ter um único método, por enquanto a única coisa que varia, a única ação que o estado pode executar é que aplica desconto extra, essa a operação que varia de acordo com o estado.
+
+[04:30] No em aprovação, ele implementa estado de um orçamento e implementação do método aplica desconto extra, que recebe orçamento é fácil que a implementação que nós tínhamos lá na classe orçamento; eu vou até copiar isso para mostrar que é a mesma.
+
+[04:55] Assim orçamento.Valor = orçamento.Valor – (orçamento.Valor * 0.05), ele não está deixando acessar porque nosso set é privado. Vou colocar para facilitar vou colocar como público.
+
+[05:16] Porque o em aprovação vai enxergar e tudo vai funcionar. Vamos fazer o mesmo no aprovado, a classe aprovada também implementa estado de orçamento, e o método aplica desconto extra recebe um orçamento e a regra de negócio é a mesma coisa, orçamento.Valor -= orçamento.Valor * 0.02; os 2%.
+
+[05:45] Já no reprovado e o finalizado, a implementação deles é parecida, o método aplica desconto extra vai soltar uma exceção, throw new Exception (“Orcamentos reprovados nao recebem desconto extra).
+
+[06:08] Vou até copiar essa implementação que vai ser a mesma para finalizados. Finalizado também é um estado de um orçamento. Vou só colocar throw new Exception (“Orcamentos finalizados nao recebem desconto extra).
+
+[06:19] Agora preciso consertar a classe orçamento, preciso tirar os inteiros, não faz mais sentido, o estado atual vai ser estado de um orçamento, o nosso aplica desconto extra não precisa mais.
+
+[06:36] Vai fazer EstadoAtual.AplicaDescontoExtra recebe um orçamento o mesmo, this, o método aplica desconto extra, que é invocado a partir de um orçamento, vai estar lá dentro do orçamento, vai descobrir o estado atual dele e vai aplicar o desconto de acordo com o estado.
+
+[07:00] O nosso orçamento agora tem uma linha de código e repassa para o estado concreto ou em aprovação, ou aprovado, reprovado etc. a regra de negócio, legal. Ótimo.
+
+[07:15] Vamos complicar um pouquinho mais esse nosso exemplo, cada estado pode mudar e pode ir para o próximo estado, por exemplo, um orçamento pode virar aprovado, depois ele pode vir a ser reprovado, finalizado, só que eu tenho uma ordem.
+
+[07:30] Se eu estou no primeiro estado que é aprovação, eu posso ir para reprovado ou aprovado, se estou em reprovado eu não posso voltar para aprovado eu só posso ir para finalizado.
+
+[07:43] Se já estou finalizado eu não posso voltar para aprovado, quero mostrar é que de acordo com o estado atual, eu tenho o próximo estado que eu posso ir, ou seja cada estado sabe qual o próximo estado que pode ir ou não.
+
+[08:00] Como vai resolver isso? Fácil vamos colocar essas transições no estado de um orçamento. Então vamos lá; eu sei que os estados que eu tenho são aprova, reprova, finaliza.
+
+[08:23] Em aprovação, vou começar por ele, eu sei que se estou em aprovação, e manda eu aprovar, eu posso. Vou pegar o orçamento e mudar o estado atual para aprovado.
+
+[08:41] Se eu estou em aprovação e manda reprovar, posso reprovar, basta pegar o orçamento e falar que o estado atual dele é reprovado - só que interessante de em aprovação para finalizado direto eu não posso. Como vou fazer isso?
+
+[09:02] O método finaliza vai soltar uma exceção, orçamento em aprovação não pode ir para finalizar direto, perceba meu estado bloqueando isso, mais uma, vamos no aprovado.
+
+[09:17] Como que aprovado vai funcionar? Se estou em aprovado e manda aprovar de novo faz sentido? Faz então, mas a prova vai lançar uma exceção “orçamento já está em estado de aprovação”.
+
+[09:35] De aprovado eu posso ir para reprovado, também não - ele já foi aprovado não faz sentido, então de novo vou lançar mais uma exceção “orçamento está em aprovação não pode ser reprovado agora”.
+
+[09:55] Essa a regra de negócio, poderia ser diferente, mas eu quis assim; finalizado se estou em aprovado, posso ir para finalizado, basta mudar estado e o estado é nova finalizado.
+
+[10:06] Vou ter de repetir isso, vamos no finalizado, não tem segredo, não vai poder fazer nada, se estou no aprova throw new Exception (“Orcamento já esta finalizado), não faz sentido, já finalizei.
+
+[10:33] Vou repetir isso para reprova e para finaliza. O reprovado é muito parecido com aprovado, eu vou até aproveitar e copiar. Se estou reprovado não posso aprovar, se estou reprovado não faz sentido reprovar de novo. Se estou no reprovado posso ir para o finalizado, excelente.
+
+[11:08] Agora falta na classe orçamento tentarmos dar essas ações, porque lembra que o meu programa vai usar o orçamento, vai fazer reforma contra aprova, não vai fazer ‘reforma.estado’ - isso é problema da classe orçamento.
+
+[11:20] Vamos fazer public void Aprova()faz EstadoAtual.Aprova passando this. A mesma coisa com reprova, passando this e a mesma coisa com finaliza, o orçamento não sabe o que vai acontecer ele repassa o trabalho para o estado e o estado resolve.
+
+[11:55] Agora vamos fazer um teste, falta um detalhe eu não defini ainda. Qual é o primeiro estado? Vou colocar no construtor que this.EstadoAtual = new EmAprovacao, o orçamento nasce em aprovação.
+
+[12:15] Eu vou começar o meu teste, tem um orçamento, eu apliquei o desconto extra, vamos imprimir o valor deste orçamento porque ele tem que ter um desconto, em seguida orçamento foi aprovado.
+
+[12:31] Com ele aprovado, eu posso aplicar o desconto extra de novo, a regra permite, eu vou mandar imprimir de novo o reforma.Valor, em seguida eu vou alisar eu vou finalizar, até no começo imprimir o valor inicial dele para conseguir comparar lá no console.
+
+[12:54] Vamos ver o que acontece, não compilou, ele está falando, faltou colocar que as classes dos estados são públicas. Ele reclamou por causa de questões de visibilidade etc. vou colocar tudo público.
+
+[13:22] Agora deve rodar. Não precisa colocar public set só colocar set, não faz sentido, rodando novamente, ele começou com 500, aplicou o primeiro desconto foi para 475 e depois para 465.5 que é 2% em cima do valor anterior.
+
+[13:50] Se eu fizer aquela reforma.AplicaDescontoExtra eu tenho que lançar uma exceção, concorda comigo? que eu não tenho desconto já está finalizado. Exceção, do jeito que eu esperava - veja só que interessante, veja que o comportamento do AplicaDescontoExtra varia de acordo com o estado do objeto orçamento.
+
+[14:11] Só que o orçamento pode ter vários estados diferentes, como que faz para o código ficar simples?
+
+[14:17] Colocamos cada estado numa classe e a classe orçamento simplesmente delega para esse estado, a ação que eu estou executando que é aplica desconto extra; os próprios estados também eles se preocupam em fazer a transição de estados.
+
+[14:33] Então de minha aprovação eu posso ir para aprovado, de aprovado posso ir para finalizado entre outras. Resolvi um problema muito comum do dia a dia, nosso objeto tem estados e eles tendem a responder de maneira diferente de acordo com o estado que ele está.
+
+[14:49] E esse padrão de projeto se chama state. A implementação dele é um pouquinho complicada, mas se você tem vários estados, essa talvez seja a melhor solução para resolver o seu problema. Até a próxima.

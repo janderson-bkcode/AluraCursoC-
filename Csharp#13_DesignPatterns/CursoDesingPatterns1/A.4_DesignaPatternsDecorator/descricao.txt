@@ -1,0 +1,55 @@
+﻿[00:00] Vamos continuar trabalhando nesse nosso domínio de imposto, o imposto é uma abstração bem importante nesse nosso sistema, eu tenho estratégias de impostos, eu tenho até um template método que ajuda a implementar impostos que são parecidos etc.
+
+[00:18] Eu quero usar o imposto para mostrar o que eu quero fazer agora, vamos supor que eu tenho o meu ISS e eu tenho um orçamento qualquer orçamento de R$ 500,00.
+
+[00:31] Eu vou fazer iss.Calcula passando o orçamento, vou guardar isso numa variável do tipo Double e vou imprimir a tela, não tem problema, calculei aqui o valor do ISS só que sabemos que na prática infelizmente esses impostos ele se agrupam.
+
+[00:57] Então às vezes preciso calcular ISS mais o ICMS, mais o imposto que inventamos o ICPP, eu preciso achar uma maneira de compor impostos; primeira maneira pode ser uma classe que chama por exemplo ISS com ICMS nessa classe vai ter a regrinha dos dois impostos.
+
+[01:15] Só que não parece uma boa ideia, porque senão eu vou ficar maluco criando as classes para as várias combinações possíveis de impostos, então ISS com ICMS ou talvez com IKCV ou ICPP, assim por diante, eu preciso achar uma maneira mais fácil de compor esses impostos.
+
+[01:34] Poderia fazer Imposto iss = new ISS(new ICMS) recebe também ICMS, deu para entender que eu quero fazer, eu quero passar o imposto para dentro do imposto, então ISS vai estar lá dentro o cálculo do ICMS também, ele vai calcular o dele, ISS e vai repassar para ICMS.
+
+[01:53] Eu quero de alguma forma compor impostos, para facilitar vou minha classe imposto e eu vou fazer com que deixe de ser uma interface, passe a ser uma classe, mas como imposto é uma abstração eu vou fazer com que ela seja abstrata.
+
+[02:09] Faz todo sentido. Vou colocar esse método calcula com abstrato e veja só se eu tentar rodar o programa, não tem problema.
+
+[02:31] Tudo compilando, eu vou criar um atributo e imposto que vai ser do tipo imposto e o nome dele vai ser outro imposto. E vou colocar get e set, vou colocar um construtor que vai receber esse outro imposto, vou guardá-lo na classe.
+
+[03:01] Vamos entender, a abstração imposto guarda um outro imposto para que serve isso? No ISS, como é filho de imposto, eu vou calcular o meu valor, mas o cálculo do outro imposto, não é isso que eu preciso fazer?
+
+[03:28] Tentei escrever em português o Visual Studio não gostou muito, não tem problema, vamos transformar isso em código. Eu crio a função cálculo do outro imposto, passando o orçamento e private double CalculoDoOutroImposto que recebe um orçamento return OutroImposto.Calcula(Orcamento orcamento).
+
+[04:00] A pergunta é qual é esse outro imposto? A resposta não sei, não importa, um imposto qualquer, não interessa saber qual é especificamente, só sei que vou calcular meu ISS e vou chamar o cálculo do próximo imposto.
+
+[04:14] Que eu vou receber no construtor. Eu preciso reescrever o construtor, porque construtores não são herdados, public ISS(Imposto outroImposto) vou chamar o construtor do pai, que vai guardar o outro imposto no atributo da própria classe.
+
+[04:32] Não tem problema e meu código vai compilar, eu vou pegar esse método cálculo do Imposto já que ele vai ser bastante utilizado, todo imposto vai ter que ter ele basicamente, eu vou mover ele para o final.
+
+[04:50] Vou colocá-lo protected para os filhos enxergarem, agora eu tenho um posto eu consigo compor ele por outros impostos, basta fazer igual fizemos no nosso programa passar construtor.
+
+[05:07] Por exemplo, new icms, vamos passar essa mudança agora para o ICMS também; o ICMS é um imposto, eu preciso reescrever o construtor, (Imposto outroImposto) chama o construtor do pai.
+
+[05:36] Eu faço a mesma coisa: cálculo o ICMS e repasso para o cálculo do imposto que recebe o orçamento - só que eu tenho um problema nesta implementação, não está compilando.
+
+[05:53] Porque o ICMS precisa de um outro imposto, mas me perdi, tem imposto que é composto de outro imposto, que é composto de outro imposto. Uma hora precisa acabar essa composição, o último imposto não vai receber ninguém.
+
+[06:09] Eu preciso deixar isso acontecer, eu vou fazer com que classe pai tenha dois construtores, o construtor imposto que já existe, um construtor padrão que não recebe nada, ele faz é falar que o imposto é nulo.
+
+[06:20] E nesse cálculo eu vou tratar isso, se o outro imposto for nulo quer dizer que ele vale 0, a minha cadeia vai andar - o último imposto não vai ter um outro imposto dentro dele, vai dar retorno zero.
+
+[06:37] Vamos dar uma olhada, mas se o outro se o outro imposto não existe me devolve zero. Como eu falei para vocês, construtores não são herdados. Então sou obrigado a escrever construtor em todas as minhas classes.
+
+[06:53] ICMS, ISS, vamos lá nosso programa ver se roda, rodou, 80, esse resultado da composição do ISS e ICMS. Vamos jogar fora, vamos rodar de novo só ISS, funcionou.
+
+[07:16] Então eu posso compor meus impostos à vontade, da maneira que eu quiser, se eu quiser propagar essa mudança mais ainda, eu poderia fazer essa mudança também no template de imposto condicional.
+
+[07:30] Basta fazer com que ele receba no construtor um outro imposto, eu uso retorno máxima taxação mais cálculo do outro imposto e assim por diante. Consegui fazer mis IKCV e assim por diante.
+
+[07:53] No fim das contas temos um imposto simples e completando esse imposto e decorando esse imposto com outros impostos.
+
+[08:01] O IKCV foi decorado com o ICMS que foi decorado com o ISS, o nome desse padrão de projeto pessoal é Decorator, o problema que estamos tentando resolver: eu tenho um objeto que precisa fazer muita coisa, precisa calcular ISS e ICMS, IKCV, se eu fizesse tudo isso na classe imagina a quantidade de código.
+
+[08:26] Teria código de ISS, código ICMS, código IKCV e assim por diante, como decorei eu tenho classes pequenas que fazem somente uma coisa e eu consegui juntar esses comportamentos, consegui decorar esses comportamentos.
+
+[08:40] É para isso que usamos Decorator para criar comportamentos complicados a partir de pequenos comportamentos que são simples, até a próxima.

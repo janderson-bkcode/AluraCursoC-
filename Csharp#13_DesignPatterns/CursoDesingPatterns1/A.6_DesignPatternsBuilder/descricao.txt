@@ -1,0 +1,85 @@
+﻿[00:00] Vamos deixar um pouquinho de lado esse nosso domínio de imposto, orçamento etc. e vamos começar um outro que é mais ou menos análogo, se eu tenho orçamento e eu vendo alguma coisa eu preciso acabar gerando uma nota fiscal, vou criar a classe nota fiscal para representar essa entidade.
+
+[00:23] Uma nota fiscal ela é geralmente composta por diversos atributos, informações então eu tenho a razão social, eu vou dar um “Control + C” para facilitar um pouco, eu tenho CNPJ, eu tenho a data de emissão da nota fiscal, o valor bruto dessa nota, os impostos que eu estou pagando em cima dessa nota.
+
+[00:55] Eu tenho uma lista de itens da nota fiscal, vou chamar item da ainda nota, eu tenho observações e assim por diante - posso ter bastante informações associadas com uma nota fiscal. Então vamos receber tudo isso pelo Construtor para facilitar.
+
+[01:20] public NotaFiscal(String razaoSocial, String cnpj, DateTime dataDeEmissao, double valorBruto, double impostos, IList<ItemDaNota> itens, String observacoes) bastante coisa, this.RazãoSocial = razaoSocial; e this.Cnpj = cnpj; this.DataDeEmissao = dataDeEmissao;.
+
+[01:49] Uma dica para você é programador C#, estou usando o Visual Estúdio mais simples possível, mas se você tiver condições você pode usar aquele chamado de plugin resharper.
+
+[02:00] E ele escreveria esse construtor, sem ter o trabalho de fazer de maneira manual. Aqui não tem jeito, na versão Express não consigo usar o resharper então vou ter de digitar um pouquinho mais, vou criar também para esse nosso código compilar logo; eu vou criar a classe item da nota.
+
+[02:20] Vamos lá, public class ItemDaNota, public String Nome, também vou criar um construtor this.Nome = nome; this.Valor = valor; não tem segredo igual todos os construtores que criamos até agora. A classe Nota Fiscal está funcionando certinho.
+
+[02:58] Vamos naquele program que é a classe que escreve os nossos testes, veja que se eu fosse criar uma nota fiscal agora eu ia fazer mais ou menos assim: NotaFiscal nf = new NotaFiscal e teria de passar um monte de parâmetros, razão social, CNPJ, data.
+
+[03:21] Vou passar a data de agora, valor total que eu vou ter de calcular ainda os impostos, os itens, observação qualquer, seria mais ou menos assim o processo de criação. Deixa tomar conta dessas variáveis que existem para resolver isso.
+
+[03:39] Vou ter uma lista de item da nota, vou chamar de itens, new List numa lista também, vamos supor que ela já tenha itens e tenha vindo do banco de dados ou coisa do tipo, não tem jeito, teria de fazer for each para cada item.
+
+[04:00] Nessa lista, valorTotal += item.Valor e double impostos = valorTotal * 0.05 do valor total tem que ficar mais ou menos assim o código de criação de uma nota fiscal. Além de complexo, porque ele é grande, tem for each que soma o valor total.
+
+[04:23] Depois calcula imposto, ele é grande e complicado, muitas linhas de código e complicado. Eu preciso achar a maneira mais fácil de fazer isso. Antes de sair implementando, vamos tentar fazer de maneira diferente.
+
+[04:39] Vamos começar pelo nosso “sonho”, pelo que esperamos conseguir para facilitar a criação da Nota Fiscal. Imagina que tenho uma classe que se chama criador de Nota Fiscal, ela não existe, é fictícia, mas não tem problema.
+
+[04:58] Poderia fazer assim criador.ParaEmpresa e eu passaria “Caelum Ensino e Inovação”, criador com o CNPJ e eu passo um CNPJ qualquer “23.456.789/0001-1”, um número qualquer e assim por diante.
+
+[04:39] criador.ComItem passo um item da Nota, um por exemplo e assim por diante é nisso que eu quero chegar, eu quero desenhar uma classe que seja mais fácil de entender o que está acontecendo sem ter de passar 10 parâmetros num construtos.
+
+[05:39] Vamos fazer isso, tentar começar a escrever essa classe criador de nota fiscal, NewClass CriadorDeNotaFiscal e vamos começar com aquele nosso método public void ParaEmpresa, recebeu uma razão social. O que eu vou fazer com ela? Nada.
+
+[06:08] Eu vou armazená-la num atributo que eu vou chamar de razão social. Então public String RazaoSocial eu vou colocar get; private set, a mesma coisa com public void com CNPJ - eu vou receber um CNPJ eu vou simplesmente armazenar esse CNPJ no atributo bem parecido com nossa classe nota fiscal.
+
+[06:46] Daqui a pouco eu vou mostrar melhor o valor disso para você, vamos continuar, eu vou criar um grupo chamado o valor total - lembra aquele nosso loop? Eu preciso disso, eu vou criar um double impostos e eu vou criar uma lista de itens da nota.
+
+[07:04] Que eu vou chamar ele de todos os itens, já vou até dar new nela, porque que eu vou criar um método que chama comItem que vai receber o item da nota e vai guardar esse item na lista de todos os itens, vai somar no valor total, o valor do item e vai já calcular o imposto.
+
+[07:36] O imposto é o valor do item vezes 5%, já ficou melhor o método com item já guarda o item na lista, já calcula o valor total, calcula o imposto, está bem melhor, na classe programa compila criador.ComItem(new ItemDaNota(“item 1”, 100.0);.
+
+[08:04] Mais um criador criador.ComItem(new ItemDaNota(“item 2”, 200.0);, isso já está compilando, para resolver agora dois campinhos que é a data e observações, nosso criador de novo eu vou seguir o mesmo padrão que já tem.
+
+[08:28] Eu coloquei um com observações que vai receber essa observação, vai guardar isso no atributo this observações. Agora eu vi que porque errei, o Visual Studio verdade tentou me ajudar e me enganou.
+
+[08:48] Arrumei public String Observacoes { get; private set;}, só que a data eu vou fazer diferente, ao invés de receber essa data, eu vou ter método mais bonitinho, por exemplo, na data atual, o meu criador pode ter o método que eu quiser.
+
+[09:00] Eu estou desenhando-o, na data atual dá a data de hoje, eu vou criar o atributo public DateTime { get; private set; } vou chamar de data, não tem problema o nome que darei, ótimo, tudo compilando. Lá no meu programa eu consigo fazer criador.NaDataAtual; com observações “uma obs qualquer”.
+
+[09:36] Estou separando cada um dos parâmetros que são passados em cada um dos métodos, com observações, recebe observação, para empresa recebe empresa, com CNPJ recebe o CNPJ, com item recebe um item.
+
+[09:51] Está mais fácil de ler, melhor que aquele construtor enorme que nós tiramos no começo, mas ainda está faltando uma coisa: eu tenho o criador, mas eu preciso que esse criador devolva uma nota fiscal.
+
+[10:04] É isso que eu espero, estou fazendo tudo isso para criar uma nota fiscal, eu preciso de um método que eu vou chamar de constrói, constrói o nome dele e devolve uma nota fiscal, que ele vai fazer? Esse método vai dar um retorno enorme – de nota fiscal que passa a razão social.
+
+[10:28] Vou passar o CNPJ, vou passar a data, vou passar o valor total, vou passar os impostos, vou passar todos os itens e vou passar as observações. Esse new nota fiscal é enorme, nesse construtor recebe 7 parâmetros.
+
+[10:51] Já que isso é complicado, eu escondi toda essa complexidade dentro da classe criador de nota fiscal, nessa classe programa que é o consumidor do nota fiscal, para ele é muito mais fácil usar o criador de nota fiscal que é muito mais semântico do que da new direto naquela classe nota fiscal.
+
+[11:12] Vamos ver se o código funciona, eu vou mandar imprimir alguma coisa nota fiscal, nf.ValorBruto por exemplo e Console.WriteLine(nf.Impostos); vamos rodar e ver o que acontece.
+
+[11:28] Erro de compilação, o nome não está batendo – coloquei com letra minúscula, o certo é public void ComItem(ItemDaNota item) detalhe que o compilador nos ajuda.
+
+[11:54] Rodando de novo, o valor total da nota é 300 que é a soma dos 100 mais 200 e 15, que é 5% desse valor, o nosso criador funcionou.
+
+[12:10] Recapitulando a motivação, eu tinha um objeto que é muito difícil de ser criado, complicado, Nota Fiscal recebe muitos parâmetros, tem logica de criação. Lembra do for each, que calculava o valor total, o imposto etc.
+
+[12:23] Eu escondi toda essa complexidade numa classe que só cria notas fiscais, quando eu tenho esse tipo de problema, eu aplico essa solução, o que estou usando é um padrão de projeto que chama builder.
+
+[12:38] Tanto que o nome builder aparece no nome da classe, chama de criador de nota fiscal, como NotaFiscalBuilder, o builder é uma classe que ajuda a criar uma outra classe complicada.
+
+[12:54] Fala que é um padrão de projeto criacional, resolve um problema de criação. Agora que você aprendeu o que é o builder, podemos melhorar um pouco esse código, fazer igual as pessoas têm usado, API e desenhado API do builder.
+
+[13:10] Eu tenho criador para empresa, e uso de várias vezes criador., eu vou tirar todos os pontos-e-vírgulas do final.
+
+[13:23] Vou tirar todas as palavras criador.
+
+[13:41] Mais fácil de ler, mais fluente de ler, como faz isso funcionar? Não é tão difícil assim. Nota os métodos que devolvem void, eles deixarão de devolver void, para pensar o método ParaEmpresa se eu consigo colocar um ponto depois, significa que está devolvendo outro objeto.
+
+[13:57] Qual o objeto que tem no método o CNPJ, o próprio NotaFiscalBuilder e faço um return this;, guardo a razão social e retorno eu mesmo, agora compila, o problema foi para ComItem.
+
+[14:15] Vamos passar essa mudança para todos os métodos, com observações return this, também na data atual, com CNPJ return this, com item também retorno.
+
+[14:32] Chamamos isso de Fluent interface, interface fluente fica fácil de ler e essa ideia de você colocar um método atrás do outro também pode ser chamado como Method chaining.
+
+[14:45] Interface fluente, Method chaining são nomes que damos para praticamente mesmas ações, recapitulando, criamos um builder que facilita o processo de criação de uma classe que é complicada. Dá API mais elegante para criar o objeto, é muito mais fácil de ler, fácil de manter etc. do que aquele construtor imenso. Até a próxima.

@@ -1,0 +1,59 @@
+﻿[00:00] Olá, vamos continuar trabalhando nesse nosso domínio de nota fiscal, na aula passada tivemos a criação desse builder, aprendemos o padrão builder, temos aquele método constrói que no fim das contas constrói uma nota fiscal.
+
+[00:18] Só que um problema que eu tenho agora é o seguinte, além de construir uma fiscal, eu preciso estar algumas ações em cima dela, por exemplo, eu preciso enviar essa nota por e-mail, eu preciso salvar no banco de dados eu preciso, enviar por sms.
+
+[00:31] Eu preciso imprimir e assim por diante, tenho várias ações associadas a ela como que eu vou fazer? Ao invés de retornar a Nota Fiscal da nossa primeira, eu vou guardar essa nota comigo, vou ter um retorno nf, para o código continuar compilando.
+
+[00:48] Vou fazer enviaPorEmail(nf), salva no banco a nota fiscal, envia por sms a nota fiscal, esses métodos privados, eu vou implementá-los, mas eles não são o mais importante nesse momento, não vou fazer alguma coisa aqui envia por e-mail de verdade, não faz sentido aqui.
+
+[01:09] Imagina que estou simulando envio de e-mail, a mesma coisa para eu salvar no banco eu não vou bater no banco de dados de verdade “simula bd” e a mesma coisa com envia por Sms, tenho Nota Fiscal, e eu vou colocar Console.WriteLine (“sms!”).
+
+[01:36] Simulei o meu comportamento. Quais são os problemas dessa classe nesse momento? Os mesmos que temos discutido o tempo inteiro, agora essa casa tem muitas responsabilidades.
+
+[01:50] Imagina se eu tivesse implementado de verdade o envio de e-mail, o salvar no banco ou enviar por sms essa classe teria um código enorme e farias muitas coisas até construir uma nota fiscal, saber como é meio enviado.
+
+[02:03] Como salvar no banco, como SMS enviado etc. a primeira coisa que pode fazer é extrair essas responsabilidades para classes menores, vimos desde a primeira lição.
+
+[02:18] Eu vou criar uma classe que se chama enviador de e-mail, ela é pública e tem um método public void EnviaPorEmail uma nota fiscal nf , um Console.WriteLine simulando o envio de e-mail, vou fazer a mesma coisa com salvar no banco.
+
+[02:47] Vou chamar essa classe de NotaFiscalDao que é assim que nós costumamos chamar classes que vão no banco de dados, public void SalvaNoBanco recebe uma nota fiscal nf, simulação nosso banco de dados.
+
+[03:06] Por fim, qual era a nossa outra ação? Vamos dar uma olhada: envia por sms. add EnviadorDeSms classe pública, void, envia por sms, recebe uma Nota Fiscal, também simula o envio da Nota Fiscal.
+
+[03:31] No builder já ficou melhorzinho porque esses métodos somem, posso fazer assim new EnviadorDeEmail.EnviaPorEmail(nf) já está melhor talvez passando a responsabilidade para outra classe.
+
+[03:47] New NotaFiscalDao().SalvaNoBanco(nf) salva no banco e para enviador de sms - envia por SMS. Já está melhor, só que assim está estranho, porque toda vez que eu criar uma nova ação a ser executada depois que a Nota é gerada, eu vou ter de implementar a ação e vou ter de lembrar de vir nesse método constrói e colocar lá dentro. Como que eu vou resolver isso?
+
+[04:15] A primeira coisa que é algo que quero que vocês aprendam desde sempre, quando você encontrar classes que fazem coisas parecidas. Tem uma mesma abstração, representa essa abstração, então enviador de e-mail e SMS são ações posteriores a geração de uma Nota.
+
+[04:35] Vamos representar através de uma interface, vou chamá-la de ação após gerar nota, público, eu vou colocar uma executa que serve uma nota fiscal está legal então vai ser uma ação após que recebe uma Nota Fiscal.
+
+[04:51] O enviador de SMS vai ser uma ação após gerar a nota, método vira executa, Nota Fiscal dá a mesma coisa, a ação após gerar nota executa, enviador de e-mail mesma coisa, ação após gerar nota.
+
+[05:03] E o método muda de nome para executa, vamos no builder, tudo parou de funcionar, vamos colocar executa para tudo continuar compilando, já está melhor e tem uma abstração para todas essas ações.
+
+[05:18] Eu vou fazer com que essa classe tenha uma lista de ação após gerar a nota, vou chamá-la de todasAcoesASeremExecutadas, não tem segredo, depois que a nota fiscal foi construída no New eu vou jogar fora esse monte de instanciação.
+
+[05:49] Eu vou fazer um for each para cada ação após gerar nota, ação na lista todas as ações acao.Executa passando nf, observa a mudança de pensamento Quais são as ações que serão executadas pelo Nota Fiscal builder? Ele não sabe, simplesmente sabe que são muitas.
+
+[06:11] Isso é legal porque pode colocar 1, 2, 3, 4, 20 ações diferentes, pouco importa o que elas fazem, que todas elas vão trabalhar e serem executadas; para isso funcionar eu já vou aproveitar dar um new List nessa lista.
+
+[06:29] Precisamos de uma maneira de colocar essa ação lá dentro. Vamos criar um método para isso public void AdicionaAcao(AcaoAposGerarNota acao) vou chamar a ação. E this todas as ações. Vou dar uma melhorada para deixar claro que é uma nova ação.
+
+[06:50] Cadê o nosso programa? Tenho criador.AdicionaAcao e passa new enviador de E-mail, criador.AdicionaAcao (new NotaFiscalDao());, criador.AdicionaAcao (new EnviadorDeSms()); e assim por diante.
+
+[07:24] Eu vou passando essas ações para ele, dando uma recapitulada, temos um monte de ações que devem ser executadas, após alguma coisa acontecer no sistema.
+
+[07:43] No nosso caso após a nota fiscal ser construída, como que fez isso de maneira genérica? Criamos uma interface que representa essa ação, chamamos de ação após gerar nota.
+
+[07:51] Executamos um loop por todas essas ações. Veja que para classe nota fiscal builder pouco importa qual ação que é e quantas são, ela simplesmente executará todas que passarmos para ela.
+
+[08:04] Veja no programa que eu poderia ter passado - eu passei três, mas eu poderia ter passado – cinco, seis, sete, oito, pouco importa. A classe nota fiscal builder ela vai continuar funcionando e eu posso criar dezenas de novas ações.
+
+[08:20] O nome desse padrão de projeto, que resolve esse problema de “aconteceu alguma coisa no sistema, preciso notificar uma classe”, em outras palavras eu criei Nota Fiscal, notifiquei o enviador de e-mail, o nota fiscal do agregador de ICMS, o nome desse padrão de projeto é observer.
+
+[08:37] Ele é um padrão de projeto bastante útil, ajuda a desacoplar o nosso código, por desacoplar que quero dizer o seguinte: veja que nota fiscal builder não conhece enviador de e-mail, não conhece NotaFiscalDao, não conhece enviador de SMS, ele simplesmente conhece AcaoAposGerarNota.
+
+[08:56] Isso faz com que nota fiscal builder evolua facilmente. Acostume-se com observer porque é um padrão de projeto bastante útil e muito utilizado no dia a dia. Vamos ver observer funcionando, vou rodar e olha só: é e-mail, banco de dados, SMS.
+
+[09:14] Funcionou, ele modificou essas três classes que nós criamos. Até a próxima.

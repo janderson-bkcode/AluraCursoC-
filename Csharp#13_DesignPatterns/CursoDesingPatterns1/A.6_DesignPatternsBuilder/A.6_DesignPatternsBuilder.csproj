@@ -54,6 +54,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="descricao.txt" />
     <Content Include="Questionario.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Questionario.txt</LastGenOutput>

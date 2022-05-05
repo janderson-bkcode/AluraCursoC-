@@ -75,5 +75,8 @@
       <Name>A.3_DesignPatternsTemplateMethod</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="descricao.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

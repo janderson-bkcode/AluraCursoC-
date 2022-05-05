@@ -1,0 +1,89 @@
+﻿[00:00] Vamos continuar no domínio de orçamentos, impostos etc. Um orçamento além de poder receber um imposto em cima dele, pode ter um desconto de acordo com a venda, por exemplo, se o cliente comprou mais de cinco itens a loja dá 10% de desconto.
+
+[00:23] Se ele fez uma compra casada de alguns produtos, por exemplo, recebe 5% de desconto e assim por diante. Então vamos começar dando uma incrementada nessa nossa classe orçamento, orçamento ele vai ter também uma lista de itens, public Ilist<Item> itens { get; private set; }.
+
+[00:50] No Construtor eu vou fazer this.Itens = new list - eu vou colocar um método para facilitar, chama de adiciona Item, que vai receber item, simples, Itens.Add. Não tem segredo a interface é list do .NET, vou adicionar esse item na lista, vou criar também a classe item, vai ser bem simples.
+
+[01:31] Um item vai ter um nome, coloco get, private, set também, vai ter um valor, também vou receber pelo construtor string nome, double valor, this.Nome = nome nome com n maiúsculo, porque sabemos que esses atributos são sempre com letra maiúscula.
+
+[02:03] this.Valor = valor. Também porque a classe existe e vamos começar criando a classe do mesmo jeito que fizemos na calculadora de impostos. Vamos criar calculador de descontos, é pública também public double Calcula ()ele vai devolver o valor do desconto, recebendo um orçamento.
+
+[02:36] Eu vou começar pela primeira regra que é mais de cinco itens, então se o if(orcamento.Itens.count > 5) eu tenho que retornar return orcamento.Valor * 0,1;, 10% por exemplo, caso contrário é o if.
+
+[03:02] else if(orcamento.Valor >500,0) na segunda regra de desconto qualquer, return orcamento.Valor * 0,07 de desconto, que eu vou continuar com as regras de desconto. Veja que o código não está compilando, porque preciso colocar return geral, sem isso o método terá uma condição que não tem retorno, porque retorno zero.
+
+[03:29] Não tem desconto. Está compilando, mas imagina que terei muitos ifs, um para cada regrinha de desconto. Isso parece muito com o problema da aula anterior, muitos ifs em uma classe.
+
+[03:44] A classe começa a ficar pouco coesa e assim por diante. A primeira lição da aula passada, ter classes coesas, vamos separar essas regras em classes específicas.
+
+[03:57] Desconto por 5 itens, eu vou pegar a regra aqui para facilitar.
+
+[04:07] Vou colocar na classe Desconto por cinco itens, public double Desconta(Orcamento orcamento), vai ter mais ou menos essa regrinha. Se a quantidade de itens for maior do que 5 retorna 10%, caso contrário, retorna zero.
+
+[04:27] Não dou desconto porque ele não tem mais do que cinco itens. A mesma coisa vou fazer para desconto por mais de 500 reais, public double Desconta(Orcamento orcamento), e a regrinha se if(orcamento.Valor : 500 retorna return orcamento.Valor * 0,07 caso contrário retorna 0.
+
+[05:08] No calculadora de descontos eu posso jogas as regras fora, vou criar uma variável desconto, vou tentar aplicar o primeiro desconto, desconto por cinco itens, se o desconto for zero quer dizer que o desconto anterior não funcionou, não tinha que funcionar, a regra não bateu, isso quer dizer que eu tenho que aplicar o próximo desconto.
+
+[05:38] O próximo desconto é o de pôr mais de 500 reais, continuaria fazendo isso se o resultado for zero, eu aplico o próximo desconto e assim por diante até que eu dou um retorno na variável desconto.
+
+[05:52] Passei por todas as regras, achei alguma que bateu, com a variável desconto e retornei, esse nosso código já está um pouco mais legal, porque a classe calculadora descontos não conhece cada uma das regras desconto.
+
+[06:07] Ela delega para essas classes específicas, desconto por 5 itens, desconto por mais de 500 reais e assim por diante, mas ainda tenho o mesmo problema. Sempre que eu criar um desconto novo eu vou ter de lembrar de vir aqui e colocar um if mais, não vou conseguir fugir disso.
+
+[06:25] Sabemos que if é complicado e que eu vou esquecer de colocar. O que eu precisava fazer aqui no fim das contas, que de alguma forma o próprio desconto percebesse que “eu não tenho que executar nada”.
+
+[06:44] Ao invés de retornar zero, retorno o próximo desconto como se eu quisesse criar uma lista, uma cadeia de descontos a serem aplicados, sem que eu precisasse passar por essa cadeia até encontrar um desconto que bate. A primeira coisa é que esses descontos têm alguma coisa em comum.
+
+[07:08] Todos eles recebem o orçamento, envolvem um double, valor do desconto, se ele tem essa coisa em comum, podemos definir de maneira bem informal certo criando uma interface.
+
+[07:18] Vamos chamá-la de desconto. Vai ter um método double Desconta(Orcamento orcamento); e ambos têm descontos. Vão ser implementações desse desconto.
+
+[07:39] Até aqui não tem segredo, só que agora precisa achar uma maneira de um desconto conhecer o próximo e assim por diante, como que eu vou fazer isso? Na interface desconto eu vou colocar além de ter esse método de desconto, vai ter um atributo chamado desconto que eu vou chamar de Próximo.
+
+[08:01] Todo desconto vai ter a regrinha de desconto, ele vai ter lá um link para o próximo desconto a ser aplicado caso necessário, public Desconta Proximo { get; set; }, no próximo desconto basta return Proximo.Desconta(orcamento), conseguiu entender o que eu fiz?
+
+[08:30] Todo desconto tem um próximo. Ele vai tentar calcular, se ele conseguir ele retorna um número, caso contrário ele retorna o resultado do próximo desconto. Qual que é o próximo? Essa é a graça, eu não sei, não importa para esse código, para esse código importa de um próximo desconto.
+
+[08:49] Próximo não importa, quer dizer que eu posso por qualquer desconto, observa a flexibilidade que ganhamos, eu vou poder montar essa cadeia de descontos da maneira que eu quiser, vamos fazer a mesma coisa no desconto por cinco itens.
+
+[09:03] public Proximo { get; set; }, esqueci de colocar o tipo, então, ] public desconto Proximo { get; set; }, e que ao invés de retorno zero, retorna próximo desconto, passando lá o orçamento.
+
+[09:30] Todo desconto sabe o próximo, a cadeia está sendo montada sozinha, no calculador de desconto vamos começar de novo. Vou criar o primeiro desconto, vou colocar lá com desconto por 5 itens e vou criar um desconto d2, de mais de 500 reais.
+
+[09:53] E eu vou fazer d1.Proximo = d2; o d1 sabe que se falhar ele tem que tentar o d2, vou fazer o retorno de d1.Desconta passando o orçamento, eu vou disparar o desconto d1, se der certo vem um número.
+
+[10:11] Se não deu certo quem que ele vai chamar? O d2 que vai tentar trabalhar também. Na classe Program.cs que é nossa main de testes, vou jogar fora o que estava no teste anterior e vou criar o calculador de descontos.
+
+[10:30] Agora vou criar um orçamento, tem um orçamento Orcamento orcamento = new Orcamento (500) vou adicionar itens nesse orçamento, item 1 caneta, tem caneta no valor de 500, certamente uma caneta bem cara, não tem problema.
+
+[10:47] Adiciona item new Item(“LAPIS, 500”) - vou fazer double desconto = calculador.Calcula(orcamento). Vou também imprimir, quero ver esse resultado Console.WriteLine(desconto), vamos rodar.
+
+[11:12] Deu uma exceção, vou dar continue para ele parar o programa, vou só fazer uma pequena mudança que ver funcionando, se o orçamento for menor ou igual a 500 reais, ele vai aplicar esse desconto, vou voltar para o programa e rodar de novo.
+
+[11:30] Vamos ver agora, ele calculou o desconto. Por que da primeira vez deu problema? Porque nenhum dos dois descontos foram aplicados, o orçamento não tem mais de cinco itens e a soma dos valores não era maior do que 500.
+
+[11:48] Coloquei 500 você mudar para 250, não tem problema só para deixar bonitinho o programa, veja que ele tentou d1, não deu certo, ele tentou dar o desconto d2, também não deu certo e ele foi para o próximo.
+
+[12:04] Mas dá uma olhada no calculadora de descontos, quem é o próximo do d2? Ninguém, é nulo. Deu problema eu vou resolver isso, vou criar mais um desconto, o desconto que vai ser o fim da nossa cadeia e vai chamar SemDesconto public class SemDesconto.
+
+[12:26] Também um desconto como qualquer outro, public Desconto Proximo ele tem um próximo também, obrigado, está na interface isso e ele devolve um *double, retorna zero.
+
+[12:43] Não tem desconto. Lá no meu calculador de desconto vou criar o desconto d3 sem desconto e vou falar d2.Proximo = d3.
+
+[12:58] Vai resolver, porque ele vai caminhar pela minha corrente, se por algum motivo chegar no sem desconto retorna 0 e tudo vai funcionar. Então vou até voltar e tirar o igual e rodar o nosso programa de novo. O que acontece agora? Erro de compilação, vamos ver ele está me dizendo.
+
+[13:17] Que ele não está implementando a interface desconto, porque o método aqui não é calcula - errei o método, se chama desconta, public double Desconta(Orcamento orcamento), ótimo.
+
+[13:30] “F5”, tudo compilou, não aplicou nenhum desconto, caiu lá naquele outro caso, vamos colocar muitos itens, lápis, geladeira, fogão, micro-ondas e vamos cair na regrinha.
+
+[13:55] De mais de cinco itens, rodando, desconto zero, tem que ser mais que 5 itens, vou colocar mais um Xbox, 50, aplicou o desconto, ele vai passando pela cadeia e vai aplicando o desconto correto.
+
+[14:18] Qual era nosso problema nesse caso? Nós temos uma sequência de algoritmos, mas nem todos têm de ser executados, tem condições para saber se executa aquele algoritmo ou não.
+
+[14:28] Por exemplo, orçamento maior do que 500, a quantidade de itens maior do que 5 e assim por diante. Ao invés de colocar tudo em uma classe só, eu separo em várias classes, cada uma dessas classes sabe a regra de negócio e sabe quando que tem de ser executada, então executa.
+
+[14:18] Ou passa para próxima, eu tenho realmente uma corrente, tanto é que se parece uma corrente. Vou entrar no calculador de descontos para ficar mais claro, tenho um ligando para outro, tanto é que se parece uma corrente que o nome desse padrão de projeto Chain of responsibility.
+
+[15:06] Uma cadeia de responsabilidades. De novo, veja a motivação desse padrão, eu tenho regras de negócio, tenho condições para aplicar ou não, uni através do Chain of responsability, cada classe tem a regra de negócio.
+
+[15:27] E sabe se tem de executar aquela regra ou não, como ocorre com os ifs, este é o Chain of responsability, acabei de mostrar para vocês uma possível implementação desse padrão, até a próxima.
