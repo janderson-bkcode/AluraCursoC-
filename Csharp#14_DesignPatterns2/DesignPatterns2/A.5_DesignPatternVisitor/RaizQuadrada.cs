@@ -11,7 +11,7 @@ using System.Threading.Tasks;
  */
 namespace A._5_DesignPatternVisitor
 {
-    public class RaizQuadrada : IExpressao
+    class RaizQuadrada : IExpressao
     {
         private IExpressao expressao;
 
@@ -20,9 +20,16 @@ namespace A._5_DesignPatternVisitor
             this.expressao = e;
         }
 
+        public void Aceita(IVisitor impressora)
+        {
+            throw new NotImplementedException();
+        }
+
         public int Avalia()
         {
             return (int)Math.Sqrt(expressao.Avalia());
         }
+
+
     }
 }

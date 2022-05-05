@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace A._5_DesignPatternVisitor
 {
-    public interface IExpressao
+     interface IExpressao
     {
         int Avalia();
+        void Aceita(IVisitor impressora);
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace A._5_DesignPatternVisitor
 {
-    internal class Impressora
+    internal interface IVisitor
     {
+        void ImprimeSoma(Soma soma);
+        void ImprimeSubtracao(Subtracao subtracao);
+        void ImprimeNumero(Numero numero);
+
     }
 }

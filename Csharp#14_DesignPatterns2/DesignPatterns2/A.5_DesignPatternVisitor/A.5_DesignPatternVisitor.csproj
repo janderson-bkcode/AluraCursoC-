@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Divisao.cs" />
     <Compile Include="IExpressao.cs" />
-    <Compile Include="Impressora.cs" />
+    <Compile Include="ImpressoraVisitor.cs" />
     <Compile Include="Multiplicacao.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Program.cs" />
@@ -53,6 +53,7 @@
     <Compile Include="RaizQuadrada.cs" />
     <Compile Include="Soma.cs" />
     <Compile Include="Subtracao.cs" />
+    <Compile Include="IVisitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,0 +1,8 @@
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.5_DesignPatternVisitor\bin\Debug\A.5_DesignPatternVisitor.exe.config
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.5_DesignPatternVisitor\bin\Debug\A.5_DesignPatternVisitor.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.5_DesignPatternVisitor\bin\Debug\A.5_DesignPatternVisitor.pdb
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.5_DesignPatternVisitor\obj\Debug\A.5_DesignPatternVisitor.csproj.AssemblyReference.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.5_DesignPatternVisitor\obj\Debug\A.5_DesignPatternVisitor.csproj.SuggestedBindingRedirects.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.5_DesignPatternVisitor\obj\Debug\A.5_DesignPatternVisitor.csproj.CoreCompileInputs.cache
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.5_DesignPatternVisitor\obj\Debug\A.5_DesignPatternVisitor.exe
+C:\Users\janderson.goncalves\Documents\Github\AluraCursoC-\Csharp#14_DesignPatterns2\DesignPatterns2\A.5_DesignPatternVisitor\obj\Debug\A.5_DesignPatternVisitor.pdb

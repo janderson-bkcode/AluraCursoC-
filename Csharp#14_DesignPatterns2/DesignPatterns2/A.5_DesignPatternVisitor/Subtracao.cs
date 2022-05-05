@@ -8,20 +8,28 @@ namespace A._5_DesignPatternVisitor
 {
     internal class Subtracao : IExpressao
     {
-        private IExpressao direita;
-        private IExpressao esquerda;
+        public IExpressao Direita { get; }
+        public IExpressao Esquerda { get; }
 
-        public Subtracao(IExpressao esquerda , IExpressao direita)
+
+        public Subtracao(IExpressao esquerda, IExpressao direita)
         {
-            this.direita = direita;
-            this.esquerda = esquerda;
+            this.Direita = direita;
+            this.Esquerda = esquerda;
         }
+
+
 
         public int Avalia()
         {
-            int valorEsquerda = esquerda.Avalia();
-            int valorDireita = direita.Avalia();
+            int valorEsquerda = Esquerda.Avalia();
+            int valorDireita = Direita.Avalia();
             return valorEsquerda - valorDireita;
+        }
+
+        public void Aceita(IVisitor impressora)
+        {
+            impressora.ImprimeSubtracao(this);
         }
     }
 }

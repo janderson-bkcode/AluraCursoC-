@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace A._5_DesignPatternVisitor
 {
-    public class Multiplicacao : IExpressao
+     class Multiplicacao : IExpressao
     {
         private IExpressao esquerda;
         private IExpressao direita;
@@ -15,6 +15,11 @@ namespace A._5_DesignPatternVisitor
         {
             this.esquerda = esquerda;
             this.direita = direita;
+        }
+
+        public void Aceita(IVisitor impressora)
+        {
+            throw new NotImplementedException();
         }
 
         public int Avalia()
