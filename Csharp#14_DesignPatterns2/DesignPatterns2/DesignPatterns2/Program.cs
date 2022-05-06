@@ -25,17 +25,13 @@ namespace DesignPatterns2.Aula01
 
         public static void TesteTransporte()
         {
-            ITransport T = new Navio();
-
-            T.deliver();
-
             RoadLogisticTransport rd = new RoadLogisticTransport();
             rd.createTransport();
 
             SeaLogisticsTransport s = new SeaLogisticsTransport();
-            s.createTransport();
-            s.dados();
-            
+            var x = s.createTransport();
+
+            x.deliver();
 
             Console.WriteLine();
             Console.ReadLine();

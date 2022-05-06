@@ -8,6 +8,7 @@ namespace DesignPatterns2.TesteTransporte
 {
     internal class SeaLogisticsTransport : LogisticaFactory
     {
+
         public override ITransport createTransport()
         {
             return new Navio();

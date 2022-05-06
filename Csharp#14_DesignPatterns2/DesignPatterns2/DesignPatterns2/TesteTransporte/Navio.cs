@@ -28,5 +28,10 @@ namespace DesignPatterns2.TesteTransporte
             this.Modelo = modelo;
 
         }
+
+        public override string ToString()
+        {
+            return $"Carga: {Carga} Modelo : {Modelo}";
+        }
     }
 }

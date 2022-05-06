@@ -16,6 +16,12 @@ namespace DesignPatterns2.TesteTransporte
         }
 
         public abstract ITransport createTransport();
-        
+
+        public virtual void CreateAndShow()
+        {
+            var veiculo = this.createTransport();
+            Console.WriteLine(veiculo);
+        }
+
     }
 }
