@@ -8,8 +8,6 @@ namespace A._3_DesignPatternsMemento
 {
     internal class Contrato
     {
-
-
         public DateTime Data { get; private set; }
 
         public String Cliente { get; private set; }
@@ -22,7 +20,7 @@ namespace A._3_DesignPatternsMemento
             Data = date;
             Cliente = cliente;
             Tipo = tipo;
-        }
+        }   
 
         /// <summary>
         /// Método com propósito de mudar o estado do contrato
