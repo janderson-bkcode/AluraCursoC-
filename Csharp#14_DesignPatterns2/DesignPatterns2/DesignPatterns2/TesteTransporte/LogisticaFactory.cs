@@ -5,20 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DesignPatterns2.TesteTransporte
-{
+{   /// <summary>
+    /// Classe que funciona como Design Pattern Factory 
+    /// </summary>
     public abstract class LogisticaFactory
     {
-        public ITransport Transporte { get; private set; }
+        public ITransportProduct Transporte { get; private set; }
 
-        private void planDelivery(ITransport transporte)
+        private void planDelivery(ITransportProduct transporte)
         {
             Transporte = transporte;
         }
 
-        public abstract ITransport createTransport();
+        public abstract ITransportProduct createTransport();
 
         public virtual void CreateAndShow()
         {
+            //Mostrando dados do veículo
             var veiculo = this.createTransport();
             Console.WriteLine(veiculo);
         }

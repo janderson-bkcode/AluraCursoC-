@@ -25,10 +25,10 @@ namespace DesignPatterns2.Aula01
 
         public static void TesteTransporte()
         {
-            RoadLogisticTransport rd = new RoadLogisticTransport();
+            RoadLogisticTransportCreator rd = new RoadLogisticTransportCreator();
             rd.createTransport();
 
-            SeaLogisticsTransport s = new SeaLogisticsTransport();
+            SeaLogisticsTransportCreator s = new SeaLogisticsTransportCreator();
             var x = s.createTransport();
 
             x.deliver();

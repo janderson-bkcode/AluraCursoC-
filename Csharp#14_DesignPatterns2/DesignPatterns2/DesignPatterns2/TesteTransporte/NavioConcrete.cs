@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.TesteTransporte
 {
-    internal class Navio : ITransport
+    internal class NavioConcrete : ITransportProduct
     {
         public String Carga { get; private set; }
 
@@ -17,12 +17,12 @@ namespace DesignPatterns2.TesteTransporte
             Console.WriteLine("Navegando");
         }
 
-        public Navio()
+        public NavioConcrete()
         {
 
         }
 
-        public Navio(String carga, String modelo)
+        public NavioConcrete(String carga, String modelo)
         {
             this.Carga = carga;
             this.Modelo = modelo;

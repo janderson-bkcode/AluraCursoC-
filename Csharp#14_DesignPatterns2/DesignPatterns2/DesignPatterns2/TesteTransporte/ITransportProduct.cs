@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns2.TesteTransporte
 {
-    public interface ITransport
+    public interface ITransportProduct
     {
         void deliver();
     }
