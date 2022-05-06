@@ -10,7 +10,7 @@ namespace DesignPatterns2.TesteTransporte
     {
         public override ITransportProduct createTransport()
         {
-            return new CaminhaoConcrete();
+            return new CaminhaoConcreteProduct();
         }
     }
 }

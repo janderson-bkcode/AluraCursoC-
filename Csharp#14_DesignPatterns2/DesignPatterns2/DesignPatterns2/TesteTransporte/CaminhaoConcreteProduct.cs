@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.TesteTransporte
 {
-    internal class CaminhaoConcrete : ITransportProduct
+    internal class CaminhaoConcreteProduct : ITransportProduct
     {
         public String Carga { get; private set; }
 
         public String Modelo { get; private set; }
 
-        public CaminhaoConcrete()
+        public CaminhaoConcreteProduct()
         {
 
         }
-        public CaminhaoConcrete(string carga, string modelo)
+        public CaminhaoConcreteProduct(string carga, string modelo)
         {
             Carga = carga;
             Modelo = modelo;

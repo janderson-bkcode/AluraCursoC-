@@ -46,10 +46,10 @@
     <Compile Include="ConnectionFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TesteTransporte\CaminhaoConcrete.cs" />
+    <Compile Include="TesteTransporte\CaminhaoConcreteProduct.cs" />
     <Compile Include="TesteTransporte\ITransportProduct.cs" />
     <Compile Include="TesteTransporte\LogisticaFactoryCreator.cs" />
-    <Compile Include="TesteTransporte\NavioConcrete.cs" />
+    <Compile Include="TesteTransporte\NavioConcreteProduct.cs" />
     <Compile Include="TesteTransporte\RoadLogisticTransportConcreteCreator.cs" />
     <Compile Include="TesteTransporte\SeaLogisticsTransportConcreteCreator.cs" />
   </ItemGroup>
