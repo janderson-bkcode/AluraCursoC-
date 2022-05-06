@@ -12,6 +12,6 @@ namespace DesignPatterns2.TesteTransporte
         public override ITransportProduct createTransport()
         {
             return new NavioConcreteProduct();
-        
+        }
     }
 }
