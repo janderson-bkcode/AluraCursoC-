@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.TesteTransporte
 {
-    public class RoadLogistic : LogisticaFactory
+    internal class SeaLogisticsTransport : LogisticaFactory
     {
         public override ITransport createTransport()
         {
-            return new Caminhao();
+            return new Navio();
+        }
+
+        public void dados()
+        {
+            Console.Write("Dados do Navio");
         }
     }
 }

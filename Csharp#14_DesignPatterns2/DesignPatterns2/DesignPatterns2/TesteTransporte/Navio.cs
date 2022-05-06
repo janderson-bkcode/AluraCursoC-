@@ -22,7 +22,7 @@ namespace DesignPatterns2.TesteTransporte
 
         }
 
-        public Navio(String carga, String modelo = "X")
+        public Navio(String carga, String modelo)
         {
             this.Carga = carga;
             this.Modelo = modelo;

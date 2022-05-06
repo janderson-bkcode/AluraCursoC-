@@ -13,23 +13,29 @@ namespace DesignPatterns2.Aula01
     {
         static void Main(string[] args)
         {
-            //Abrindo conexão usando a classe ConnectionFactory
-            IDbConnection conexao = new ConnectionFactory().GetConnection();
+            ////Abrindo conexão usando a classe ConnectionFactory
+            //IDbConnection conexao = new ConnectionFactory().GetConnection();
 
-            //Variavel que representa o comando a ser executado
-            IDbCommand comando = conexao.CreateCommand();
-            comando.CommandText = "select * from tabela;";
+            ////Variavel que representa o comando a ser executado
+            //IDbCommand comando = conexao.CreateCommand();
+            //comando.CommandText = "select * from tabela;";
+
+            TesteTransporte();
         }
 
-        public void TesteTransporte()
+        public static void TesteTransporte()
         {
             ITransport T = new Navio();
 
             T.deliver();
-            RoadLogistic rd = new RoadLogistic();
+
+            RoadLogisticTransport rd = new RoadLogisticTransport();
             rd.createTransport();
-            SeaLogistics s = new SeaLogistics();
+
+            SeaLogisticsTransport s = new SeaLogisticsTransport();
             s.createTransport();
+            s.dados();
+            
 
             Console.WriteLine();
             Console.ReadLine();

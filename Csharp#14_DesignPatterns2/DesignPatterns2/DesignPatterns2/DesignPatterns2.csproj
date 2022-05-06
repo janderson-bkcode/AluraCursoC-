@@ -50,6 +50,8 @@
     <Compile Include="TesteTransporte\ITransport.cs" />
     <Compile Include="TesteTransporte\LogisticaFactory.cs" />
     <Compile Include="TesteTransporte\Navio.cs" />
+    <Compile Include="TesteTransporte\RoadLogisticTransport.cs" />
+    <Compile Include="TesteTransporte\SeaLogisticsTransport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
