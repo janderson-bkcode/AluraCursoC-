@@ -51,6 +51,14 @@ namespace A._3_DesignPatternsMemento.Teste
                 Backup = new SnapShotMemento().Editor.createSnapShot();
             }
 
+            public void undo()
+            {
+                if(Backup != null)
+                {
+                    Backup.Restore();
+                }
+            }
+
         }
     }
 }
