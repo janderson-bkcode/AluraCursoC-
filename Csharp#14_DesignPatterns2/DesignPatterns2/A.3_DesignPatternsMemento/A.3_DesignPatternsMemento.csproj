@@ -48,6 +48,9 @@
     <Compile Include="Historico.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Teste\Comand.cs" />
+    <Compile Include="Teste\EditorOriginator.cs" />
+    <Compile Include="Teste\SnapShotMemento.cs" />
     <Compile Include="TipoContrato.cs" />
   </ItemGroup>
   <ItemGroup>
