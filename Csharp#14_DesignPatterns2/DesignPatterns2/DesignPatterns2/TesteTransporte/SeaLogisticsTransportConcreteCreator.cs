@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns2.TesteTransporte
 {
-    internal class SeaLogisticsTransportCreator : LogisticaFactory
+    internal class SeaLogisticsTransportConcreteCreator : LogisticaFactoryCreator
     {
 
         public override ITransportProduct createTransport()

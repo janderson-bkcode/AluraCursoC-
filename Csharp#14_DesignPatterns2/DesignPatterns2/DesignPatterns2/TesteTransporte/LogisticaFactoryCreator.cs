@@ -8,7 +8,7 @@ namespace DesignPatterns2.TesteTransporte
 {   /// <summary>
     /// Classe que funciona como Design Pattern Factory 
     /// </summary>
-    public abstract class LogisticaFactory
+    public abstract class LogisticaFactoryCreator
     {
         public ITransportProduct Transporte { get; private set; }
 
