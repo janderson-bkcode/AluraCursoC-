@@ -46,6 +46,10 @@
     <Compile Include="ConnectionFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TesteTransporte\Caminhao.cs" />
+    <Compile Include="TesteTransporte\ITransport.cs" />
+    <Compile Include="TesteTransporte\LogisticaFactory.cs" />
+    <Compile Include="TesteTransporte\Navio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
