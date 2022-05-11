@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DesignPatterns2",
+    "\\DesignPatterns2\\A.2_DesignPatterns2",
+    "\\DesignPatterns2\\A.2_DesignPatternsFlyWeight"
   ],
+  "SelectedNode": "\\DesignPatterns2\\A.2_DesignPatterns2\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
