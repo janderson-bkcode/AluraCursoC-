@@ -17,6 +17,7 @@ namespace DesignPatterns2.TesteTransporte
             Transporte = transporte;
         }
 
+        //Método para instanciar objetos
         public abstract ITransportProduct createTransport();
 
         public virtual void CreateAndShow()

@@ -29,6 +29,8 @@ namespace DesignPatterns2.Aula01
             rd.createTransport();
 
             SeaLogisticsTransportConcreteCreator s = new SeaLogisticsTransportConcreteCreator();
+
+
             var x = rd.createTransport();
 
             x.deliver();

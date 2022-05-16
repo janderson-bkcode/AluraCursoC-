@@ -24,7 +24,7 @@ namespace DesignPatterns2.TesteTransporte
 
         public void deliver()
         {
-            Console.WriteLine("Dirigindo e comendo putas");
+            Console.WriteLine("Entrega via terrestre");
         }
 
         public override string ToString()
