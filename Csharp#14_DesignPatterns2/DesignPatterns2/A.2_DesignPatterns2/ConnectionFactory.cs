@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace  DesignPatterns2.Aula01
 {   /// <summary>
-    /// Classe que tem como Propósito Abri conexão com Banco de Dados 
+    /// Classe que tem como Propósito Abrir conexão com Banco de Dados 
     /// Funciona como Design Pattern Factory
     /// </summary>
     internal class ConnectionFactory
