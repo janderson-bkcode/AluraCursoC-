@@ -1,19 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace A.2_DesignPatterns2FlyWeight
-{
-    internal class Program
-    {
-        static void Main(string[] args)
+namespace DesignPatterns2
+{   /// <summary>
+    /// Classe que tem como Propósito Abri conexão com Banco de Dados 
+    /// Funciona como Design Pattern Factory
+    /// </summary>
+    internal class ConnectionFactory
+    {   
+        public IDbConnection GetConnection()
         {
-            new List<INota>()
-            {
-                new Do(),new Re(),new Mi(),new Fa(),new Fa()
-            };
+            //Abrindo conexão
+            IDbConnection conexao = new SqlConnection();
+            conexao.ConnectionString = "User Id =root;Password=;Server=localhost;Database=meuBanco";
+            conexao.Open();
+
+            return conexao;
 
         }
     }

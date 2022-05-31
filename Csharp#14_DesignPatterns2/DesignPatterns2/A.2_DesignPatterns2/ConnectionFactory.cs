@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace A.2_DesignPatterns2FlyWeight
+namespace  DesignPatterns2.Aula01
 {   /// <summary>
     /// Classe que tem como Propósito Abri conexão com Banco de Dados 
     /// Funciona como Design Pattern Factory
