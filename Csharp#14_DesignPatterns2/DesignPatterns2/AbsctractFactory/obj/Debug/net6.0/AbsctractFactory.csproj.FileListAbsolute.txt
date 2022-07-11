@@ -1,0 +1,15 @@
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/AbsctractFactory.csproj.AssemblyReference.cache
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/AbsctractFactory.GeneratedMSBuildEditorConfig.editorconfig
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/AbsctractFactory.AssemblyInfoInputs.cache
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/AbsctractFactory.AssemblyInfo.cs
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/AbsctractFactory.csproj.CoreCompileInputs.cache
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/bin/Debug/net6.0/AbsctractFactory
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/bin/Debug/net6.0/AbsctractFactory.deps.json
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/bin/Debug/net6.0/AbsctractFactory.runtimeconfig.json
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/bin/Debug/net6.0/AbsctractFactory.dll
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/bin/Debug/net6.0/AbsctractFactory.pdb
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/AbsctractFactory.dll
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/refint/AbsctractFactory.dll
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/AbsctractFactory.pdb
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/AbsctractFactory.genruntimeconfig.cache
+/home/janderson/Documentos/GitHub/AluraCursoC-/Csharp#14_DesignPatterns2/DesignPatterns2/AbsctractFactory/obj/Debug/net6.0/ref/AbsctractFactory.dll
