@@ -7,7 +7,7 @@ namespace A._6_DesignPatternsBuilder.TesteBuilderCar
 {
     public class CarBuilder : Builder
     {
-        public Car carro { get; set; }
+        private Car carro { get; set; }
 
         public void reset()
         {
